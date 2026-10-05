@@ -1,0 +1,336 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{xeCJK}
+\IfFontExistsTF{Microsoft JhengHei}
+ {\setCJKmainfont{Microsoft JhengHei}}
+ {\setCJKmainfont{FandolSong-Regular}}
+\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\setlist{itemsep=0.3em,topsep=0.4em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.18}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\makeatletter
+\newcommand{\totalpages}{\@abspage@last}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage/\totalpages}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\thepage/\totalpages}}
+\title{Digital Avionics --- Homework 1}
+\author{葉彥辰\quad P46154345}
+\date{}
+\begin{document}
+\maketitle
+\begin{center}CA7528\quad Fall 2026\end{center}
+
+\section*{Question 1}
+What are the advantages of digital avionics comparing the analog avionics?
+
+\textbf{Solution}
+
+Compared with analog avionics, digital avionics has the following advantages.
+\begin{enumerate}
+\item \textbf{Less weight and wiring.} One computer can perform several functions,
+and data buses allow different systems to share sensor information. This reduces
+the amount of separate hardware and cabling.
+\item \textbf{Easier modification.} Control laws and display functions can be changed
+through software instead of changing the analog circuit design.
+\item \textbf{More consistent processing.} Digital computation is less affected by
+analog component drift. Error checks can also detect corrupted data during transmission.
+\item \textbf{Better integration.} Navigation, displays, and flight control can exchange
+information and work together. This also supports automation and reduces pilot workload.
+\item \textbf{Fault detection and maintenance.} Built-in tests help locate faults.
+Digital monitoring and voting can detect a failed channel and allow the remaining
+channels to continue operating.
+\end{enumerate}
+
+\newpage
+\section*{Question 2}
+Is there any drawback of the digital avionics? How to overcome the drawback in aircraft system engineering?
+
+\textbf{Solution}
+
+Yes. The main drawbacks and possible solutions are listed below.
+\begin{enumerate}
+\item \textbf{Aliasing:} If the sampling rate is too low, high-frequency signals can
+appear as false low-frequency signals. An anti-aliasing filter should be placed before
+the analog-to-digital converter, and the sampling rate should be sufficiently high.
+\item \textbf{Quantization:} Digital values have limited resolution. A suitable number
+of bits and proper signal scaling reduce the resulting numerical error.
+\item \textbf{Time delay and data staleness:} Processing and transmission take time,
+which can reduce control stability. Different computers may also compare data sampled
+at different times. These problems can be reduced by limiting delays, synchronizing
+the channels, and checking the age of the data.
+\item \textbf{Software errors:} A software error can affect several computers using
+the same program. Careful verification and testing are required. An independent,
+dissimilar backup can help protect against common-mode failures.
+\item \textbf{Shared equipment failures:} Failure of a shared computer, bus, or power
+supply may affect several functions. Redundant channels, independent power supplies,
+fault isolation, and backup operating modes can reduce this risk.
+\end{enumerate}
+Therefore, aircraft system engineering must consider both the individual components
+and the complete system. Simply adding identical computers is not enough to protect
+against every type of failure.
+
+\newpage
+\section*{Question 3}
+Introduce and compare the CNS/ATM and NAS (National Airspace System).
+
+\textbf{Solution}
+
+\textbf{CNS/ATM} stands for \emph{Communications, Navigation and Surveillance / Air
+Traffic Management}. Its main functions are:
+\begin{itemize}
+\item \textbf{Communications:} transfer voice and data among aircraft and ground services.
+\item \textbf{Navigation:} determine position and support flight along an intended route.
+\item \textbf{Surveillance:} provide aircraft identity, position, and movement information.
+\item \textbf{ATM:} coordinate traffic services, airspace use, and traffic flow.
+\end{itemize}
+These functions use ground-based and satellite-based systems to support safe and
+efficient air traffic operations. ICAO helps coordinate their international
+implementation.
+
+\textbf{NAS} stands for the U.S. \emph{National Airspace System}. It includes
+airspace, airports, navigation facilities, air traffic services, operating rules,
+procedures, and personnel. The FAA manages civil air traffic within this
+system.
+
+Both CNS/ATM and NAS aim to improve aviation safety and efficiency. The main
+difference is their scope: CNS/ATM describes the functions and technologies used
+for air traffic management, while NAS is the actual national system in the United
+States. CNS/ATM capabilities are used within the NAS, so the two concepts are related
+rather than separate alternatives.
+
+\newpage
+\section*{Question 4}
+Every aircraft equips with voice communication by radio frequency. Many radio frequencies are used onboard for different avionics. Please show all the radio frequencies and the purposes of the belonging avionics.
+
+\textbf{Solution}
+
+The main avionics radio frequencies and their uses are summarized below. The equipment
+carried depends on the aircraft, and the assigned channels can vary between countries.
+The table gives operating bands or channel frequencies rather than every individual
+channel assignment.
+
+\small
+\begin{longtable}{@{}P{3.1cm}P{5.0cm}P{7.2cm}@{}}
+\toprule
+System & Frequency or band & Purpose \\
+\midrule
+\endfirsthead
+\toprule System & Frequency or band & Purpose \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+HF communication & Assigned channels roughly within 2--23 MHz & Long-range air--ground voice/data; equipment may tune a wider range. \\
+\addlinespace
+Civil VHF communication & 118--137 MHz band & Line-of-sight ATC and operational voice/data. Not every channel is a voice channel. \\
+\addlinespace
+Military UHF communication & 225--400 MHz range, excluding reserved subbands & Military air--air and air--ground communications. \\
+\addlinespace
+ACARS / VDL & Assigned VHF channels; VDL Mode 2 common signalling channel: 136.975 MHz & Operational/ATC data. ACARS can also use HF or SATCOM; it is not one universal RF frequency. \\
+\addlinespace
+L-band aeronautical SATCOM & 1545--1559 MHz downlink; 1646.5--1660.5 MHz uplink & Satellite voice/data; these are specified aeronautical mobile-satellite bands, not every provider's complete allocation. \\
+\addlinespace
+Emergency voice & 121.5 MHz; 243 MHz & Civil and military distress/guard communication. \\
+\addlinespace
+ELT & 406.0--406.1 MHz; commonly 121.5 MHz for homing & Distress alerting and search localization. \\
+\addlinespace
+ADF / NDB & 190--1750 kHz internationally; commonly 190--535 kHz in U.S. facilities & Aircraft receives beacon signals to determine bearing. \\
+\addlinespace
+VOR & 108.00--117.95 MHz, assigned channels & Bearing/radial guidance. \\
+\addlinespace
+ILS localizer & Channel centres 108.10--111.95 MHz & Runway lateral guidance. \\
+\addlinespace
+ILS glide slope & Channel centres 329.15--335.00 MHz & Vertical approach guidance; paired with localizer channels. \\
+\addlinespace
+ILS marker beacon & 75 MHz & Identifies fixed approach positions. \\
+\addlinespace
+DME / TACAN & Within the 960--1215 MHz navigation band & DME measures slant range; TACAN also supplies bearing to suitably equipped military aircraft. \\
+\addlinespace
+MLS & 5030--5150 MHz allocation & Microwave precision-approach guidance. \\
+\addlinespace
+GPS & L1: 1575.42 MHz; L2: 1227.60 MHz; L5: 1176.45 MHz & Satellite position, velocity, and time. These are GPS carriers; receiver use depends on its design and approval. \\
+\addlinespace
+SSR / Mode A, C, S & 1030 MHz interrogation; 1090 MHz reply & Cooperative identification, altitude reporting, and Mode S data. \\
+\addlinespace
+TCAS / ACAS & 1030 / 1090 MHz & Cooperative traffic detection and collision avoidance. \\
+\addlinespace
+ADS-B & 1090 MHz extended squitter; 978 MHz UAT & Broadcast aircraft state; UAT is a U.S. option below FL180, subject to operating requirements. \\
+\addlinespace
+Radio altimeter & 4200--4400 MHz & Height above terrain. \\
+\addlinespace
+Airborne weather radar & Typically 9300--9500 MHz & Weather detection; 5350--5470 MHz is another airborne-radar allocation. \\
+\addlinespace
+Doppler navigation radar & 8750--8850 MHz or 13250--13400 MHz & Ground-relative velocity/drift measurement on equipped aircraft. \\
+\end{longtable}
+\normalsize
+
+Communication systems exchange voice and data, navigation systems provide position
+or guidance, and surveillance systems help track aircraft. INS and wired data buses
+do not require their own external radio frequencies. Additional equipment, such as
+passenger connectivity or special-mission systems, may use other bands.
+
+\newpage
+\section*{Question 5}
+Explain the relationships of Guidance, Navigation, and Control for an aircraft.
+
+\textbf{Solution}
+
+\textbf{Navigation} estimates the current position, velocity, attitude, and heading
+of the aircraft using sensors and navigation aids.
+
+\textbf{Guidance} uses this information and the desired flight path to generate
+commands, such as the required heading, altitude, or bank angle.
+
+\textbf{Control} operates the control surfaces and thrust to follow these commands.
+It also uses feedback to stabilize the aircraft against disturbances.
+
+Their closed-loop relationship can be written as
+\[
+\begin{gathered}
+\text{Desired path}
+\longrightarrow \text{Guidance}
+\longrightarrow \text{Control}
+\longrightarrow \text{Aircraft},\\[0.4em]
+\text{Sensors}\longrightarrow\text{Navigation}
+\longrightarrow\text{Feedback to guidance and control}.
+\end{gathered}
+\]
+For example, if an aircraft moves away from its planned route, navigation detects
+the position error. Guidance determines the turn needed to return to the route,
+and control commands the surfaces to make the turn. The updated aircraft state
+is then fed back to guidance and control.
+
+\newpage
+\section*{Common data for Questions 6--8}
+For Questions 6--8, the aircraft parameters from textbook \S3.2.4 are used:
+\[
+\begin{aligned}
+m&=30{,}000\ \mathrm{kg}, & S&=75\ \mathrm{m^2},\\
+C_{L,\max}&=1.2, & \alpha_{\max}&=15^\circ,\\
+\rho_{0}&=1.225\ \mathrm{kg/m^3}, &
+\rho_{30{,}000\,\mathrm{ft}}&=0.4583\ \mathrm{kg/m^3},\\
+g&=9.81\ \mathrm{m/s^2}. &&
+\end{aligned}
+\]
+Neglect the density variation from 0 to 1,000 ft. Following the example, assume
+a linear lift curve passing through the origin up to maximum lift:
+\[
+C_L=\frac{C_{L,\max}}{\alpha_{\max}}\alpha
+=0.08\alpha_{\mathrm{deg}}.
+\]
+Here $\alpha_{\mathrm{deg}}$ is the angle in degrees. In this example, wing incidence
+refers to the aerodynamic angle of attack.
+
+\section*{Question 6}
+What is the wing incidence, $\alpha$, when flying straight and level at a speed of
+$80\,\mathrm{m/s}$ (160 knots approx.) at a height of $200\,\mathrm{ft}$ in the
+approach to the airfield?
+
+\textbf{Solution}
+
+For steady, unbanked, level flight, assuming thrust has no significant vertical
+component,
+\[
+L=W=mg,\qquad L=qSC_L,\qquad q=\tfrac12\rho V^2.
+\]
+The weight and dynamic pressure are
+\[
+W=30{,}000(9.81)=294{,}300\ \mathrm{N},
+\qquad q=\tfrac12(1.225)(80)^2=3920\ \mathrm{Pa}.
+\]
+Therefore,
+\[
+C_L=\frac{294{,}300}{3920(75)}\approx1.001.
+\]
+\[
+\boxed{\alpha=\frac{C_L}{0.08}\approx12.5^\circ.}
+\]
+The required angle is below $15^\circ$, so the lift requirement is achievable
+within the assumed lift-curve range.
+
+\newpage
+\section*{Question 7}
+What is the corresponding wing incidence when flying straight and level at a speed
+of $200\,\mathrm{m/s}$ (400 knots approx.) at a height of $1{,}000\,\mathrm{ft}$?
+
+\textit{Note: Neglect change in density $0$--$1{,}000\,\mathrm{ft}$ for simplicity.}
+
+\textbf{Solution}
+
+The density, weight, and wing area remain the same. Thus
+\[
+q=\tfrac12(1.225)(200)^2=24{,}500\ \mathrm{Pa},
+\]
+\[
+C_L=\frac{mg}{qS}=\frac{294{,}300}{24{,}500(75)}\approx0.1602,
+\]
+and
+\[
+\boxed{\alpha=\frac{C_L}{0.08}\approx2.0^\circ.}
+\]
+As a cross-check, $L$ is fixed and $C_L$ is proportional to $\alpha$, so
+\[
+\alpha_7=\alpha_6\left(\frac{V_6}{V_7}\right)^2
+\approx12.5^\circ\left(\frac{80}{200}\right)^2
+=2.0^\circ.
+\]
+The higher speed produces greater dynamic pressure, so less angle of attack is
+needed to support the same weight.
+
+\newpage
+\section*{Question 8}
+What is the maximum normal acceleration that can be achieved at a height of
+$30{,}000\,\mathrm{ft}$ when flying at a speed of $225\,\mathrm{m/s}$ (450 knots)?
+Neglect compressibility effects and assume adequate thrust is available to
+counteract the increase in drag and maintain speed of 450 knots at $\alpha_{\max}$.
+
+\textbf{Solution}
+
+Using $V=225\,\mathrm{m/s}$ and $C_{L,\max}=1.2$ at $\alpha_{\max}=15^\circ$,
+\[
+q=\tfrac12(0.4583)(225)^2\approx11{,}600.7\ \mathrm{Pa},
+\]
+\[
+L_{\max}=qSC_{L,\max}
+\approx11{,}600.7(75)(1.2)
+\approx1.0441\times10^6\ \mathrm{N}.
+\]
+
+For a wings-level pull-up starting from a horizontal flight path, the net normal
+force is lift minus weight. Therefore,
+\[
+ma_{n,\max}=L_{\max}-mg,
+\]
+\[
+\begin{aligned}
+a_{n,\max}&=\frac{L_{\max}-mg}{m}\\
+&\approx\frac{1.0441\times10^6-294{,}300}{30{,}000}\\
+&\approx25.0\ \mathrm{m/s^2}.
+\end{aligned}
+\]
+Hence,
+\[
+\boxed{a_{n,\max}\approx25.0\ \mathrm{m/s^2}\approx2.55g.}
+\]
+This is approximately $2.5g$ using the rounding in the textbook. The corresponding
+load factor is
+\[
+n_{\max}=\frac{L_{\max}}{W}\approx3.55.
+\]
+The load factor is different from the net normal acceleration because gravity
+must be subtracted: $a_n=(n-1)g$. This calculation neglects compressibility and
+assumes sufficient thrust, as specified in the question.
+
+\end{document}

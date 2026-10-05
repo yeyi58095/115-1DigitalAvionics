@@ -1,0 +1,201 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+% 自編練習題；不是授課教師正式發布的作業。
+% 在各題 Solution 下撰寫答案；需要更多空間時可移除 \vfill 或 \newpage。
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=2.5cm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{xeCJK}
+\IfFontExistsTF{Microsoft JhengHei}
+  {\setCJKmainfont{Microsoft JhengHei}}
+  {\setCJKmainfont{FandolSong-Regular}}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CA7528 Digital Avionics}
+\fancyhead[R]{\small Practice Homework}
+\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\linespread{1.12}
+\newcommand{\question}[1]{\section*{Question #1}}
+\newcommand{\solution}{\par\medskip\textbf{Solution}\par}
+\begin{document}
+\begin{center}
+  {\LARGE\bfseries Digital Avionics}\\[0.3em]
+  {\Large Practice Homework}\\[0.5em]
+  CA7528 \quad Fall 2026\\[0.3em]
+  Handouts 1--4 \quad 自編練習題（共 20 題）
+\end{center}
+\medskip
+姓名：\underline{\hspace{3.4cm}}\hfill 學號：\underline{\hspace{3.4cm}}
+
+\textbf{作答說明：}申論題請說明理由，必要時以表格或方塊圖輔助。計算題請列出公式、代入過程及單位。本題本依目前講義範圍與 Homework 1 題型自編，非教師正式作業；不含解答。
+
+\question{1}
+比較數位航電系統與傳統類比航電系統。請從訊號傳輸、設備整合、重量與配線，以及維修方式說明數位航電的優點。
+\solution
+% 在這裡撰寫 Question 1 的解答。
+\vfill
+\question{2}
+數位航電將多種功能整合至共用電腦與資料匯流排後，可能產生哪些缺點或故障風險？在飛機系統工程中，可以使用哪些方法降低這些風險？
+\solution
+% 在這裡撰寫 Question 2 的解答。
+\vfill
+\newpage
+
+\question{3}
+介紹 Communication、Navigation、Surveillance 與 Air Traffic Management 的功能，並比較傳統地面設施與衛星／資料鏈技術在 CNS/ATM 中扮演的角色。
+\solution
+% 在這裡撰寫 Question 3 的解答。
+\vfill
+\question{4}
+說明 Guidance、Navigation 與 Control 之間的關係。以「飛機因側風偏離預定航線」為例，說明各系統如何配合，使飛機回到預定航線。
+\solution
+% 在這裡撰寫 Question 4 的解答。
+\vfill
+\newpage
+
+\question{5}
+介紹 Flight Management System（FMS）、Autopilot（A/P）與 Fly-by-Wire（FBW）的功能及層級關係。為什麼不同層級的系統需要不同的控制更新頻率？
+\solution
+% 在這裡撰寫 Question 5 的解答。
+\vfill
+\question{6}
+說明 Built-in Test（BIT）與 Line Replaceable Unit（LRU）如何改善航電系統的故障診斷與維修。若某項故障只在飛行中間歇發生，落地後便消失，應如何利用這些設計協助排除故障？
+\solution
+% 在這裡撰寫 Question 6 的解答。
+\vfill
+\newpage
+
+\section*{Common Data for Questions 7--12}
+某飛機的參數如下。本頁資料適用於 Questions 7--12。
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{ll}
+\toprule
+參數 & 數值\\
+\midrule
+質量 $m$ & $24{,}000\,\mathrm{kg}$\\
+機翼面積 $S$ & $80\,\mathrm{m^2}$\\
+最大升力係數 $C_{L,\max}$ & $1.40$\\
+最大升力對應攻角 $\alpha_{\max}$ & $15^\circ$\\
+海平面空氣密度 $\rho_0$ & $1.225\,\mathrm{kg/m^3}$\\
+30,000 ft 空氣密度 $\rho_{30,000}$ & $0.4583\,\mathrm{kg/m^3}$\\
+重力加速度 $g$ & $9.81\,\mathrm{m/s^2}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+失速前的升力曲線與阻力極線為
+\[
+ C_L=0.20+0.08\alpha,\qquad C_D=0.025+0.045C_L^2.
+\]
+\textbf{角度單位：}上述升力曲線中的 $\alpha$ 以度（degree）為單位。
+
+\textbf{共同假設：}忽略 0--1,000 ft 的空氣密度變化、壓縮性效應與燃油消耗造成的質量變化。推力視為平行飛行方向。各題未指定構型變化時，使用相同的機翼面積及氣動係數關係。
+
+\textbf{符號：}以 $\bar q$ 表示動壓，以 $q$ 表示俯仰角速度。負載因數 $n=L/(mg)$ 為無因次量；淨法向加速度須考慮重力在飛行路徑法向的分量。
+\vfill
+{\small 本組數值為自編練習參數，非 Homework 1 原始範例。}
+\newpage
+
+\question{7}
+飛機在高度 200 ft，以 $75\,\mathrm{m/s}$ 定速直線水平飛行。求所需的攻角 $\alpha$，並判斷是否超過給定的最大升力攻角。使用前頁共同資料。
+\solution
+% 在這裡撰寫 Question 7 的解答。
+\vfill
+\question{8}
+同一架飛機在高度 1,000 ft，以 $180\,\mathrm{m/s}$ 定速直線水平飛行。求所需攻角，並解釋其與 Question 7 結果不同的原因。
+\solution
+% 在這裡撰寫 Question 8 的解答。
+\vfill
+\newpage
+
+\question{9}
+飛機在高度 30,000 ft，以 $180\,\mathrm{m/s}$ 定速直線水平飛行。求所需攻角，並與 Question 8 比較。說明空氣密度改變如何影響所需升力係數與攻角。
+\solution
+% 在這裡撰寫 Question 9 的解答。
+\vfill
+\question{10}
+求此飛機在海平面與 30,000 ft 高度，以給定構型維持直線水平飛行的最低真空速（僅考慮升力限制，假設推力足夠）。說明兩個高度的結果為何不同。
+\solution
+% 在這裡撰寫 Question 10 的解答。
+\vfill
+\newpage
+
+\question{11}
+飛機在高度 30,000 ft，以 $220\,\mathrm{m/s}$ 飛行。當攻角增加至 $\alpha_{\max}$ 時，求最大升力及對應負載因數 $n=L/(mg)$。若飛機在機翼水平、飛行路徑瞬間水平的狀態下拉起，求此瞬間的最大\textbf{淨法向加速度}，並以 $\mathrm{m/s^2}$ 與 $g$ 倍數表示。假設推力足以維持速度，且暫不考慮結構限制。
+\solution
+% 在這裡撰寫 Question 11 的解答。
+\vfill
+\question{12}
+分別計算 Questions 7 與 8 飛行條件下的阻力、升阻比，以及維持定速水平飛行所需的推力。說明為什麼飛行速度增加時，所需推力不能只根據升力係數的變化判斷。
+\solution
+% 在這裡撰寫 Question 12 的解答。
+\vfill
+\newpage
+
+\question{13}
+說明襟翼（Flap）與前緣縫翼（Slat）如何影響升力特性及低速飛行能力。為什麼飛機通常在起飛與降落時使用這些裝置，而在高速巡航時收回？
+\solution
+% 在這裡撰寫 Question 13 的解答。
+\vfill
+\question{14}
+比較壓力中心（Center of Pressure）、氣動中心（Aerodynamic Center）與全機中性點（Neutral Point）的物理意義。說明這些位置與重心之間的關係，為什麼對分析俯仰力矩及縱向靜穩定性很重要。
+\solution
+% 在這裡撰寫 Question 14 的解答。
+\vfill
+\newpage
+
+\question{15}
+某飛機在固定升降舵位置下的俯仰力矩係數為
+\[
+ C_M=0.08-0.90\alpha,
+\]
+其中 $\alpha$ 以 rad 表示，抬頭力矩為正。求配平攻角，並判斷縱向靜穩定性。若攻角由配平值增加 $2^\circ$，求新的 $C_M$，並說明此力矩對飛機運動的影響。
+\solution
+% 在這裡撰寫 Question 15 的解答。
+\vfill
+\question{16}
+某飛機的平均氣動弦長為 $2.5\,\mathrm{m}$，中性點位於平均氣動弦前緣後方 $1.10\,\mathrm{m}$。原重心位於同一基準後方 $0.85\,\mathrm{m}$，重新配置載重後移至 $1.15\,\mathrm{m}$。求兩種配置的靜穩定裕度，並比較其縱向靜穩定性。使用
+\[
+ SM=\frac{x_{NP}-x_{CG}}{\bar c}.
+\]
+\solution
+% 在這裡撰寫 Question 16 的解答。
+\vfill
+\newpage
+
+\question{17}
+說明飛機六自由度運動所對應的速度、角速度、力及力矩。為什麼使用機體座標建立運動方程式時，會出現速度與角速度相乘的耦合項？
+\solution
+% 在這裡撰寫 Question 17 的解答。
+\vfill
+\question{18}
+說明配平狀態與小擾動假設，以及如何利用這些假設將非線性飛機運動方程式線性化。以 $QW$ 為例，令
+\[
+ Q=Q_e+q,\qquad W=W_e+w,\qquad Q_e=0,
+\]
+其中 $Q$ 為總俯仰角速度，$W$ 為機體 $z$ 軸速度，下標 $e$ 表示配平值，小寫字母表示擾動量。展開此乘積並說明應保留與忽略的項。若擾動幅度很大，這種近似可能產生什麼問題？
+\solution
+% 在這裡撰寫 Question 18 的解答。
+\vfill
+\newpage
+
+\question{19}
+在對稱飛機、直線平飛附近的小擾動條件下，說明如何將運動分為縱向與橫向／方向運動。分別列出主要狀態變數與控制輸入，並以
+\[
+ \dot{\mathbf{x}}=A\mathbf{x}+B\mathbf{u}
+\]
+說明狀態矩陣 $A$ 與輸入矩陣 $B$ 的物理意義。為什麼建立此模型需要氣動穩定導數與控制導數？
+\solution
+% 在這裡撰寫 Question 19 的解答。
+\vfill
+\question{20}
+一架飛機受到陣風擾動後，產生衰減緩慢的俯仰振盪。請說明如何利用俯仰角速度回授與升降舵建立 Stability Augmentation System（SAS），改善飛機的動態響應。畫出包含指令、控制器、致動器、飛機與感測器的簡化閉迴路方塊圖，並解釋靜穩定性與動態阻尼的差別。
+\solution
+% 在這裡撰寫 Question 20 的解答。
+\vfill
+\end{document}
