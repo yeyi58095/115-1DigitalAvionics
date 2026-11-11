@@ -1,0 +1,954 @@
+
+PAGE 1
+@Ying-Chih Lai, FCU
+Digital Avionics
+航電系統
+Lecture 6
+Prof. Ying-Chih Lai
+
+PAGE 2
+Textbook
+• Reading:
+– Chapter 5: Inertial Sensors and Attitude Derivation 
+– Section 5.1~5.3, pp. 255-302
+– Chapter 6: Navigation Systems 
+– Section 6.1~6.4, pp. 303-355
+2
+
+PAGE 3
+Guidance, Navigation, and Control of an Aircraft
+• From A to B
+• Guidance: Where to go?
+• Navigation: Where are you?
+• Control: How to go?
+A
+B
+3
+
+PAGE 4
+Example
+• Getting from your present location to Tainan Train Station
+– How would you tell someone how to get there?
+– How would you tell a robot/drone to get there?
+• Both problems assume there is some agreed upon coordinate 
+system.
+– Latitude, Longitude, Altitude (Geodetic)
+– North, East, Down with respect to some origin
+– Ad Hoc system ( Step by step)
+4
+
+PAGE 5
+Applications of Navigation Systems
+• Air Transportation
+• Marine, Space, and Ground Vehicles
+• Pedestrian Navigation / Indoor Navigation
+• Surveying
+5
+
+PAGE 6
+Guidance and Navigation
+• Comparison of Navigation and Guidance
+– Navigation: The process of determining a vehicle’s/ 
+person’s/ object’s position
+– Guidance: The process of directing a vehicle/ person/ 
+object from one point to another along some desired path
+6
+
+
+PAGE 7
+Navigation and Guidance
+• A Navigation or Guidance System
+• Steering commands: instructions on what to do to get the 
+vehicle going to where it should be going
+– Turn right / left
+– Go up / down
+– Speed up /slow down 
+7
+
+
+PAGE 8
+Guidance, Navigation, and Control of an Aircraft
+• System Block Diagram
+Navigation System
+Control System
+Guidance 
+System
+Planning 
+path
+Position 
+controller
+Attitude 
+controller
+A/C
+8
+Destination
+Attitude Feedback
+Position Feedback
+
+PAGE 9
+Guidance, Navigation, and Control of an Aircraft
+• Navigation: the determination, at a given time, of the vehicle's 
+position and velocity as well as its attitude
+– Radio navigation
+• It uses radio waves to determine position by either radio direction finding 
+systems or hyperbolic systems, such as VOR/DME.
+– Dead reckoning
+• Current position is determined from the knowledge of the previous 
+position and measurements of the distance traveled and the direction of 
+motion, such as the Inertial navigation system (INS).
+– Fixed point positioning
+• The current vehicle position is determined using measurements to known 
+reference points, such as the global positioning system (GPS).
+9
+
+PAGE 10
+Guidance, Navigation, and Control of an Aircraft
+• Radio navigation
+– Omega/Loran-C: 越洋導航系統
+– VOR/DME: 航路導航系統
+– TACAN: 太康導航系統(軍機)
+– ILS: 儀器降落系統
+VOR
+10
+
+PAGE 11
+11
+
+
+PAGE 12
+Navigation Aids 
+• Dependent navigation is a way to follow external 
+signals to find direction to fly. It is especially referring 
+to ground facilities. 
+• Independent navigation is to identify aircraft heading 
+from airborne systems without ground signals. 
+
+PAGE 13
+Navigation 1950~2000
+• Dependent long distance navigation referring to 
+ground radio signals
+– Establish airway in airspace to assist flight
+– Invalid for over ocean (oceanic) and continent (remote)
+– Based on Dead Reckoning for positioning
+• Independent self navigation in avionics for self-
+positioning
+– Design independent navigation
+– Keep accuracy enhancement 
+
+PAGE 14
+Early Ground Navigation signal
+• LORAN-C
+• OMEGA: Low frequency signal for receiver positioning, 
+accurate being affect by climate, location, environment 
+• Fix Beacon 63MHz: along airways
+• Fix Marker: offer higher frequency signal for aircraft for 
+certain airways within limited range by dead reckoning
+
+PAGE 15
+Improved Ground Navigation 
+• VOR - VHF freq. for azimuth indication
+• DME - UHF freq. for distance indication
+• TACAN - UHF freq. for azimuth and distance
+• VOR-TAC, VOR-DME - mixed systems 
+• Radar Guidance - guide aircraft from ground transmitted 
+radar signal
+
+PAGE 16
+Requirements for Airborne Navigation 
+system
+• Install on airborne, operable by pilots
+• Effective method to calibrate errors
+• Mutual correction from ground signals
+• Multiple technology support and integration
+
+PAGE 17
+Can it be possible to 
+eliminate ground connection for 
+navigation?
+
+PAGE 18
+Doppler Navigation
+• Calculate position based on relative speed difference 
+between aircraft to the Earth
+– Affect easily by compass or Earth magnetic field change
+– Affect by surface reflection from sea or dessert during weak signal 
+period
+– Accumulate error in azimuth and distance 
+– Many practical problems in application
+
+PAGE 19
+RMI Instrument
+• Radio Magnetic Indicator (RMI) uses a magnetic device to 
+interact with Earth magnet for direction
+– Offer only rough indication to North and South
+– Earth magnetic field distribution being abnormal and deviated in 
+different territories
+– Establish calibration rule to enhance accuracy
+– Rely on computer database for correction
+– Offer good navigation aid for VFR in short rang
+
+PAGE 20
+Principle of RMI 
+
+
+PAGE 21
+Earth Magnet to Geography 
+
+
+PAGE 22
+@Ying-Chih Lai, FCU
+Inertial Navigation System
+
+PAGE 23
+Inertial Navigation System (INS)
+• Inertial navigation (1940): WWII German V-2 Rocket.
+• The very first inertial navigation system (INS) for aircraft use 
+were developed by Charles Draper at MIT in 1950
+• An inertial navigation is a self-contained navigator equipped 
+with sensors that continuously measure acceleration and 
+rotation, from which velocity and position vectors are 
+computed.
+• System architecture: Gimbal or Strapdown systems
+– Gimbal systems: accelerometer leveling is done physically.
+– Strapdown systems: accelerometer leveling is done in math ( or 
+analytically measure rotation of the platform and compute rotation 
+angle from measurements.)
+23
+
+PAGE 24
+Inertial Navigation System (INS)
+24
+
+PAGE 25
+
+
+PAGE 26
+Strap Down the Inertial System
+Fig. 5.21 Strap down system schematic.
+
+PAGE 27
+Inertial System Output Message
+Fig. 5.21 Strap down system schematic.
+
+PAGE 28
+Navigation State / State Vector
+• A set of parameters describing the  
+position, velocity, attitude… of a vehicle / person
+• Navigation state vector:
+– Position = 3 coordinates of location, a 3×1 vector
+– Velocity = derivative of the positon vector, a 3×1 vector
+– Attitude = a set of parameters which describe the vehicle’s 
+orientation is space
+28
+
+PAGE 29
+Attitude
+• We will deal with two ways of describing the orientation of 
+two coordinates frames
+– Euler angles: 3 angles describing the relationship between 2-cordinate 
+systems
+– Transformation matrix: maps vector in “A” coordinate frame to “B”
+29
+
+
+PAGE 30
+Inertial Navigation System (INS)
+• Rotation and Translation Motion
+30
+Euler angles 
+
+PAGE 31
+Principle of INS
+• Inertial Sensors: Gyros and Accelerometers
+• The Inertial Navigation System (INS) applies Newton’s 
+First Law of Motion. 
+• If an object experiences no net force, then its velocity is 
+constant: the object is either at rest (if its velocity is 
+zero), or it moves in a straight line with constant speed 
+(if its velocity is nonzero).
+
+PAGE 32
+Principle of INS
+• The reactive centripetal force (離心力) on a mass 
+interacting with Earth rotation 
+• High speed motion aircraft can still offer a rest 
+environment that mass and rotation speed are both key 
+factors to effect its performance.
+
+PAGE 33
+Elements of INS
+• Gyro - detect the attitude and azimuth relative to its origin in 
+6 DoF
+• Rate Gyro – offer specific axis and its change rate 
+• Accelerometer - detect accelerometer in X, Y , and Z axes
+– X axis for flight acceleration, Z axis for climb or descend 
+
+
+PAGE 34
+Superiority of INS
+• Complete independent navigation system without ground 
+information support 
+• Receive continuous navigation message, such as position 
+and direction
+• Offer attitude awareness
+• Pilot operating without foreign support
+• Accumulative error much improved to less than 1 mile/hr
+in simple calibration
+
+PAGE 35
+Gyros
+• Micro Electro-Mechanical Systems (MEMS) Technology Rate 
+Gyros
+• Optical Gyroscopes
+– Ring Laser Gyro (RLG)
+– Fiber Optic Gyro (FOG)
+35
+
+
+PAGE 36
+MEMS Gyro
+• Vibrating structure MEMS gyroscope
+• Inexpensive vibrating structure microelectromechanical 
+systems (MEMS) gyroscopes have become widely available. 
+• These are packaged similarly to other integrated circuits and 
+may provide either analogue or digital outputs.
+
+
+PAGE 37
+MEMS Gyro
+37
+
+
+PAGE 38
+MEMS Gyro
+38
+
+
+PAGE 39
+
+
+PAGE 40
+Optical Gyro
+• Sagnac Effect to observe light interference in phase shift
+• Two light beams travelling in opposite directions to cause time 
+lag due to axial acceleration
+
+PAGE 41
+Optical Gyro
+• When gyro is rotate at an angular rate (rad/s) in clockwise
+(CW) and counterclockwise (CCW) to observe light travel
+difference as
+ΔT = (4A/c2)
+– C is light speed, θ gyro declination, and its derivative is
+angular velocity, A is the enclosed area by light path r in
+total length L
+• Two light beams path difference
+ΔL = (4A/c)
+• Two light beams generate cyclic difference under 
+laser of wavelength λ laser as
+Δf = (4A/λL)
+
+PAGE 42
+Optical Gyro
+⚫ Two laser beams cause interference due to travel difference 
+and generate an optical spectrum.
+⚫ The interferometer can measure their angular velocity and 
+convert into angular acceleration
+⚫ Ring laser gyro can measure angular rate 400 deg/s, or 
+minimum 0.015 deg/hr
+
+PAGE 43
+Principle of Ring Laser Gyro
+
+
+PAGE 44
+Ring Laser Gyro
+• Laser beams transmit from two directions, and merge by 
+mirror reflection into one receiver
+• Being affect by rotational acceleration, the laser beams are 
+accelerate one way and decelerate in the other way to result in 
+apparent light phase shift
+
+PAGE 45
+
+
+PAGE 46
+Optical Fiber Laser Gyro
+• Transmit two laser beams into two direction of optical fiber 
+and merge in one end
+• Either clockwise or counterclockwise to rotational acceleration 
+• Two merged laser beams present Sagnac Effect to display 
+interference pattern
+
+PAGE 47
+Optical Fiber Laser Gyro
+• The time difference of two laser beams is
+ΔT = (4A/c2)
+– Assuming N turns optical fiber, in radius R with total
+enclosed area A=πR2N
+N = L/2πR
+• And ΔT=(LD/c2)
+– for D = 2R。
+• The relative angular velocity can be estimated
+
+PAGE 48
+Optical Fiber Laser Gyro
+
+
+PAGE 49
+Principle of Accelerometer
+• Newton’s Law of Motion  F=ma
+• A mass in an acceleration a will produce a force F
+• It the mass is hung on a spring, it will elastic to displacement l, 
+to get l=F/k
+• How to detect the displacement?
+
+PAGE 50
+Principle of Accelerometer
+Mass
+Spring
+Indicator
+Spring
+
+PAGE 51
+Principle of Accelerometer
+Acceleration
+Velocity
+Displacement
+
+PAGE 52
+Acceleration to Inertia
+
+
+PAGE 53
+Principle of Accelerometer
+• Inertia of a mass in a motion environment
+• Produce a displacement along with the Inertial force direction 
+• A recovery force by spring or other mechanism
+• Inertial force = recovery force
+• Inertial displacement can be detected by electric devices, 
+resistive, inductive or capacitive to induce electric signals
+
+PAGE 54
+Acceleration Sensing
+• Inductive (L) - a moving coil to change flux linkage in a 
+magnetic field to induce voltage
+• Capacitive (C) – change position to change electroplate area 
+and change capacitance to induce capacitive voltage
+• Resistive (R) – using piezoelectric material to measure 
+resistance change
+• Combination of R, L, C to generate oscillation frequency into 
+digital signal
+
+PAGE 55
+Inductor
+
+PAGE 56
+Acceleration Sensing
+• Change inductor core to change mutual flux linkage of 
+detecting coil from central position to two sides, and 
+recover by spring force.
+
+PAGE 57
+57
+MEMS Accelerometer
+
+PAGE 58
+Inertial Navigation System (INS)
+• INS Advantages
+– No external electromagnetic signals (non-jammable)
+– A very high data output rate (much bigger than GPS)
+– Works in all environments (indoor, underwater, underground)
+– Exhibits relatively low noise
+• INS Disadvantages
+– Bias drift problems (accuracy deteriorate with time)
+– Requires Initial and In-flight calibration and alignment
+– Requires knowledge of gravity
+58
+
+PAGE 59
+Inertial Navigation System (INS)
+• INS Error Sources
+– Gyro bias (drift)
+– Gyro scale factor
+– Gyro noise (random walk)
+– Accelerometer bias
+– Accelerometer scale factor
+– Accelerometer noise
+– Misalignment
+59
+
+PAGE 60
+Inertial Navigation System (INS)
+• INS Disadvantages
+– Accumulating errors
+60
+
+PAGE 61
+Inertial Navigation System (INS)
+• Classification by accuracy / performance 
+❑ Integrated with 
+GPS for mapping 
+applications
+❑ Short time 
+applications 
+(weapons) 
+❑ General 
+navigation and 
+high precision 
+georeferencing 
+mapping 
+applications
+❑ Land-based 
+intercontinental 
+ballistics missiles
+❑ Submarines
+Applications
+100 – 1000 g50 – 100 g1 gAccelerometer bias
+1- 10 deg/hr 
+(could be larger)
+Roughly speaking 
+1/1000 of the 
+Earth’s rotation 
+rate = 0.015 deg/hr 
+(1 nmi/hr)
+0.0001Gyro Drift rate 
+(deg/hr)
+10-20 nmi/hr
+(10-20K USD)
+0.5 – 2  nmi/hr
+(70-100kUSD)
+< 30 m/hr
+(>200,00 USD)
+Positional Errors*
+Tactical Grade
+(IMU or ISA 
+systems)
+Navigation-Grade
+(INS or IMU 
+systems)
+Strategic-Grade
+(INS systems)
+Performance
+❑ Integrated with 
+GPS for mapping 
+applications
+❑ Short time 
+applications 
+(weapons) 
+❑ General 
+navigation and 
+high precision 
+georeferencing 
+mapping 
+applications
+❑ Land-based 
+intercontinental 
+ballistics missiles
+❑ Submarines
+Applications
+100 – 1000 g50 – 100 g1 gAccelerometer bias
+1- 10 deg/hr 
+(could be larger)
+Roughly speaking 
+1/1000 of the 
+Earth’s rotation 
+rate = 0.015 deg/hr 
+(1 nmi/hr)
+0.0001Gyro Drift rate 
+(deg/hr)
+10-20 nmi/hr
+(10-20K USD)
+0.5 – 2  nmi/hr
+(70-100kUSD)
+< 30 m/hr
+(>200,00 USD)
+Positional Errors*
+Tactical Grade
+(IMU or ISA 
+systems)
+Navigation-Grade
+(INS or IMU 
+systems)
+Strategic-Grade
+(INS systems)
+Performance
+1 nmi6076 feet 1851 m
+61
+0
+
+PAGE 62
+Inertial Navigation System (INS)
+• ISA, IMU, and INS
+Raw 
+Inertial 
+Data
+Corrected
+Raw 
+Inertial 
+Data
+Navigation 
++ 
+Corrected
+Raw 
+Inertial 
+Data
+User
+Error 
+Compensation
+Error 
+Compensation
+Navigation 
+Computer
+Ltn-100G
+Ltn-200
+BEI-DQI
+ISA
+IMU
+INS
+Raw 
+Inertial 
+Data
+Corrected
+Raw 
+Inertial 
+Data
+Navigation 
++ 
+Corrected
+Raw 
+Inertial 
+Data
+User
+Error 
+Compensation
+Error 
+Compensation
+Navigation 
+Computer
+Ltn-100G
+Ltn-200
+BEI-DQI
+ISA
+IMU
+INS
+62INERTIAL SENSOR ASSEMBLY (ISA)
+
+PAGE 63
+6 DoF in Flight
+• Attitude Representation
+– Euler Angles
+
+PAGE 64
+Constraints in Euler Equation 
+• The Euler angles can then be derived from the Euler angle
+rates by a process of integration using as initial conditions a
+known attitude at a given point in time.
+• This process becomes meaningless, however, at θ = 90◦ when
+tanθ and secθ become infinite. (This is the mathematical
+equivalent of ‘gimbal lock’.)
+• The limitations of the three-parameter Euler system are
+overcome by the use of what is known as the Euler four
+symmetrical parameters to define the vehicle attitude.
+
+PAGE 65
+Constraints in Euler Equation 
+• Attitude Representation
+– Quaternion Representation
+• From flight control Euler Equations, we can derive four Euler 
+symmetrical parameters of 
+     e0=cosμ/2
+e1=αsinμ/2
+e2=βsinμ/2
+e3=γsinμ/2
+
+PAGE 66
+Constraints in Euler Equation 
+• The following relationships with the Euler angles can be 
+derived:
+• It can be shown that
+
+
+PAGE 67
+Constraints in Euler Equation 
+• In Euler angle relation, these four parameters should maintain 
+at anytime for system stability
+e02＋e12＋e22＋e32＝1
+• Great advantages over the equivalent Euler angle equations: 
+– (1) any attitude
+– (2) error equation is only inside the constraints
+– (3) parameter sum lies between -1~＋1
+• Equation (5.24) can be re-arranged into the form
+
+
+PAGE 68
+Inertial System Error Estimation
+• Estimation by e02＋e12＋e22＋e32＝1, the Euler equation
+can calculate Euler angles of Bank AngleΦ, Pitch AngleΘ,
+Heading AngleΨ, and three axes motion vector p, q, r
+• e02＋e12＋e22＋e32＝1 is repeatedly estimated until
+convergence
+
+PAGE 69
+Inertial System Error Estimation
+
+
+PAGE 70
+Generation of Strap-Down ‘Equivalent 
+Stable Platform’
+• Figure 5.22 illustrates the computational processes involved in
+generating an ‘equivalent stable platform’ within the strap-
+down system computer.
+• The integration of the Euler parameter rates to yield the Euler
+parameters, as explained, enables the Direction Cosine Matrix
+(DCM) to be computed for the aircraft axes to local North, East,
+Down (NED) axes conversion, and vice versa.
+
+PAGE 71
+
+
+PAGE 72
+Generation of Strap-Down ‘Equivalent 
+Stable Platform’
+• The Direction Cosine Matrix for converting to local NED axes
+from aircraft body axes is
+• Thus the aircraft acceleration components with respect to local
+NED axes are given by
+
+
+PAGE 73
+Navigation Coordination Transform
+• Navigation coordination transforms from body 
+coordinate to Earth coordinate
+
+
+PAGE 74
+Longitude & Latitude on Earth
+• Earth is flat, longer E-W, shorter N-S
+• The Earth-centric latitude and the geographic latitude are 
+different
+• The Earth CG is called local CG, with about 1/120 difference 
+to actual CG
+• Local CG offers two vectors of E vector and  N vector to 
+describe the ellipsoidal coordinate system
+
+PAGE 75
+
+
+PAGE 76
+Inertial Navigation Vector
+A = [ dV / dt ]g + 2ΩxV – g
+– A is accelerometer output
+– [ dV / dt ]g the centripetal force due to aircraft acceleration
+– 2ΩxV acceleration due to Earth rotation
+– V aircraft velocity (m/s)
+– Ω Earth rotation rate (rad/s)
+– g gravitational acceleration by Earth
+At a latitude of 51◦30N(London area), the Earth’s rate 
+component about the North axis is 15 cos 51◦30
+degrees per hour = 9.3377◦/hour ( = 15◦/hour)
+
+PAGE 77
+Inertial Navigation Vector
+• Use Gimbals to maintain local balance by effect from 
+gravitational acceleration 
+• 3 axes gimbals is composed of a stable platform
+• Install INS on the stable gimbals to eliminate Earth 
+gravitational effect and read measurement freedom
+
+PAGE 78
+Inertial Vector Transformation
+• Earth self rotation is decomposed into E axis, N axis and A axis
+to describe a spatial motion with velocity vectors by VE, VN, h,to get (Coriolis Force)：
+• Including directional vector, aircraft altitude and its change rate
+hVV
+iii
+V
+NE
+AZNE
+
+
+ sincos022 =
+
+PAGE 79
+Inertial Vector Transformation
+• East Vector accelerometer 指東加速儀
+• North Vector accelerometer 指北加速儀
+• Vertical accelerometer 
+N
+E
+E VhdtdVA  sin2cos2 −+= 
+E
+N
+N VdtdVA sin2+=
+ghhAAZ −+=  cos2
+
+PAGE 80
+Inertial Vector Transformation
+• If the East vector maintains zero, but keep flying north, a west
+acceleration will be induced. Aircraft can fly a little eastbound
+for calibration.
+• If the North vector maintains zero, but keep flying east,
+aircraft will observe a downward and north bound acceleration.
+A little southbound with head up climbing.
+
+PAGE 81
+Inertial Navigation
+• Reset the initial point as latitudeλ0，and longitude Ω0 mark inmemory
+• Calculate longitude and latitude changesΔλ,ΔΩ.
+• Update current position (POS) by:
+λ =λ0 +Δλ (deg)
+Ω = Ω0 +ΔΩ (deg)
+
+PAGE 82
+Gyro on Earth Location
+• Gyro cannot fit all locations on Earth.
+
+
+PAGE 83
+Calibration on Vertical Gyro
+
+
+PAGE 84
+Calibration on Vertical Gyro
+• Gyro is changing with respect to local vertical division, except 
+on Equator
+• Velocity calibration takes 10 minutes
+• Can maintain stale in pitch and roll motion
+• Stable gyro offers pilot important horizontal reference
+
+PAGE 85
+85
+
+
+PAGE 86
+Gyro for Attitude Display
+- Pitch 
+- Pitch down
++ Pitch 
+Pitch up
+0 Pitch
+
+PAGE 87
+Gyro for Attitude Display
+Pitch and Roll Display
+        
+
+
+PAGE 88
+Gyro for Attitude Display
+
+
+PAGE 89
+Basic DR Navigation Systems
+• The basic principles of deriving a DR navigation 
+position estimate  are explained below.
+• The following quantities are required:
+– 1. Initial position – latitude/longitude.
+– 2. The northerly and easterly velocity components of the 
+aircraft, VN and VE
+• The rate of change of latitude is
+• The rate of change of longitude is
+or
+
+
+PAGE 90
+Basic DR Navigation Systems
+90
+
+
+PAGE 91
+Basic DR Navigation Systems
+• Integration of the latitude and longitude according to the 
+changes over time, t.
+• The AHRS system provides an accurate measurement of the 
+heading angle, ψ, and hence the track angle, ψT can be 
+obtained from
+91
+
+
+PAGE 92
+92
+
+
+PAGE 93
+Basic DR Navigation Systems
+• Hence
+• The horizontal velocity component VH of the true airspeed VT
+is obtained by resolving VT through the aircraft pitch angle θ,
+• The northerly and easterly velocity components of the airspeed 
+are then derived by resolving VH through the aircraft heading 
+angle ψ, viz.
+93
+
+
+PAGE 94
+Aided IN Systems and Kalman Filters
+• The time dependent error growth of an IN system makes it
+necessary that some form of aided navigation system using an
+alternative navigation source is introduced to correct the INS
+error build up on long distance flights.
+• A variety of navigation aids can be used for this purpose, for
+example GPS.
+94
+
+PAGE 95
+GPS/INS
+95
+
+
+PAGE 96
+Aided IN Systems and Kalman Filters
+• The various navigation sources comprise:
+1. Position Data
+• GPS, VOR/DME, TACAN.
+• Terrain reference navigation systems.
+• Radar.
+• Visual fixes (e.g., use of helmet mounted sight).
+• Astro (Stellar) navigation (using automatic star trackers).
+2. Velocity Data
+• Doppler radar.
+• GPS.
+3. Altitude Data
+• Barometric altitude from the air data computer.
+• Radio altimeter.
+96
+
+PAGE 97
+97
+
+
+PAGE 98
+Introduction to Complementary Filtering
+• Inertial velocity mixing exploits the technique of
+complementary filtering for combining the data from two
+independent sources of information. Other examples include:
+– Combining a magnetic heading reference with a gyro heading reference.
+– Combining barometrically measured altitude or radar altimeter
+measured altitude, with inertially derived altitude.
+
+PAGE 99
+Introduction to Complementary Filtering
+• In this simple example, the outputs from the two independent
+systems measuring a quantity θ are designated θ1 and θ2
+respectively. Their characteristics are:
+– θ1 has a low noise content and a fast response to changes in
+θ. It is also subject to drift with time.
+– θ2 has a high noise content but has good long term accuracy.
+
+PAGE 100
+Introduction to Complementary Filtering
+• A method of combining the two sources with a simple first-
+order mixing system is shown in the block diagram in Figure
+5.26. It can be seen from Figure 5.26 that
+where F1(D) = T D/1+T D, which is the transfer function of a first-order high pass 
+filter (or ‘wash-out’ filter) and F2(D) = 1/1 +T D which is the transfer function of a 
+first-order low pass filter.
+
+
+PAGE 101
+Introduction to Complementary Filtering
+
+
+PAGE 102
+102

@@ -1,0 +1,162 @@
+[
+  {
+    "slide": 1,
+    "title": "數位航電與課程導讀",
+    "characters": 112
+  },
+  {
+    "slide": 2,
+    "title": "範圍與閱讀方式",
+    "characters": 214
+  },
+  {
+    "slide": 3,
+    "title": "分次閱讀安排",
+    "characters": 193
+  },
+  {
+    "slide": 4,
+    "title": "分次閱讀安排（續）",
+    "characters": 74
+  },
+  {
+    "slide": 5,
+    "title": "課程範圍與先備知識",
+    "characters": 261
+  },
+  {
+    "slide": 6,
+    "title": "自我檢查：課程範圍與先備知識",
+    "characters": 165
+  },
+  {
+    "slide": 7,
+    "title": "航電系統的功能邊界",
+    "characters": 253
+  },
+  {
+    "slide": 8,
+    "title": "講義原頁 12：航電系統的功能邊界",
+    "characters": 77
+  },
+  {
+    "slide": 9,
+    "title": "自我檢查：航電系統的功能邊界",
+    "characters": 160
+  },
+  {
+    "slide": 10,
+    "title": "類比量測與 A/D 轉換",
+    "characters": 258
+  },
+  {
+    "slide": 11,
+    "title": "講義原頁 14：類比量測與 A/D 轉換",
+    "characters": 81
+  },
+  {
+    "slide": 12,
+    "title": "自我檢查：類比量測與 A/D 轉換",
+    "characters": 192
+  },
+  {
+    "slide": 13,
+    "title": "D/A 與致動命令",
+    "characters": 219
+  },
+  {
+    "slide": 14,
+    "title": "講義原頁 15：D/A 與致動命令",
+    "characters": 78
+  },
+  {
+    "slide": 15,
+    "title": "自我檢查：D/A 與致動命令",
+    "characters": 157
+  },
+  {
+    "slide": 16,
+    "title": "GNC 的分工與回授",
+    "characters": 237
+  },
+  {
+    "slide": 17,
+    "title": "講義原頁 17：GNC 的分工與回授",
+    "characters": 81
+  },
+  {
+    "slide": 18,
+    "title": "自我檢查：GNC 的分工與回授",
+    "characters": 165
+  },
+  {
+    "slide": 19,
+    "title": "飛行階段與資訊需求",
+    "characters": 221
+  },
+  {
+    "slide": 20,
+    "title": "講義原頁 18：飛行階段與資訊需求",
+    "characters": 78
+  },
+  {
+    "slide": 21,
+    "title": "自我檢查：飛行階段與資訊需求",
+    "characters": 158
+  },
+  {
+    "slide": 22,
+    "title": "CNS 與空中交通管理",
+    "characters": 248
+  },
+  {
+    "slide": 23,
+    "title": "講義原頁 19：CNS 與空中交通管理",
+    "characters": 83
+  },
+  {
+    "slide": 24,
+    "title": "自我檢查：CNS 與空中交通管理",
+    "characters": 159
+  },
+  {
+    "slide": 25,
+    "title": "ADS-B 的資料來源與依賴",
+    "characters": 239
+  },
+  {
+    "slide": 26,
+    "title": "講義原頁 20：ADS-B 的資料來源與依賴",
+    "characters": 86
+  },
+  {
+    "slide": 27,
+    "title": "自我檢查：ADS-B 的資料來源與依賴",
+    "characters": 174
+  },
+  {
+    "slide": 28,
+    "title": "NextGen 案例與系統整合",
+    "characters": 231
+  },
+  {
+    "slide": 29,
+    "title": "講義原頁 21：NextGen 案例與系統整合",
+    "characters": 85
+  },
+  {
+    "slide": 30,
+    "title": "自我檢查：NextGen 案例與系統整合",
+    "characters": 180
+  },
+  {
+    "slide": 31,
+    "title": "整合複述檢查",
+    "characters": 170
+  },
+  {
+    "slide": 32,
+    "title": "來源與後續閱讀",
+    "characters": 319
+  }
+]

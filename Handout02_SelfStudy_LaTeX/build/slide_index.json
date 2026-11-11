@@ -1,0 +1,232 @@
+[
+  {
+    "slide": 1,
+    "title": "航電系統架構與數位整合",
+    "characters": 114
+  },
+  {
+    "slide": 2,
+    "title": "範圍與閱讀方式",
+    "characters": 214
+  },
+  {
+    "slide": 3,
+    "title": "分次閱讀安排",
+    "characters": 190
+  },
+  {
+    "slide": 4,
+    "title": "分次閱讀安排（續）",
+    "characters": 124
+  },
+  {
+    "slide": 5,
+    "title": "航電用途與工程單位",
+    "characters": 226
+  },
+  {
+    "slide": 6,
+    "title": "講義原頁 4：航電用途與工程單位",
+    "characters": 76
+  },
+  {
+    "slide": 7,
+    "title": "自我檢查：航電用途與工程單位",
+    "characters": 161
+  },
+  {
+    "slide": 8,
+    "title": "外界目視與儀表資訊",
+    "characters": 213
+  },
+  {
+    "slide": 9,
+    "title": "講義原頁 9：外界目視與儀表資訊",
+    "characters": 76
+  },
+  {
+    "slide": 10,
+    "title": "自我檢查：外界目視與儀表資訊",
+    "characters": 156
+  },
+  {
+    "slide": 11,
+    "title": "獨立儀表與類比傳輸",
+    "characters": 236
+  },
+  {
+    "slide": 12,
+    "title": "講義原頁 12：獨立儀表與類比傳輸",
+    "characters": 80
+  },
+  {
+    "slide": 13,
+    "title": "講義原頁 16：獨立儀表與類比傳輸",
+    "characters": 80
+  },
+  {
+    "slide": 14,
+    "title": "自我檢查：獨立儀表與類比傳輸",
+    "characters": 149
+  },
+  {
+    "slide": 15,
+    "title": "類比與數位顯示的操作差異",
+    "characters": 214
+  },
+  {
+    "slide": 16,
+    "title": "講義原頁 18：類比與數位顯示的操作差異",
+    "characters": 83
+  },
+  {
+    "slide": 17,
+    "title": "講義原頁 19：類比與數位顯示的操作差異",
+    "characters": 83
+  },
+  {
+    "slide": 18,
+    "title": "自我檢查：類比與數位顯示的操作差異",
+    "characters": 149
+  },
+  {
+    "slide": 19,
+    "title": "數位整合與共享資料",
+    "characters": 221
+  },
+  {
+    "slide": 20,
+    "title": "講義原頁 23：數位整合與共享資料",
+    "characters": 79
+  },
+  {
+    "slide": 21,
+    "title": "講義原頁 25：數位整合與共享資料",
+    "characters": 79
+  },
+  {
+    "slide": 22,
+    "title": "自我檢查：數位整合與共享資料",
+    "characters": 179
+  },
+  {
+    "slide": 23,
+    "title": "控制層級與更新率",
+    "characters": 242
+  },
+  {
+    "slide": 24,
+    "title": "自我檢查：控制層級與更新率",
+    "characters": 163
+  },
+  {
+    "slide": 25,
+    "title": "性能、可用性與機地分工",
+    "characters": 217
+  },
+  {
+    "slide": 26,
+    "title": "自我檢查：性能、可用性與機地分工",
+    "characters": 156
+  },
+  {
+    "slide": 27,
+    "title": "傳統與衛星資料鏈 CNS",
+    "characters": 235
+  },
+  {
+    "slide": 28,
+    "title": "講義原頁 39：傳統與衛星資料鏈 CNS",
+    "characters": 84
+  },
+  {
+    "slide": 29,
+    "title": "講義原頁 40：傳統與衛星資料鏈 CNS",
+    "characters": 84
+  },
+  {
+    "slide": 30,
+    "title": "自我檢查：傳統與衛星資料鏈 CNS",
+    "characters": 167
+  },
+  {
+    "slide": 31,
+    "title": "IMA、LRU 與微電子技術",
+    "characters": 240
+  },
+  {
+    "slide": 32,
+    "title": "講義原頁 44：IMA、LRU 與微電子技術",
+    "characters": 85
+  },
+  {
+    "slide": 33,
+    "title": "自我檢查：IMA、LRU 與微電子技術",
+    "characters": 160
+  },
+  {
+    "slide": 34,
+    "title": "不同機型的座艙閱讀方法",
+    "characters": 224
+  },
+  {
+    "slide": 35,
+    "title": "講義原頁 46：不同機型的座艙閱讀方法",
+    "characters": 82
+  },
+  {
+    "slide": 36,
+    "title": "講義原頁 48：不同機型的座艙閱讀方法",
+    "characters": 82
+  },
+  {
+    "slide": 37,
+    "title": "講義原頁 51：不同機型的座艙閱讀方法",
+    "characters": 82
+  },
+  {
+    "slide": 38,
+    "title": "自我檢查：不同機型的座艙閱讀方法",
+    "characters": 170
+  },
+  {
+    "slide": 39,
+    "title": "間歇故障、紀錄與更換",
+    "characters": 216
+  },
+  {
+    "slide": 40,
+    "title": "講義原頁 54：間歇故障、紀錄與更換",
+    "characters": 82
+  },
+  {
+    "slide": 41,
+    "title": "自我檢查：間歇故障、紀錄與更換",
+    "characters": 171
+  },
+  {
+    "slide": 42,
+    "title": "端到端航電分析",
+    "characters": 194
+  },
+  {
+    "slide": 43,
+    "title": "講義原頁 57：端到端航電分析",
+    "characters": 76
+  },
+  {
+    "slide": 44,
+    "title": "自我檢查：端到端航電分析",
+    "characters": 152
+  },
+  {
+    "slide": 45,
+    "title": "整合複述檢查",
+    "characters": 170
+  },
+  {
+    "slide": 46,
+    "title": "來源與後續閱讀",
+    "characters": 319
+  }
+]

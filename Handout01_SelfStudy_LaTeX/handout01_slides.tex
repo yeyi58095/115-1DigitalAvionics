@@ -1,0 +1,256 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[UTF8,fontset=none]{ctex}
+\setCJKmainfont{Microsoft JhengHei}
+\setCJKsansfont{Microsoft JhengHei}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\definecolor{navy}{HTML}{183750}
+\definecolor{teal}{HTML}{007E87}
+\definecolor{orange}{HTML}{B45A20}
+\setbeamercolor{normal text}{fg=navy,bg=white}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{frametitle}{fg=navy}
+\setbeamercolor{alerted text}{fg=orange}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+\setbeamertemplate{footline}{\hspace{8mm}\scriptsize Handout 1 自讀筆記\hfill\insertsectionhead\hfill\insertframenumber/\inserttotalframenumber\hspace{8mm}\vspace{3mm}}
+\newcommand{\src}[1]{\par\vfill{\scriptsize\color{teal}#1}}
+\newcommand{\slide}[3]{\begin{frame}[t]{#1}#3\src{#2}\end{frame}}
+\newcommand{\bi}{\begin{itemize}\setlength{\itemsep}{5pt}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\key}[1]{\par\medskip{\color{teal}\bfseries #1}\par\smallskip}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\bookslide}[3]{\slide{#1}{課本：#2。頁碼為書本印刷頁碼}{#3}}
+% Original images extracted losslessly from the supplied textbook PDF.
+\newcommand{\originalfigure}[6]{
+\begin{frame}[t]{課本原圖 #1：#2}
+\centering
+\includegraphics[width=.94\linewidth,height=5.05cm,keepaspectratio]{figures/#4}\par
+\vspace{2mm}\raggedright\small #5\par
+\vfill{\scriptsize\color{teal}原圖：Collinson, 第 3 版，Fig. #1，p. #3。#6}\par
+\end{frame}}
+
+
+\newcommand{\handoutfigure}[3]{
+\begin{frame}[t]{講義原頁 #1：#2}
+\centering
+\includegraphics[width=.97\linewidth,height=5.65cm,keepaspectratio]{figures/#3}\par
+\vfill{\scriptsize\color{teal}原圖與文字：賴盈誌老師提供之 Handout，PDF 第 #1 頁。}\par
+\end{frame}}
+\title{數位航電與課程導讀}
+\subtitle{Handout 1\\繁體中文自讀詳解}
+\author{依賴盈誌老師課程講義整理}
+\date{CA7528 Digital Avionics\quad Fall 2026}
+\begin{document}
+\begin{frame}\titlepage\centering\small 概念、原圖、推導、算例與自我檢查\end{frame}
+\section{閱讀地圖}
+\slide{範圍與閱讀方式}{Handout 1，PDF pp. 1--22}{
+\bi
+\item 航電功能、訊號轉換、GNC、飛行階段與 CNS/ATM。
+\item 原頁碼一律指講義 PDF 頁序。標示「課本」的頁碼則是 Collinson 第三章印刷頁碼。
+\item 先讀概念，再對照原圖。自我檢查先遮住參考解答，再獨立計算或口頭說明。
+\item 自編算例與補充推導依題內假設使用。歷史機型、服務與表格依原教材背景理解。
+\ei
+}
+\slide{分次閱讀安排}{Handout 1 閱讀地圖}{
+\small
+\bi
+\item \textbf{課程與學習地圖}：課程範圍與先備知識。
+\item \textbf{航電功能}：航電系統的功能邊界。
+\item \textbf{數位訊號}：類比量測與 A/D 轉換、D/A 與致動命令。
+\item \textbf{導引導航控制}：GNC 的分工與回授。
+\item \textbf{飛行任務}：飛行階段與資訊需求。
+\item \textbf{CNS/ATM}：CNS 與空中交通管理、ADS-B 的資料來源與依賴。
+\ei
+}
+\slide{分次閱讀安排（續）}{Handout 1 閱讀地圖}{
+\small
+\bi
+\item \textbf{複習與整合}：NextGen 案例與系統整合。
+\ei
+}
+\section{課程與學習地圖}
+\slide{課程範圍與先備知識}{Handout 1，PDF pp. 1--9；概念整理與補充推導}{
+\small
+\bi
+\item 本課程把飛機的運動、感測、計算、顯示及控制放在同一個系統架構中理解。
+\item 先備力學用來理解力與力矩。控制理論用來理解回授、穩定性與動態響應。
+\item 講義的教材章節依主題排列，handout 編號與課本章號不必相同。
+\item 原講義的課表、評量與聯絡資料屬該檔案版本，閱讀時仍以授課教師最新公告為準。
+\ei
+\key{閱讀重點}閱讀順序：先認識功能，再追蹤訊號如何流動，最後檢查故障會造成什麼影響。
+}
+\slide{自我檢查：課程範圍與先備知識}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼讀懂電路圖，仍不足以完成航電系統的整體分析？
+\key{參考解答}
+還需要知道飛機運動、資料的物理意義、控制需求與人機操作。例如空速資料可能同時影響顯示、控制律及導航計算，必須檢查整條功能鏈。
+}
+\section{航電功能}
+\slide{航電系統的功能邊界}{Handout 1，PDF pp. 10--12；概念整理與補充推導}{
+\small
+\bi
+\item Avionics 結合 aviation 與 electronics，包含通訊、導航、監視、顯示、控制與系統管理。
+\item 駕駛艙螢幕只是資訊出口。機鼻、機身及設備艙中的感測器、電腦與配線也屬功能鏈。
+\item 同一顯示器可以呈現不同系統的資訊，但顯示整合不表示來源、電源或故障模式完全相同。
+\ei
+\key{閱讀重點}辨認設備時，同時問輸入是什麼、輸出給誰、失效後影響哪項飛行任務。
+}
+\handoutfigure{12}{航電系統的功能邊界}{handout01-p012.png}
+\slide{自我檢查：航電系統的功能邊界}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+GPS、無線電與姿態顯示器分別支援哪些功能？
+\key{參考解答}
+GPS 提供導航量測及解算結果。無線電支援通訊。姿態顯示器將姿態估計呈現給飛行員。三者可能共用螢幕或資料鏈，功能仍需分別辨識。
+}
+\section{數位訊號}
+\slide{類比量測與 A/D 轉換}{Handout 1，PDF pp. 13--14；概念整理與補充推導}{
+\small
+\bi
+\item 感測器將壓力、溫度或運動轉成電訊號，A/D 將連續振幅量化為可處理的數值。
+\item 取樣頻率決定何時取得資料，位元數決定振幅的離散程度，兩者控制不同誤差。
+\item 以下為理想均勻量化補充：滿量程範圍為 $V_{FS}$ 時，量化間距約為 $V_{FS}/2^N$。
+\item 取樣前須控制超出所需頻帶的成分，避免高頻成分折返到低頻。
+\ei
+\key{閱讀重點}數位化後仍需保留單位、校正係數、量測時間與有效性標記。
+}
+\handoutfigure{14}{類比量測與 A/D 轉換}{handout01-p014.png}
+\slide{自我檢查：類比量測與 A/D 轉換}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+自編算例：12-bit ADC 量測範圍為 $0$--$10\,\mathrm V$，求量化間距及理想四捨五入最大誤差。
+\key{參考解答}
+$\Delta=10/4096=2.441\,\mathrm{mV}$，最大量化誤差約 $\Delta/2=1.221\,\mathrm{mV}$。未包含感測器誤差、偏移、非線性與雜訊。
+}
+\slide{D/A 與致動命令}{Handout 1，PDF pp. 15--16；概念整理與補充推導}{
+\small
+\bi
+\item D/A 把數值命令轉成類比訊號，後續功率驅動器與致動器才提供實際力量。
+\item 命令更新率、D/A 解析度及致動器反應速度都可能限制控制效果。
+\item 以資料從感測器進入電腦、再送到致動器的流程，可定位延遲、飽和及故障發生處。
+\ei
+\key{閱讀重點}電腦算出的數字與舵面真正達到的位置，需要透過量測與回授連接。
+}
+\handoutfigure{15}{D/A 與致動命令}{handout01-p015.png}
+\slide{自我檢查：D/A 與致動命令}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+電腦命令升降舵偏轉 $5^\circ$，是否表示舵面瞬間達到 $5^\circ$？
+\key{參考解答}
+還須經過訊號傳輸、驅動器與致動器。機構有速率、行程、負載與頻寬限制。位置回授可確認實際舵角，不能只看命令值。
+}
+\section{導引導航控制}
+\slide{GNC 的分工與回授}{Handout 1，PDF pp. 17；概念整理與補充推導}{
+\small
+\bi
+\item Navigation 估計目前的位置、速度與姿態，回答目前狀態。
+\item Guidance 依目的地與航路產生可追蹤的運動指令。
+\item Control 利用感測回授與操縱面，使飛機跟隨指令。
+\item 外層航跡控制通常透過內層姿態或角速度控制實現，兩層需要相容的時間尺度。
+\ei
+\key{閱讀重點}每個回授圈都要辨認指令、實際輸出、比較誤差及控制作用。
+}
+\handoutfigure{17}{GNC 的分工與回授}{handout01-p017.png}
+\slide{自我檢查：GNC 的分工與回授}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+側風把飛機吹離航線時，GNC 如何合作？
+\key{參考解答}
+導航系統辨認位置與地速偏差，導引系統要求修正航跡或航向，控制系統產生適當坡度及舵面動作。回到航線後，指令仍須保留抵抗側風所需的修正。
+}
+\section{飛行任務}
+\slide{飛行階段與資訊需求}{Handout 1，PDF pp. 18；概念整理與補充推導}{
+\small
+\bi
+\item 起飛與爬升重視空速、姿態、推力及構型。巡航重視航路、燃油與系統狀態。
+\item 下降及進場需要位置、垂直路徑、速度與航行設施資訊。接地後仍有滑行與地面避障任務。
+\item 飛行階段改變顯示優先順序與控制目標，但不表示低優先資訊可以完全失去監視。
+\ei
+\key{閱讀重點}分析設備用途時，先指定飛行階段，再說明它支援哪個決策。
+}
+\handoutfigure{18}{飛行階段與資訊需求}{handout01-p018.png}
+\slide{自我檢查：飛行階段與資訊需求}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼巡航畫面與進場畫面的資訊配置可能不同？
+\key{參考解答}
+飛行員的決策時間與任務不同。巡航重視長期航路及燃油規劃，進場重視即時的橫向、垂直偏差與速度。顯示需兼顧注意力與模式辨識。
+}
+\section{CNS/ATM}
+\slide{CNS 與空中交通管理}{Handout 1，PDF pp. 19；概念整理與補充推導}{
+\small
+\bi
+\item Communication 傳遞語音、指令及資料。Navigation 支援位置估計與路徑追蹤。
+\item Surveillance 讓其他使用者或管制單位掌握航空器狀態。ATM 運用這些資訊協調交通。
+\item 機載系統與地面系統分工合作，機上導航正常並不等於整個空域交通服務正常。
+\ei
+\key{閱讀重點}CNS 是資訊與技術能力，ATM 把它們用於交通協調及運作。
+}
+\handoutfigure{19}{CNS 與空中交通管理}{handout01-p019.png}
+\slide{自我檢查：CNS 與空中交通管理}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+ATC 指示改變高度後，通訊、導航、監視各做什麼？
+\key{參考解答}
+通訊傳遞並確認許可。導航及飛行儀表協助確定高度與航跡。監視提供管制端的航空器狀態，使管制員能持續評估間隔。
+}
+\slide{ADS-B 的資料來源與依賴}{Handout 1，PDF pp. 20；概念整理與補充推導}{
+\small
+\bi
+\item Automatic 表示系統自動發送。Dependent 表示報告依賴機上的導航等資料來源。
+\item Surveillance 表示監視用途，Broadcast 表示向可接收的對象廣播資訊。
+\item 接收到報告不代表已獨立測得其位置，仍要考量來源資料與完整性。
+\ei
+\key{閱讀重點}報告、量測及估計是不同層次，分析時應追溯位置資料的來源。
+}
+\handoutfigure{20}{ADS-B 的資料來源與依賴}{handout01-p020.png}
+\slide{自我檢查：ADS-B 的資料來源與依賴}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+若機上導航位置錯誤，ADS-B 廣播的位置是否可能跟著錯？
+\key{參考解答}
+可能。ADS-B 報告依賴機上來源，使用端需要結合品質資訊與其他監視資料評估。這說明多個畫面一致也可能來自同一個錯誤來源。
+}
+\section{複習與整合}
+\slide{NextGen 案例與系統整合}{Handout 1，PDF pp. 21--22；概念整理與補充推導}{
+\small
+\bi
+\item 講義以 NextGen 呈現通訊、導航、監視與交通管理共同改變運作方式的概念。
+\item 自讀時可追蹤一班航機的資料如何在駕駛艙、衛星、地面站與管制中心之間流動。
+\item 本筆記依提供的講義解說架構，講義中的影片及連結保留為原始延伸資料。
+\ei
+\key{閱讀重點}整合改善資訊共享，也讓資料品質、時序與共同依賴成為分析重點。
+}
+\handoutfigure{21}{NextGen 案例與系統整合}{handout01-p021.png}
+\slide{自我檢查：NextGen 案例與系統整合}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+用自己的話說明從感測到交通管理的完整鏈，並指出兩個可能的共同故障來源。
+\key{參考解答}
+例如感測器產生量測，電腦估計位置，螢幕顯示，資料鏈廣播，管制中心用於協調。共用電源與共用導航來源都可能同時影響多個下游功能。
+}
+\section{複習與來源}
+\slide{整合複述檢查}{Handout 1 全份複習}{
+\bi
+\item 選一項系統功能，說明輸入、輸出、座標、單位與資料來源。
+\item 找出一個公式，逐一解釋每個符號，再說明它使用哪些假設。
+\item 選一個故障或誤差，追蹤它如何影響下游功能，以及可以用什麼獨立資訊核對。
+\item 重做本份的自我檢查，再對照講義與相關公式。
+\ei
+}
+\slide{來源與後續閱讀}{Handout 1 與隨附教材}{
+\small
+\bi
+\item 主要來源：賴盈誌老師，CA7528 Digital Avionics，Handout 1。原始檔保留於上一層資料夾。
+\item 版型與重用內容：既有 Chapter03\_SelfStudy\_LaTeX。Handout 3、4 沿用相關章節及其原圖。
+\item 第三章重用內容來源：R. P. G. Collinson，\textit{Introduction to Avionics Systems}，第 3 版。
+\item 本筆記的重算、核對與延伸為自讀整理，並非授課教師或出版社正式勘誤。
+\item 原圖內來源標示與圖說保留，新增題目與參考解答已另行標明。
+\ei
+}
+\end{document}

@@ -1,0 +1,412 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[UTF8,fontset=none]{ctex}
+\setCJKmainfont{Microsoft JhengHei}
+\setCJKsansfont{Microsoft JhengHei}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\definecolor{navy}{HTML}{183750}
+\definecolor{teal}{HTML}{007E87}
+\definecolor{orange}{HTML}{B45A20}
+\setbeamercolor{normal text}{fg=navy,bg=white}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{frametitle}{fg=navy}
+\setbeamercolor{alerted text}{fg=orange}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+\setbeamertemplate{footline}{\hspace{8mm}\scriptsize Handout 7 自讀筆記\hfill\insertsectionhead\hfill\insertframenumber/\inserttotalframenumber\hspace{8mm}\vspace{3mm}}
+\newcommand{\src}[1]{\par\vfill{\scriptsize\color{teal}#1}}
+\newcommand{\slide}[3]{\begin{frame}[t]{#1}#3\src{#2}\end{frame}}
+\newcommand{\bi}{\begin{itemize}\setlength{\itemsep}{5pt}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\key}[1]{\par\medskip{\color{teal}\bfseries #1}\par\smallskip}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\bookslide}[3]{\slide{#1}{課本：#2。頁碼為書本印刷頁碼}{#3}}
+% Original images extracted losslessly from the supplied textbook PDF.
+\newcommand{\originalfigure}[6]{
+\begin{frame}[t]{課本原圖 #1：#2}
+\centering
+\includegraphics[width=.94\linewidth,height=5.05cm,keepaspectratio]{figures/#4}\par
+\vspace{2mm}\raggedright\small #5\par
+\vfill{\scriptsize\color{teal}原圖：Collinson, 第 3 版，Fig. #1，p. #3。#6}\par
+\end{frame}}
+
+
+\newcommand{\handoutfigure}[3]{
+\begin{frame}[t]{講義原頁 #1：#2}
+\centering
+\includegraphics[width=.97\linewidth,height=5.65cm,keepaspectratio]{figures/#3}\par
+\vfill{\scriptsize\color{teal}原圖與文字：賴盈誌老師提供之 Handout，PDF 第 #1 頁。}\par
+\end{frame}}
+\title{GPS 原理、誤差與航空增強}
+\subtitle{Handout 7\\繁體中文自讀詳解}
+\author{依賴盈誌老師課程講義整理}
+\date{CA7528 Digital Avionics\quad Fall 2026}
+\begin{document}
+\begin{frame}\titlepage\centering\small 概念、原圖、推導、算例與自我檢查\end{frame}
+\section{閱讀地圖}
+\slide{範圍與閱讀方式}{Handout 7，PDF pp. 1--66}{
+\bi
+\item GNSS 架構、偽距、時鐘、訊號、差分、導航性能及 SBAS/GBAS。
+\item 原頁碼一律指講義 PDF 頁序。標示「課本」的頁碼則是 Collinson 第三章印刷頁碼。
+\item 先讀概念，再對照原圖。自我檢查先遮住參考解答，再獨立計算或口頭說明。
+\item 自編算例與補充推導依題內假設使用。歷史機型、服務與表格依原教材背景理解。
+\ei
+}
+\slide{分次閱讀安排}{Handout 7 閱讀地圖}{
+\small
+\bi
+\item \textbf{GNSS 概觀}：系統家族與星系幾何。
+\item \textbf{系統架構}：太空、控制與使用者區段。
+\item \textbf{測距與解算}：距離交會與時鐘未知量、訊號傳播時間與偽距模型。
+\item \textbf{誤差來源}：時鐘、星曆與大氣。
+\item \textbf{差分定位}：DGPS 參考站修正。
+\item \textbf{導航訊號}：載波、測距碼與導航資料。
+\ei
+}
+\slide{分次閱讀安排（續）}{Handout 7 閱讀地圖}{
+\small
+\bi
+\item \textbf{精密時間}：時鐘誤差與共同估計。
+\item \textbf{定位方式}：電碼差分與載波相位。
+\item \textbf{導航性能}：Accuracy 與 Precision、Integrity、Continuity 與 Availability。
+\item \textbf{性能表的讀法}：飛行階段與歷史性能表。
+\item \textbf{增強系統}：SBAS 與 GBAS 的分工。
+\item \textbf{SBAS}：WAAS 修正資訊的流程。
+\ei
+}
+\slide{分次閱讀安排（續）}{Handout 7 閱讀地圖}{
+\small
+\bi
+\item \textbf{GBAS}：機場局部服務與資料廣播。
+\item \textbf{整合複習}：GPS、INS 與 CNS/ATM。
+\ei
+}
+\section{GNSS 概觀}
+\slide{系統家族與星系幾何}{Handout 7，PDF pp. 1--12；概念整理與補充推導}{
+\small
+\bi
+\item GNSS 是衛星導航系統的統稱，GPS 是其中一種，講義另介紹 GLONASS、Galileo 與 BeiDou。
+\item 多軌道平面的衛星星系支援廣域可見性，使用者能看見的衛星數隨位置、時間與遮蔽變化。
+\item 衛星數量、部署狀態與精度比較表屬講義資料背景，本筆記不將其標為現行清單。
+\ei
+\key{閱讀重點}衛星數與幾何分布一起影響定位條件，看到更多衛星不保證每顆量測都有效。
+}
+\handoutfigure{6}{系統家族與星系幾何}{handout07-p006.png}
+\handoutfigure{8}{系統家族與星系幾何}{handout07-p008.png}
+\handoutfigure{12}{系統家族與星系幾何}{handout07-p012.png}
+\slide{自我檢查：系統家族與星系幾何}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+GPS 與 GNSS 的關係是什麼？多星系接收機是否一定能排除所有故障？
+\key{參考解答}
+GPS 屬於 GNSS，多星系可增加量測與幾何選擇，但仍可能受到共用天線、接收機、環境或干擾影響，不能保證排除全部共同故障。
+}
+\section{系統架構}
+\slide{太空、控制與使用者區段}{Handout 7，PDF pp. 13--17；概念整理與補充推導}{
+\small
+\bi
+\item 太空區段播送導航訊號與相關資料，控制區段監測軌道、時鐘及系統狀態。
+\item 使用者接收機追蹤訊號、形成量測，再依衛星位置與誤差模型估計位置及時鐘。
+\item 一般使用者接收導航廣播，不需要向衛星發送測距要求才能解算位置。
+\ei
+\key{閱讀重點}接收訊號、形成量測與解算位置是不同處理階段。
+}
+\handoutfigure{13}{太空、控制與使用者區段}{handout07-p013.png}
+\handoutfigure{14}{太空、控制與使用者區段}{handout07-p014.png}
+\handoutfigure{17}{太空、控制與使用者區段}{handout07-p017.png}
+\slide{自我檢查：太空、控制與使用者區段}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+手機或機載接收機若沒有把自己的位置發給 GPS 衛星，為何仍可定位？
+\key{參考解答}
+接收機從廣播訊號估計傳播時間，利用導航資料求衛星位置，再聯立量測。這與另行使用通訊網路分享位置是不同流程。
+}
+\section{測距與解算}
+\slide{距離交會與時鐘未知量}{Handout 7，PDF pp. 18--22；概念整理與補充推導}{
+\small
+\bi
+\item 理想已知距離形成球面，多個球面的交會限制使用者位置。
+\item 實際接收機時鐘不完全同步，量到的是含有時鐘偏差的偽距。
+\item 三維位置 $(x,y,z)$ 加共同接收機時鐘偏差共四個未知量，一般至少需要四個獨立且幾何適當的量測。
+\item 講義三球面示意有助理解幾何，但不能直接當作一般三維接收機只需三顆衛星。
+\ei
+\key{閱讀重點}固定高度、外部時鐘或其他約束可以改變未知數數量，必須另外說明。
+}
+\handoutfigure{19}{距離交會與時鐘未知量}{handout07-p019.png}
+\handoutfigure{20}{距離交會與時鐘未知量}{handout07-p020.png}
+\handoutfigure{21}{距離交會與時鐘未知量}{handout07-p021.png}
+\slide{自我檢查：距離交會與時鐘未知量}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼四顆衛星若幾乎在同一方向，也可能得到很差的位置解？
+\key{參考解答}
+量測對不同位置方向的辨識能力不足，幾何矩陣接近病態。相同距離誤差可被放大成較大位置誤差，衛星數量只是條件之一。
+}
+\slide{訊號傳播時間與偽距模型}{Handout 7，PDF pp. 22--23；概念整理與補充推導}{
+\small
+\bi
+\item 簡化模型為 $\rho_i=\|\mathbf r-\mathbf r_i\|+c\delta t+\varepsilon_i$，衛星時鐘等可另外建模或修正。
+\item 採 $c=299{,}792{,}458\,\mathrm{m/s}$，講義的光速數字應先核對。
+\item 星曆提供衛星軌道資訊，解算時還要考慮訊號發射時刻的衛星位置及相關修正。
+\ei
+\key{閱讀重點}觀測值、幾何距離與修正後距離要使用不同符號。
+}
+\handoutfigure{22}{訊號傳播時間與偽距模型}{handout07-p022.png}
+\slide{自我檢查：訊號傳播時間與偽距模型}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+自編算例：傳播時間為 $0.070\,\mathrm s$，對應多少距離？若時鐘快 $1\,\mu\mathrm s$，偽距多多少？
+\key{參考解答}
+$R=ct=20{,}985{,}472.06\,\mathrm m$，約 20,985.5 km。依正偏差模型，共同偽距偏差為 $c\delta t=299.792458\,\mathrm m$，並非位置必然偏同樣距離。
+}
+\section{誤差來源}
+\slide{時鐘、星曆與大氣}{Handout 7，PDF pp. 23--26；概念整理與補充推導}{
+\small
+\bi
+\item 衛星時鐘與軌道誤差影響量測基準，電離層與對流層改變訊號傳播。
+\item 近距離參考站與使用者可能共享部分誤差，差分可以抵消其共同成分。
+\item 接收機本地雜訊及多路徑與環境相關，遠端參考站通常不能完全消除。
+\ei
+\key{閱讀重點}誤差修正方法要對應物理來源，不能把所有誤差視為相同常數。
+}
+\handoutfigure{23}{時鐘、星曆與大氣}{handout07-p023.png}
+\handoutfigure{26}{時鐘、星曆與大氣}{handout07-p026.png}
+\slide{自我檢查：時鐘、星曆與大氣}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼開闊地參考站正常，靠近金屬建築的使用者仍可能有定位偏差？
+\key{參考解答}
+使用者可能接收反射訊號，形成當地多路徑。這種路徑與參考站不同，參考站的修正不會完整包含該項誤差。
+}
+\section{差分定位}
+\slide{DGPS 參考站修正}{Handout 7，PDF pp. 24--25；概念整理與補充推導}{
+\small
+\bi
+\item 已知位置的參考站可比較量測與預期距離，估計可共享的修正量。
+\item 採本例符號 $PRC=R_b-\rho_b$，使用者以 $\rho_{u,corr}=\rho_u+PRC$ 修正。
+\item 需要確認同一衛星、相近時間、時鐘處理與修正有效範圍，符號慣例也要一致。
+\ei
+\key{閱讀重點}參考站修正有空間與時間限制，過期資料可能降低成效。
+}
+\handoutfigure{25}{DGPS 參考站修正}{handout07-p025.png}
+\slide{自我檢查：DGPS 參考站修正}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+自編例：$R_b=21{,}000{,}000$、$\rho_b=21{,}000{,}018$、$\rho_u=21{,}450{,}025$，單位皆為 m。求修正後偽距。
+\key{參考解答}
+$PRC=-18\,\mathrm m$，$\rho_{u,corr}=21{,}450{,}007\,\mathrm m$。假設共同加性誤差成立，且時鐘項已適當處理。
+}
+\section{導航訊號}
+\slide{載波、測距碼與導航資料}{Handout 7，PDF pp. 27--30；概念整理與補充推導}{
+\small
+\bi
+\item 載波提供射頻傳播的基礎，測距碼讓接收機辨認與對齊訊號，導航資料提供解算所需參數。
+\item 講義傳統訊號例：L1 為 1575.42 MHz，L2 為 1227.60 MHz，並介紹 L5。
+\item C/A 與 P(Y) 碼的碼片率與導航訊息位元率不同，chip/s 與 bit/s 不能混用。
+\ei
+\key{閱讀重點}本份以講義的傳統訊號為範圍，不把其簡表當作完整現代訊號配置。
+}
+\handoutfigure{28}{載波、測距碼與導航資料}{handout07-p028.png}
+\handoutfigure{30}{載波、測距碼與導航資料}{handout07-p030.png}
+\slide{自我檢查：載波、測距碼與導航資料}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼 1.023 Mchip/s 不表示接收機每秒收到 1.023 Mbit 的導航星曆？
+\key{參考解答}
+測距碼的快速碼片序列用於相關及時間對齊，導航資料以另一資料率調變。兩者用途、時間尺度與資料意義不同。
+}
+\section{精密時間}
+\slide{時鐘誤差與共同估計}{Handout 7，PDF pp. 31--32；概念整理與補充推導}{
+\small
+\bi
+\item 高精度時間使距離量測成為可能，衛星時鐘需要監測、模型及修正。
+\item 接收機用多顆衛星共同估計自己的時鐘偏差，因此不必每台都裝上相同等級的原子鐘。
+\item 位置估計與時鐘估計互相耦合，受量測品質及幾何影響。
+\ei
+\key{閱讀重點}時鐘越準通常有幫助，但不能取代衛星位置、誤差修正與適當幾何。
+}
+\handoutfigure{32}{時鐘誤差與共同估計}{handout07-p032.png}
+\slide{自我檢查：時鐘誤差與共同估計}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+自編例：接收機時鐘誤差由 $1\,\mu\mathrm s$ 降至 $10\,\mathrm{ns}$，對應距離尺度降為多少？
+\key{參考解答}
+$c\times10^{-8}=2.9979\,\mathrm m$。這是時間誤差對應的距離尺度，完整位置誤差還包括其他來源及解算幾何。
+}
+\section{定位方式}
+\slide{電碼差分與載波相位}{Handout 7，PDF pp. 33--34；概念整理與補充推導}{
+\small
+\bi
+\item 電碼量測以碼的時間對齊測距，載波相位利用更細的相位資訊，仍有整數週數等未知量。
+\item 靜態與動態描述使用者運動及處理情境，不能只憑名稱判斷一定精度。
+\item RTK 等方法的成效需要通訊、參考資訊、模糊度解算與環境條件配合。
+\ei
+\key{閱讀重點}精度數字要附上方法、條件及可信度，避免把不同定位方式混成一張固定排名。
+}
+\handoutfigure{33}{電碼差分與載波相位}{handout07-p033.png}
+\slide{自我檢查：電碼差分與載波相位}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼載波波長很短，也不能單靠一筆相位就知道完整衛星距離？
+\key{參考解答}
+相位只提供週期內的相對位置，還有未知整數週數及其他偏差。需利用多時刻、多衛星、差分或其他約束求解。
+}
+\section{導航性能}
+\slide{Accuracy 與 Precision}{Handout 7，PDF pp. 35--40；概念整理與補充推導}{
+\small
+\bi
+\item Accuracy 關心估計接近真值的程度，Precision 關心重複量測的分散程度。
+\item 集中但有偏差的量測可能 precision 好而 accuracy 差，統計描述還需註明信賴範圍。
+\item 講義把導航需求連到不同飛行階段，自讀時應分清服務能力與單次量測表現。
+\ei
+\key{閱讀重點}平均誤差小並不足以判斷航空導航是否適合某項操作。
+}
+\handoutfigure{40}{Accuracy 與 Precision}{handout07-p040.png}
+\slide{自我檢查：Accuracy 與 Precision}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+十次定位都落在真位置東側 50 m、彼此差不到 1 m，如何描述？
+\key{參考解答}
+重複結果很集中，precision 好，但存在約 50 m 系統性偏差，accuracy 不佳。只看散布範圍會漏掉偏差。
+}
+\slide{Integrity、Continuity 與 Availability}{Handout 7，PDF pp. 41--43；概念整理與補充推導}{
+\small
+\bi
+\item Integrity 包含對異常的可信監視與及時告警，Alert Limit 與 Time-to-Alert 定義警戒需求。
+\item Continuity 描述開始特定操作後持續提供所需服務的能力。
+\item Availability 描述在指定時間與區域滿足所需服務條件的可用程度。
+\item 告警可以保護使用者，也可能使服務中止，性能項目需共同評估。
+\ei
+\key{閱讀重點}準確、能告警、不中斷及當下可使用，分別描述不同能力。
+}
+\handoutfigure{41}{Integrity、Continuity 與 Availability}{handout07-p041.png}
+\handoutfigure{42}{Integrity、Continuity 與 Availability}{handout07-p042.png}
+\handoutfigure{43}{Integrity、Continuity 與 Availability}{handout07-p043.png}
+\slide{自我檢查：Integrity、Continuity 與 Availability}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+系統平時誤差只有 1 m，但異常後 30 s 才告警，可否只依精度認定適合進場？
+\key{參考解答}
+不能。需要依該操作的完整性及告警時間要求判斷，並確認持續性與可用性。低平均誤差無法補償延遲告警。
+}
+\section{性能表的讀法}
+\slide{飛行階段與歷史性能表}{Handout 7，PDF pp. 44--47；概念整理與補充推導}{
+\small
+\bi
+\item 講義性能表同時列出水平／垂直精度、告警限制、告警時間與風險等，單位及暴露時間不同。
+\item 每小時機率、每次進場機率與某段秒數內風險不能直接並排比較大小。
+\item 表格含歷史規格與目標，本筆記用它練習讀表，不把數字當作現行操作批准。
+\ei
+\key{閱讀重點}比較前先對齊操作、誤差方向、機率分母及服務條件。
+}
+\handoutfigure{44}{飛行階段與歷史性能表}{handout07-p044.png}
+\handoutfigure{46}{飛行階段與歷史性能表}{handout07-p046.png}
+\slide{自我檢查：飛行階段與歷史性能表}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+某數字標成 $10^{-7}$/hour，另一個是 $10^{-7}$/approach，可以說安全性相同嗎？
+\key{參考解答}
+不能直接比較。需要知道每次進場的暴露時間、事件定義與模型。相同的數字配上不同分母，代表不同風險敘述。
+}
+\section{增強系統}
+\slide{SBAS 與 GBAS 的分工}{Handout 7，PDF pp. 48--51；概念整理與補充推導}{
+\small
+\bi
+\item 增強系統以修正資訊及完整性資訊改善特定導航服務，並非單純把所有衛星訊號放大。
+\item SBAS 使用廣域地面監測及衛星廣播等架構，GBAS 以機場附近地面設施與資料廣播提供局部服務。
+\item 講義用 WAAS 與 LAAS 說明，實際可執行的進場類別還依服務、設備及批准。
+\ei
+\key{閱讀重點}區域覆蓋、資料傳送方式與操作能力需要分別比較。
+}
+\handoutfigure{49}{SBAS 與 GBAS 的分工}{handout07-p049.png}
+\handoutfigure{50}{SBAS 與 GBAS 的分工}{handout07-p050.png}
+\handoutfigure{51}{SBAS 與 GBAS 的分工}{handout07-p051.png}
+\slide{自我檢查：SBAS 與 GBAS 的分工}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+安裝能接收增強資料的接收機，是否自動可以執行任何 CAT II/III 進場？
+\key{參考解答}
+不能。需確認完整系統的服務等級、機載設備、場站、程序與使用資格。單一設備支援某項訊號並不足以推出全部操作能力。
+}
+\section{SBAS}
+\slide{WAAS 修正資訊的流程}{Handout 7，PDF pp. 52--59；概念整理與補充推導}{
+\small
+\bi
+\item 參考站觀察衛星訊號，處理系統估計修正與完整性資訊，再經廣播送到使用者。
+\item 使用者將訊息套用到相應衛星、時間與區域，並檢查資料有效性及服務狀態。
+\item 廣域服務仍可能受到衛星可見性、電離層情況與本地遮蔽等因素限制。
+\ei
+\key{閱讀重點}修正資料能改善部分誤差，不能讓被完全遮蔽的訊號重新出現。
+}
+\handoutfigure{52}{WAAS 修正資訊的流程}{handout07-p052.png}
+\handoutfigure{54}{WAAS 修正資訊的流程}{handout07-p054.png}
+\handoutfigure{59}{WAAS 修正資訊的流程}{handout07-p059.png}
+\slide{自我檢查：WAAS 修正資訊的流程}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼收到 SBAS 廣播，仍可能無法使用某個導航服務？
+\key{參考解答}
+可能有衛星不足、幾何不佳、保護水準超出限制、訊息過期或接收機環境異常。收到廣播與滿足服務條件是不同層次。
+}
+\section{GBAS}
+\slide{機場局部服務與資料廣播}{Handout 7，PDF pp. 60--64；概念整理與補充推導}{
+\small
+\bi
+\item GBAS 的局部參考設施監測 GNSS 並傳送差分及完整性資訊，服務機場附近使用者。
+\item 講義提到 LAAS、VHF 資料廣播與進場應用，應分清歷史方案與實際部署服務。
+\item Pseudolite 是類衛星測距發射器概念，不應把所有 GBAS 地面站都描述成反射 GPS 訊號。
+\ei
+\key{閱讀重點}導航增強資訊、額外測距訊號及反射多路徑是不同概念。
+}
+\handoutfigure{61}{機場局部服務與資料廣播}{handout07-p061.png}
+\handoutfigure{62}{機場局部服務與資料廣播}{handout07-p062.png}
+\handoutfigure{63}{機場局部服務與資料廣播}{handout07-p063.png}
+\slide{自我檢查：機場局部服務與資料廣播}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+一座局部增強站可能服務多條跑道，是否意味所有跑道都使用相同進場路徑？
+\key{參考解答}
+不意味。修正與完整性資訊可共享，但每條跑道的進場路徑、障礙及程序仍需分別定義，並在服務範圍與適用條件內使用。
+}
+\section{整合複習}
+\slide{GPS、INS 與 CNS/ATM}{Handout 7，PDF pp. 65--66；概念整理與補充推導}{
+\small
+\bi
+\item GPS 提供外部定位參考，INS 提供快速連續的運動傳播，兩者融合可互補部分特性。
+\item 導航資訊進一步支援 FMS、監視報告與交通管理，來源錯誤可能向多個功能傳播。
+\item 衛星中斷時可利用 INS 延續估計，但誤差會成長，增強系統也無法消除所有遮蔽與干擾。
+\ei
+\key{閱讀重點}從任務需求檢查資料來源、有效性、備援及降級模式。
+}
+\handoutfigure{65}{GPS、INS 與 CNS/ATM}{handout07-p065.png}
+\handoutfigure{66}{GPS、INS 與 CNS/ATM}{handout07-p066.png}
+\slide{自我檢查：GPS、INS 與 CNS/ATM}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+進場時衛星遮蔽，INS 還能輸出平穩位置，是否代表仍可繼續原本的所有操作？
+\key{參考解答}
+不能只看輸出平穩。需判斷導航誤差與完整性是否仍滿足所選服務條件，依設備狀態與適用程序採取操作。INS 連續輸出不等於原服務保證持續成立。
+}
+\section{複習與來源}
+\slide{整合複述檢查}{Handout 7 全份複習}{
+\bi
+\item 選一項系統功能，說明輸入、輸出、座標、單位與資料來源。
+\item 找出一個公式，逐一解釋每個符號，再說明它使用哪些假設。
+\item 選一個故障或誤差，追蹤它如何影響下游功能，以及可以用什麼獨立資訊核對。
+\item 重做本份的自我檢查，再對照講義與相關公式。
+\ei
+}
+\slide{來源與後續閱讀}{Handout 7 與隨附教材}{
+\small
+\bi
+\item 主要來源：賴盈誌老師，CA7528 Digital Avionics，Handout 7。原始檔保留於上一層資料夾。
+\item 版型與重用內容：既有 Chapter03\_SelfStudy\_LaTeX。Handout 3、4 沿用相關章節及其原圖。
+\item 第三章重用內容來源：R. P. G. Collinson，\textit{Introduction to Avionics Systems}，第 3 版。
+\item 本筆記的重算、核對與延伸為自讀整理，並非授課教師或出版社正式勘誤。
+\item 原圖內來源標示與圖說保留，新增題目與參考解答已另行標明。
+\ei
+}
+\end{document}

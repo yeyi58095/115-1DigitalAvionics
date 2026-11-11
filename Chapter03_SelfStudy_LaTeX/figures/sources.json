@@ -1,0 +1,710 @@
+[
+  {
+    "number": 1,
+    "part": "",
+    "page": 102,
+    "pdf_page": 117,
+    "file": "fig-3-01.png",
+    "caption": "Fig.3.1Pressuredistributionoveranaerofoil.",
+    "size": [
+      1968,
+      1650
+    ]
+  },
+  {
+    "number": 2,
+    "part": "",
+    "page": 102,
+    "pdf_page": 117,
+    "file": "fig-3-02.png",
+    "caption": "Fig.3.2Changeinairﬂowmomentumbyaerofoil.",
+    "size": [
+      2013,
+      1239
+    ]
+  },
+  {
+    "number": 3,
+    "part": "",
+    "page": 103,
+    "pdf_page": 118,
+    "file": "fig-3-03.png",
+    "caption": "Fig.3.3Angleofincidence.",
+    "size": [
+      2036,
+      1449
+    ]
+  },
+  {
+    "number": 4,
+    "part": "",
+    "page": 105,
+    "pdf_page": 120,
+    "file": "fig-3-04.png",
+    "caption": "CCα Fig.3.4andversus. LD",
+    "size": [
+      1696,
+      1340
+    ]
+  },
+  {
+    "number": 5,
+    "part": "",
+    "page": 106,
+    "pdf_page": 121,
+    "file": "fig-3-05.png",
+    "caption": "Fig.3.5Leadingedgeslatsandtrailingedgeﬂaps.",
+    "size": [
+      1728,
+      1436
+    ]
+  },
+  {
+    "number": 6,
+    "part": "",
+    "page": 108,
+    "pdf_page": 123,
+    "file": "fig-3-06.png",
+    "caption": "Fig.3.6Tailplanecontribution.",
+    "size": [
+      643,
+      564
+    ]
+  },
+  {
+    "number": 7,
+    "part": "",
+    "page": 110,
+    "pdf_page": 125,
+    "file": "fig-3-07.png",
+    "caption": "Fig.3.7Pitchingmomentversusincidence.",
+    "size": [
+      1969,
+      1412
+    ]
+  },
+  {
+    "number": 8,
+    "part": "",
+    "page": 110,
+    "pdf_page": 125,
+    "file": "fig-3-08.png",
+    "caption": "Fig.3.8Simpleexampleofstabilityconditions.",
+    "size": [
+      2764,
+      661
+    ]
+  },
+  {
+    "number": 9,
+    "part": "a",
+    "page": 111,
+    "pdf_page": 126,
+    "file": "fig-3-09a.png",
+    "caption": "Fig.3.9(a)Staticstability.(b)Dynamicstability.",
+    "size": [
+      2212,
+      1045
+    ]
+  },
+  {
+    "number": 9,
+    "part": "b",
+    "page": 111,
+    "pdf_page": 126,
+    "file": "fig-3-09b.png",
+    "caption": "Fig.3.9(a)Staticstability.(b)Dynamicstability.",
+    "size": [
+      2207,
+      1413
+    ]
+  },
+  {
+    "number": 10,
+    "part": "",
+    "page": 112,
+    "pdf_page": 127,
+    "file": "fig-3-10.png",
+    "caption": "Cα Fig.3.10versus. M",
+    "size": [
+      1936,
+      1616
+    ]
+  },
+  {
+    "number": 11,
+    "part": "",
+    "page": 113,
+    "pdf_page": 128,
+    "file": "fig-3-11.png",
+    "caption": "Fig.3.11Naturallongitudinalstability.",
+    "size": [
+      758,
+      880
+    ]
+  },
+  {
+    "number": 12,
+    "part": "",
+    "page": 113,
+    "pdf_page": 128,
+    "file": "fig-3-12.png",
+    "caption": "Fig.3.12Aerodynamicallyunstableaircraft.",
+    "size": [
+      729,
+      350
+    ]
+  },
+  {
+    "number": 13,
+    "part": "",
+    "page": 114,
+    "pdf_page": 129,
+    "file": "fig-3-13.png",
+    "caption": "Fig.3.13Analogyofcontrollingaerodynamicallyunstableaircraft.",
+    "size": [
+      737,
+      308
+    ]
+  },
+  {
+    "number": 14,
+    "part": "",
+    "page": 115,
+    "pdf_page": 130,
+    "file": "fig-3-14.png",
+    "caption": "Fig.3.14NegativetailplaneliftonTornado.PositivetailplaneliftonFBWJaguar.(Photograph byArthurGibsonprovidedbyBritishAerospaceDefenceLtd.)",
+    "size": [
+      787,
+      574
+    ]
+  },
+  {
+    "number": 15,
+    "part": "",
+    "page": 116,
+    "pdf_page": 131,
+    "file": "fig-3-15.png",
+    "caption": "Fig.3.15Aircraftaxesandvelocitycomponents.",
+    "size": [
+      2768,
+      1865
+    ]
+  },
+  {
+    "number": 16,
+    "part": "",
+    "page": 117,
+    "pdf_page": 132,
+    "file": "fig-3-16.png",
+    "caption": "Fig.3.16Vectorchangeinvelocitycomponentsduetoangularrotation.",
+    "size": [
+      1669,
+      2192
+    ]
+  },
+  {
+    "number": 17,
+    "part": "",
+    "page": 118,
+    "pdf_page": 133,
+    "file": "fig-3-17.png",
+    "caption": "Fig.3.17Eulerangles.",
+    "size": [
+      2381,
+      2280
+    ]
+  },
+  {
+    "number": 18,
+    "part": "",
+    "page": 120,
+    "pdf_page": 135,
+    "file": "fig-3-18.png",
+    "caption": "Fig.3.18Externalforcesactingonaircraft.",
+    "size": [
+      2231,
+      1830
+    ]
+  },
+  {
+    "number": 19,
+    "part": "",
+    "page": 121,
+    "pdf_page": 136,
+    "file": "fig-3-19.png",
+    "caption": "Fig.3.19Forcecomponentsandmoments.",
+    "size": [
+      1940,
+      1992
+    ]
+  },
+  {
+    "number": 20,
+    "part": "",
+    "page": 125,
+    "pdf_page": 140,
+    "file": "fig-3-20.png",
+    "caption": "Fig.3.20Dampingmomentduetopitchrate.",
+    "size": [
+      2148,
+      1836
+    ]
+  },
+  {
+    "number": 21,
+    "part": "",
+    "page": 127,
+    "pdf_page": 142,
+    "file": "fig-3-21.png",
+    "caption": "Fig.3.21Lateralforces.",
+    "size": [
+      1448,
+      2116
+    ]
+  },
+  {
+    "number": 22,
+    "part": "",
+    "page": 128,
+    "pdf_page": 143,
+    "file": "fig-3-22.png",
+    "caption": "Fig.3.22Effectofdihedralandsideslip.",
+    "size": [
+      2276,
+      1689
+    ]
+  },
+  {
+    "number": 23,
+    "part": "",
+    "page": 129,
+    "pdf_page": 144,
+    "file": "fig-3-23.png",
+    "caption": "Fig.3.23Rollingmomentduetorateofroll.",
+    "size": [
+      2272,
+      1620
+    ]
+  },
+  {
+    "number": 24,
+    "part": "",
+    "page": 135,
+    "pdf_page": 150,
+    "file": "fig-3-24.png",
+    "caption": "Fig.3.24Manoeuvringinthepitchplane.",
+    "size": [
+      2764,
+      1277
+    ]
+  },
+  {
+    "number": 25,
+    "part": "",
+    "page": 138,
+    "pdf_page": 153,
+    "file": "fig-3-25.png",
+    "caption": "Fig.3.25Pitchresponse.",
+    "size": [
+      2126,
+      1440
+    ]
+  },
+  {
+    "number": 26,
+    "part": "",
+    "page": 139,
+    "pdf_page": 154,
+    "file": "fig-3-26.png",
+    "caption": "Fig.3.26Forcesandmoments–longitudinalplane(stabilityaxes).",
+    "size": [
+      1884,
+      1560
+    ]
+  },
+  {
+    "number": 27,
+    "part": "",
+    "page": 140,
+    "pdf_page": 155,
+    "file": "fig-3-27.png",
+    "caption": "Fig.3.27Blockdiagramrepresentationofequation(3.47).",
+    "size": [
+      2481,
+      1473
+    ]
+  },
+  {
+    "number": 28,
+    "part": "",
+    "page": 141,
+    "pdf_page": 156,
+    "file": "fig-3-28.png",
+    "caption": "Fig.3.28Blockdiagramrepresentationofequation(3.48).",
+    "size": [
+      2005,
+      1216
+    ]
+  },
+  {
+    "number": 29,
+    "part": "",
+    "page": 141,
+    "pdf_page": 156,
+    "file": "fig-3-29.png",
+    "caption": "Fig.3.29Generalisednegativefeedbacksystem.",
+    "size": [
+      2256,
+      1584
+    ]
+  },
+  {
+    "number": 30,
+    "part": "",
+    "page": 142,
+    "pdf_page": 157,
+    "file": "fig-3-30.png",
+    "caption": "Fig.3.30Simpliﬁedoverallblockdiagram.",
+    "size": [
+      2698,
+      877
+    ]
+  },
+  {
+    "number": 31,
+    "part": "",
+    "page": 143,
+    "pdf_page": 158,
+    "file": "fig-3-31.png",
+    "caption": "Fig.3.31Furthersimpliﬁedoverallblockdiagram.",
+    "size": [
+      2154,
+      403
+    ]
+  },
+  {
+    "number": 32,
+    "part": "",
+    "page": 145,
+    "pdf_page": 160,
+    "file": "fig-3-32.png",
+    "caption": "Fig.3.32Generalisedsecond-ordersystemtransientresponse.",
+    "size": [
+      2832,
+      1680
+    ]
+  },
+  {
+    "number": 33,
+    "part": "",
+    "page": 149,
+    "pdf_page": 164,
+    "file": "fig-3-33.png",
+    "caption": "Fig.3.33Forcesactinginaturn.",
+    "size": [
+      2193,
+      1596
+    ]
+  },
+  {
+    "number": 34,
+    "part": "",
+    "page": 151,
+    "pdf_page": 166,
+    "file": "fig-3-34.png",
+    "caption": "Fig.3.34Rollrateresponse.",
+    "size": [
+      2244,
+      1576
+    ]
+  },
+  {
+    "number": 35,
+    "part": "",
+    "page": 154,
+    "pdf_page": 169,
+    "file": "fig-3-35.png",
+    "caption": "Fig.3.35Mechanicallysignalledﬂightcontrolsystem(bycourtesyofBAESystems).",
+    "size": [
+      834,
+      478
+    ]
+  },
+  {
+    "number": 36,
+    "part": "",
+    "page": 155,
+    "pdf_page": 170,
+    "file": "fig-3-36.png",
+    "caption": "Fig.3.36PowerControlUnitoperation.",
+    "size": [
+      921,
+      473
+    ]
+  },
+  {
+    "number": 37,
+    "part": "",
+    "page": 158,
+    "pdf_page": 173,
+    "file": "fig-3-37.png",
+    "caption": "Fig.3.37Simplestabilityaugmentationsystem.",
+    "size": [
+      2764,
+      1541
+    ]
+  },
+  {
+    "number": 38,
+    "part": "",
+    "page": 159,
+    "pdf_page": 174,
+    "file": "fig-3-38.png",
+    "caption": "Fig.3.38DCblockingor‘wash-out’ﬁlterwithhighfrequencycut-off.",
+    "size": [
+      2028,
+      2300
+    ]
+  },
+  {
+    "number": 39,
+    "part": "",
+    "page": 161,
+    "pdf_page": 176,
+    "file": "fig-3-39.png",
+    "caption": "Fig.3.39Pitchstabilityaugmentationloop.",
+    "size": [
+      2420,
+      1428
+    ]
+  },
+  {
+    "number": 40,
+    "part": "",
+    "page": 162,
+    "pdf_page": 177,
+    "file": "fig-3-40.png",
+    "caption": "Fig.3.40Pitchresponsewithandwithoutstabilityaugmentation.",
+    "size": [
+      1228,
+      1036
+    ]
+  },
+  {
+    "number": 41,
+    "part": "",
+    "page": 163,
+    "pdf_page": 178,
+    "file": "fig-3-41.png",
+    "caption": "Fig.3.41Liftgeneration–ﬁxed-wingaircraftcomparedwithahelicopter.",
+    "size": [
+      787,
+      577
+    ]
+  },
+  {
+    "number": 42,
+    "part": "",
+    "page": 164,
+    "pdf_page": 179,
+    "file": "fig-3-42.png",
+    "caption": "Fig.3.42Singlemainrotorconﬁguration–AgustaWestlandAW159‘LynxWildcat’helicopter (bycourtesyofAgustaWestland).",
+    "size": [
+      921,
+      636
+    ]
+  },
+  {
+    "number": 43,
+    "part": "",
+    "page": 165,
+    "pdf_page": 180,
+    "file": "fig-3-43.png",
+    "caption": "Fig.3.43Co-axialcontra-rotatingrotorsconﬁguration–SikorskyS97helicopter.",
+    "size": [
+      2598,
+      859
+    ]
+  },
+  {
+    "number": 44,
+    "part": "",
+    "page": 166,
+    "pdf_page": 181,
+    "file": "fig-3-44.png",
+    "caption": "Fig.3.44Tandemrotorconﬁguration–BoeingChinookhelicopter.",
+    "size": [
+      2362,
+      1020
+    ]
+  },
+  {
+    "number": 45,
+    "part": "",
+    "page": 166,
+    "pdf_page": 181,
+    "file": "fig-3-45.png",
+    "caption": "Fig.3.45Inter-meshingrotorconﬁguration–Kamanhelicopter.",
+    "size": [
+      2362,
+      1368
+    ]
+  },
+  {
+    "number": 46,
+    "part": "",
+    "page": 167,
+    "pdf_page": 182,
+    "file": "fig-3-46.png",
+    "caption": "Fig.3.46Dragandﬂappinghingesonanarticulatedrotor.",
+    "size": [
+      1703,
+      1654
+    ]
+  },
+  {
+    "number": 47,
+    "part": "",
+    "page": 168,
+    "pdf_page": 183,
+    "file": "fig-3-47.png",
+    "caption": "Fig.3.47Semi-rigidrotor.",
+    "size": [
+      2126,
+      1196
+    ]
+  },
+  {
+    "number": 48,
+    "part": "",
+    "page": 168,
+    "pdf_page": 183,
+    "file": "fig-3-48.png",
+    "caption": "Fig.3.48Rigidrotor.",
+    "size": [
+      2339,
+      1415
+    ]
+  },
+  {
+    "number": 49,
+    "part": "",
+    "page": 169,
+    "pdf_page": 184,
+    "file": "fig-3-49.png",
+    "caption": "Fig.3.49Schematicdiagramoftheswashplatemechanism.",
+    "size": [
+      940,
+      818
+    ]
+  },
+  {
+    "number": 50,
+    "part": "",
+    "page": 169,
+    "pdf_page": 184,
+    "file": "fig-3-50.png",
+    "caption": "Fig.3.50Pilot’scontrols.",
+    "size": [
+      591,
+      348
+    ]
+  },
+  {
+    "number": 51,
+    "part": "",
+    "page": 171,
+    "pdf_page": 186,
+    "file": "fig-3-51.png",
+    "caption": "Fig.3.51Forcesandmomentsactingonthehelicopter.",
+    "size": [
+      709,
+      361
+    ]
+  },
+  {
+    "number": 52,
+    "part": "",
+    "page": 171,
+    "pdf_page": 186,
+    "file": "fig-3-52.png",
+    "caption": "Fig.3.52Steady-stateforwardmotion.",
+    "size": [
+      2362,
+      1210
+    ]
+  },
+  {
+    "number": 53,
+    "part": "a",
+    "page": 173,
+    "pdf_page": 188,
+    "file": "fig-3-53a.png",
+    "caption": "Fig.3.53(a)Duplexstabilityaugmentationsystem.(b)Dual-dualstabilityaugmentationsystem. (c)Triplexstabilityaugmentationsystem.",
+    "size": [
+      788,
+      493
+    ]
+  },
+  {
+    "number": 53,
+    "part": "b",
+    "page": 173,
+    "pdf_page": 188,
+    "file": "fig-3-53b.png",
+    "caption": "Fig.3.53(a)Duplexstabilityaugmentationsystem.(b)Dual-dualstabilityaugmentationsystem. (c)Triplexstabilityaugmentationsystem.",
+    "size": [
+      552,
+      394
+    ]
+  },
+  {
+    "number": 53,
+    "part": "c",
+    "page": 173,
+    "pdf_page": 188,
+    "file": "fig-3-53c.png",
+    "caption": "Fig.3.53(a)Duplexstabilityaugmentationsystem.(b)Dual-dualstabilityaugmentationsystem. (c)Triplexstabilityaugmentationsystem.",
+    "size": [
+      614,
+      394
+    ]
+  },
+  {
+    "number": 54,
+    "part": "",
+    "page": 175,
+    "pdf_page": 190,
+    "file": "fig-3-54.png",
+    "caption": "Fig.3.54Pitchaxisstabilityaugmentationsystem.",
+    "size": [
+      2362,
+      1333
+    ]
+  },
+  {
+    "number": 55,
+    "part": "",
+    "page": 175,
+    "pdf_page": 190,
+    "file": "fig-3-55.png",
+    "caption": "Fig.3.55Rollaxisauto-stabilisationsystem.",
+    "size": [
+      2362,
+      1599
+    ]
+  },
+  {
+    "number": 56,
+    "part": "",
+    "page": 176,
+    "pdf_page": 191,
+    "file": "fig-3-56.png",
+    "caption": "Fig.3.56Basicyawratestabilityaugmentationsystem.",
+    "size": [
+      2362,
+      835
+    ]
+  }
+]

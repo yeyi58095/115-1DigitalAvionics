@@ -1,0 +1,16 @@
+{
+  "A1": 3.310719131614654,
+  "A2": 36.04703753957485,
+  "K": 87.06467661691542,
+  "omega_n": 6.003918515400992,
+  "damping_ratio": 0.2757131965667206,
+  "SAS_gain": 0.10450167391355042,
+  "SAS_frequency": 6.719035792789354,
+  "standard_overshoot": 0.4061204660635532,
+  "turn_60_degrees_rate_deg_s": 9.735365635358,
+  "exercise_stall_1g": 73.06692487168242,
+  "exercise_stall_2g": 103.33223611442928,
+  "exercise_turn_radius": 1765.5971534850942,
+  "exercise_roll_angle_1sec": 11.353352832366127,
+  "exercise_SAS_gain": 0.0872562055437056
+}

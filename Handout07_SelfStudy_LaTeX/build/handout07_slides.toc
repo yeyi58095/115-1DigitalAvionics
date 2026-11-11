@@ -1,0 +1,16 @@
+\beamer@sectionintoc {1}{閱讀地圖}{2}{0}{1}
+\beamer@sectionintoc {2}{GNSS 概觀}{6}{0}{2}
+\beamer@sectionintoc {3}{系統架構}{11}{0}{3}
+\beamer@sectionintoc {4}{測距與解算}{16}{0}{4}
+\beamer@sectionintoc {5}{誤差來源}{24}{0}{5}
+\beamer@sectionintoc {6}{差分定位}{28}{0}{6}
+\beamer@sectionintoc {7}{導航訊號}{31}{0}{7}
+\beamer@sectionintoc {8}{精密時間}{35}{0}{8}
+\beamer@sectionintoc {9}{定位方式}{38}{0}{9}
+\beamer@sectionintoc {10}{導航性能}{41}{0}{10}
+\beamer@sectionintoc {11}{性能表的讀法}{49}{0}{11}
+\beamer@sectionintoc {12}{增強系統}{53}{0}{12}
+\beamer@sectionintoc {13}{SBAS}{58}{0}{13}
+\beamer@sectionintoc {14}{GBAS}{63}{0}{14}
+\beamer@sectionintoc {15}{整合複習}{68}{0}{15}
+\beamer@sectionintoc {16}{複習與來源}{72}{0}{16}

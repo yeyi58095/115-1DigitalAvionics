@@ -1,0 +1,377 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+% 自編練習題；不是授課教師正式發布的作業。
+% 在各題 Solution 下撰寫答案；需要更多空間時可移除 \vfill 或 \newpage。
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=2.5cm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{xeCJK}
+\IfFontExistsTF{Microsoft JhengHei}
+  {\setCJKmainfont{Microsoft JhengHei}}
+  {\setCJKmainfont{FandolSong-Regular}}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CA7528 Digital Avionics}
+\fancyhead[R]{\small Practice Homework}
+\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\linespread{1.12}
+\newcommand{\question}[1]{\section*{Question #1}}
+\newcommand{\solution}{\par\medskip\textbf{Solution}\par}
+\begin{document}
+\begin{center}
+  {\LARGE\bfseries Digital Avionics}\\[0.3em]
+  {\Large Practice Homework}\\[0.5em]
+  CA7528 \quad Fall 2026\\[0.3em]
+  Handouts 1--7 \quad 自編練習題（共 44 題）
+\end{center}
+\medskip
+姓名：\underline{\hspace{3.4cm}}\hfill 學號：\underline{\hspace{3.4cm}}
+
+\textbf{作答說明：}申論題請說明理由，必要時以表格或方塊圖輔助。計算題請列出公式、代入過程及單位。本題本依目前講義範圍與 Homework 1 題型自編，非教師正式作業；不含解答。
+
+\question{1}
+比較數位航電系統與傳統類比航電系統。請從訊號傳輸、設備整合、重量與配線，以及維修方式說明數位航電的優點。
+\solution
+% 在這裡撰寫 Question 1 的解答。
+\vfill
+\question{2}
+數位航電將多種功能整合至共用電腦與資料匯流排後，可能產生哪些缺點或故障風險？在飛機系統工程中，可以使用哪些方法降低這些風險？
+\solution
+% 在這裡撰寫 Question 2 的解答。
+\vfill
+\newpage
+
+\question{3}
+介紹 Communication、Navigation、Surveillance 與 Air Traffic Management 的功能，並比較傳統地面設施與衛星／資料鏈技術在 CNS/ATM 中扮演的角色。
+\solution
+% 在這裡撰寫 Question 3 的解答。
+\vfill
+\question{4}
+說明 Guidance、Navigation 與 Control 之間的關係。以「飛機因側風偏離預定航線」為例，說明各系統如何配合，使飛機回到預定航線。
+\solution
+% 在這裡撰寫 Question 4 的解答。
+\vfill
+\newpage
+
+\question{5}
+介紹 Flight Management System（FMS）、Autopilot（A/P）與 Fly-by-Wire（FBW）的功能及層級關係。為什麼不同層級的系統需要不同的控制更新頻率？
+\solution
+% 在這裡撰寫 Question 5 的解答。
+\vfill
+\question{6}
+說明 Built-in Test（BIT）與 Line Replaceable Unit（LRU）如何改善航電系統的故障診斷與維修。若某項故障只在飛行中間歇發生，落地後便消失，應如何利用這些設計協助排除故障？
+\solution
+% 在這裡撰寫 Question 6 的解答。
+\vfill
+\newpage
+
+\section*{Common Data for Questions 7--12}
+某飛機的參數如下。本頁資料適用於 Questions 7--12。
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{ll}
+\toprule
+參數 & 數值\\
+\midrule
+質量 $m$ & $24{,}000\,\mathrm{kg}$\\
+機翼面積 $S$ & $80\,\mathrm{m^2}$\\
+最大升力係數 $C_{L,\max}$ & $1.40$\\
+最大升力對應攻角 $\alpha_{\max}$ & $15^\circ$\\
+海平面空氣密度 $\rho_0$ & $1.225\,\mathrm{kg/m^3}$\\
+30,000 ft 空氣密度 $\rho_{30,000}$ & $0.4583\,\mathrm{kg/m^3}$\\
+重力加速度 $g$ & $9.81\,\mathrm{m/s^2}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+失速前的升力曲線與阻力極線為
+\[
+ C_L=0.20+0.08\alpha,\qquad C_D=0.025+0.045C_L^2.
+\]
+\textbf{角度單位：}上述升力曲線中的 $\alpha$ 以度（degree）為單位。
+
+\textbf{共同假設：}忽略 0--1,000 ft 的空氣密度變化、壓縮性效應與燃油消耗造成的質量變化。推力視為平行飛行方向。各題未指定構型變化時，使用相同的機翼面積及氣動係數關係。
+
+\textbf{符號：}以 $\bar q$ 表示動壓，以 $q$ 表示俯仰角速度。負載因數 $n=L/(mg)$ 為無因次量；淨法向加速度須考慮重力在飛行路徑法向的分量。
+\vfill
+{\small 本組數值為自編練習參數，非 Homework 1 原始範例。}
+\newpage
+
+\question{7}
+飛機在高度 200 ft，以 $75\,\mathrm{m/s}$ 定速直線水平飛行。求所需的攻角 $\alpha$，並判斷是否超過給定的最大升力攻角。使用前頁共同資料。
+\solution
+% 在這裡撰寫 Question 7 的解答。
+\vfill
+\question{8}
+同一架飛機在高度 1,000 ft，以 $180\,\mathrm{m/s}$ 定速直線水平飛行。求所需攻角，並解釋其與 Question 7 結果不同的原因。
+\solution
+% 在這裡撰寫 Question 8 的解答。
+\vfill
+\newpage
+
+\question{9}
+飛機在高度 30,000 ft，以 $180\,\mathrm{m/s}$ 定速直線水平飛行。求所需攻角，並與 Question 8 比較。說明空氣密度改變如何影響所需升力係數與攻角。
+\solution
+% 在這裡撰寫 Question 9 的解答。
+\vfill
+\question{10}
+求此飛機在海平面與 30,000 ft 高度，以給定構型維持直線水平飛行的最低真空速（僅考慮升力限制，假設推力足夠）。說明兩個高度的結果為何不同。
+\solution
+% 在這裡撰寫 Question 10 的解答。
+\vfill
+\newpage
+
+\question{11}
+飛機在高度 30,000 ft，以 $220\,\mathrm{m/s}$ 飛行。當攻角增加至 $\alpha_{\max}$ 時，求最大升力及對應負載因數 $n=L/(mg)$。若飛機在機翼水平、飛行路徑瞬間水平的狀態下拉起，求此瞬間的最大\textbf{淨法向加速度}，並以 $\mathrm{m/s^2}$ 與 $g$ 倍數表示。假設推力足以維持速度，且暫不考慮結構限制。
+\solution
+% 在這裡撰寫 Question 11 的解答。
+\vfill
+\question{12}
+分別計算 Questions 7 與 8 飛行條件下的阻力、升阻比，以及維持定速水平飛行所需的推力。說明為什麼飛行速度增加時，所需推力不能只根據升力係數的變化判斷。
+\solution
+% 在這裡撰寫 Question 12 的解答。
+\vfill
+\newpage
+
+\question{13}
+說明襟翼（Flap）與前緣縫翼（Slat）如何影響升力特性及低速飛行能力。為什麼飛機通常在起飛與降落時使用這些裝置，而在高速巡航時收回？
+\solution
+% 在這裡撰寫 Question 13 的解答。
+\vfill
+\question{14}
+比較壓力中心（Center of Pressure）、氣動中心（Aerodynamic Center）與全機中性點（Neutral Point）的物理意義。說明這些位置與重心之間的關係，為什麼對分析俯仰力矩及縱向靜穩定性很重要。
+\solution
+% 在這裡撰寫 Question 14 的解答。
+\vfill
+\newpage
+
+\question{15}
+某飛機在固定升降舵位置下的俯仰力矩係數為
+\[
+ C_M=0.08-0.90\alpha,
+\]
+其中 $\alpha$ 以 rad 表示，抬頭力矩為正。求配平攻角，並判斷縱向靜穩定性。若攻角由配平值增加 $2^\circ$，求新的 $C_M$，並說明此力矩對飛機運動的影響。
+\solution
+% 在這裡撰寫 Question 15 的解答。
+\vfill
+\question{16}
+某飛機的平均氣動弦長為 $2.5\,\mathrm{m}$，中性點位於平均氣動弦前緣後方 $1.10\,\mathrm{m}$。原重心位於同一基準後方 $0.85\,\mathrm{m}$，重新配置載重後移至 $1.15\,\mathrm{m}$。求兩種配置的靜穩定裕度，並比較其縱向靜穩定性。使用
+\[
+ SM=\frac{x_{NP}-x_{CG}}{\bar c}.
+\]
+\solution
+% 在這裡撰寫 Question 16 的解答。
+\vfill
+\newpage
+
+\question{17}
+說明飛機六自由度運動所對應的速度、角速度、力及力矩。為什麼使用機體座標建立運動方程式時，會出現速度與角速度相乘的耦合項？
+\solution
+% 在這裡撰寫 Question 17 的解答。
+\vfill
+\question{18}
+說明配平狀態與小擾動假設，以及如何利用這些假設將非線性飛機運動方程式線性化。以 $QW$ 為例，令
+\[
+ Q=Q_e+q,\qquad W=W_e+w,\qquad Q_e=0,
+\]
+其中 $Q$ 為總俯仰角速度，$W$ 為機體 $z$ 軸速度，下標 $e$ 表示配平值，小寫字母表示擾動量。展開此乘積並說明應保留與忽略的項。若擾動幅度很大，這種近似可能產生什麼問題？
+\solution
+% 在這裡撰寫 Question 18 的解答。
+\vfill
+\newpage
+
+\question{19}
+在對稱飛機、直線平飛附近的小擾動條件下，說明如何將運動分為縱向與橫向／方向運動。分別列出主要狀態變數與控制輸入，並以
+\[
+ \dot{\mathbf{x}}=A\mathbf{x}+B\mathbf{u}
+\]
+說明狀態矩陣 $A$ 與輸入矩陣 $B$ 的物理意義。為什麼建立此模型需要氣動穩定導數與控制導數？
+\solution
+% 在這裡撰寫 Question 19 的解答。
+\vfill
+\question{20}
+一架飛機受到陣風擾動後，產生衰減緩慢的俯仰振盪。請說明如何利用俯仰角速度回授與升降舵建立 Stability Augmentation System（SAS），改善飛機的動態響應。畫出包含指令、控制器、致動器、飛機與感測器的簡化閉迴路方塊圖，並解釋靜穩定性與動態阻尼的差別。
+\solution
+% 在這裡撰寫 Question 20 的解答。
+\vfill
+\newpage
+\section*{Handout 5: Fly-by-Wire Flight Control}
+{\small Questions 21--28；頁碼指原講義 PDF 頁序。計算參數為自編。}
+
+\question{21}
+{\small 對照：Handout 5, pp. 4--18。}\\
+說明 FBW 如何以電子訊號與飛行控制電腦取代傳統機械操縱傳動。畫出包含飛行員、飛控電腦、致動器、飛機、運動感測器及空氣資料系統的方塊圖，並說明 FBW 為何能支援自然穩定性較低的飛機設計。
+\solution
+\vfill
+\question{22}
+{\small 對照：Handout 5, pp. 19--26。}\\
+列出 FBW 所需的飛行員指令、角速度、加速度及空氣資料輸入，說明各自用途。若空速感測器讀值異常，可能如何影響依飛行條件調整的控制律？飛控電腦應如何偵測、隔離故障並重新配置？
+\solution
+\vfill
+\newpage
+
+\question{23}
+{\small 對照：Handout 5, pp. 25--29。}\\
+比較被動式與主動式 FBW 操縱桿的力量產生方式及力與位移關係。當機械傳動不再把舵面負載直接傳回操縱桿時，為什麼需要人工操縱感？說明其與飛行員工作負荷及過度操縱的關係。
+\solution
+\vfill
+\question{24}
+{\small 對照：Handout 5, pp. 30--36。}\\
+考慮簡化滾轉角速度模型 $G(s)=K_a/(\tau s+1)$，控制律為
+\[
+ \delta_a=K_c(p_c-p),\qquad K_a=2\,\mathrm{s^{-1}},\quad
+ \tau=0.8\,\mathrm{s},\quad K_c=3\,\mathrm{s}.
+\]
+其中 $p_c,p$ 為指令及實際滾轉角速度，$\delta_a$ 為副翼偏角，角度均使用 rad。推導 $p(s)/p_c(s)$，求直流增益、閉迴路時間常數及單位階躍的穩態追蹤誤差。討論加大 $K_c$ 的好處，以及實際系統中致動器頻寬與延遲造成的限制。
+\solution
+\vfill
+\newpage
+
+\question{25}
+{\small 對照：Handout 5, pp. 38--39。}\\
+說明 Cooper--Harper 操縱品質評分如何同時考量任務表現與飛行員補償工作量。若兩個系統皆能完成相同的航跡追蹤任務，但其中一個需要持續大幅修正，能否僅以追蹤誤差判斷其操縱品質？請說明理由。
+\solution
+\vfill
+\question{26}
+{\small 對照：Handout 5, pp. 40--44。}\\
+比較雙重、三重及四重備援的故障偵測、隔離與持續運作能力。為什麼雙通道輸出不一致時，通常不能只靠兩者互相比較判定哪一個正確？另說明多數決對共同原因故障的限制。
+\solution
+\vfill
+\newpage
+
+\question{27}
+{\small 對照：Handout 5, pp. 48--50。}\\
+三個滾轉角速度感測器分別輸出 $1.8$、$1.9$、$12.0\,\mathrm{deg/s}$。比較平均值與中位數作為控制律輸入的結果，提出一個離群值偵測規則，並說明門檻過小或過大各有何風險。若兩個感測器同時產生相似的錯誤，這個規則是否仍可靠？
+\solution
+\vfill
+\question{28}
+{\small 對照：Handout 5, pp. 26, 40--50。}\\
+飛機某一飛控通道在飛行中失效，但其他通道及部分致動器仍正常。請依序說明故障偵測、故障隔離、備援管理、控制律重新配置及 BIT 紀錄各扮演的角色。為什麼感測器、電源、資料匯流排與致動器也需要納入備援設計？
+\solution
+\vfill
+\newpage
+
+\section*{Handout 6: Inertial Navigation System}
+{\small Questions 29--36；計算題採題目指定的簡化模型。}
+
+\question{29}
+{\small 對照：Handout 6, pp. 23--29, 58--62。}\\
+依講義架構比較 ISA、IMU 與 INS 的輸出及處理功能。INS 如何由陀螺儀與加速度計資料推算姿態、速度和位置？為什麼仍需要初始位置、速度與姿態，以及感測器誤差補償？
+\solution
+\vfill
+\question{30}
+{\small 對照：Handout 6, pp. 23--27, 70--73。}\\
+比較平台式（Gimballed）與捷聯式（Strapdown）INS，說明兩者如何建立導航參考座標。捷聯式系統如何利用姿態與方向餘弦矩陣，將機體座標的量測轉換到 North--East--Down（NED）座標？
+\solution
+\vfill
+\newpage
+
+\question{31}
+{\small 對照：Handout 6, pp. 35--48。}\\
+比較 MEMS 振動式陀螺儀、環形雷射陀螺儀（RLG）與光纖陀螺儀（FOG）的感測原理。說明 Sagnac 效應如何提供旋轉資訊，並討論選用感測器時精度、漂移、體積與成本之間的取捨。
+\solution
+\vfill
+\question{32}
+{\small 對照：Handout 6, pp. 49--60。}\\
+在一維簡化模型中，假設姿態及重力補償完全正確，只有固定加速度偏差 $b_a=0.020\,\mathrm{m/s^2}$，初始速度及位置誤差皆為零。推導速度誤差與位置誤差對時間的關係，並求 $t=60\,\mathrm{s}$ 及 $300\,\mathrm{s}$ 的誤差。為什麼位置誤差比速度誤差成長得更快？
+\solution
+\vfill
+\newpage
+
+\question{33}
+{\small 對照：Handout 6, pp. 63--68。}\\
+為什麼以 Euler angles 表示姿態時，在俯仰角接近 $90^\circ$ 會產生奇異性？比較四元數表示法的優點。某次數值積分後得到純量在前的四元數 $\tilde{\boldsymbol e}=(0.8,0.1,0.2,0.5)$，請正規化，並說明滿足單位範數是否足以保證姿態沒有估測誤差。
+\solution
+\vfill
+\question{34}
+{\small 對照：Handout 6, pp. 70--79。}\\
+採簡化局部平面模型，忽略地球自轉與導航座標轉動。已知
+\[
+ C_b^n=\begin{bmatrix}0&-1&0\\1&0&0\\0&0&1\end{bmatrix},\quad
+ \mathbf f^b=\begin{bmatrix}1.0\\0\\-9.81\end{bmatrix}\mathrm{m/s^2},\quad
+ \mathbf g^n=\begin{bmatrix}0\\0\\9.81\end{bmatrix}\mathrm{m/s^2}.
+\]
+以 $\dot{\mathbf v}^n=C_b^n\mathbf f^b+\mathbf g^n$ 求 NED 加速度。解釋加速度計量測的比力為何不能直接當作導航座標中的運動加速度，以及長時間導航時為何還需考慮地球自轉等修正。
+\solution
+\vfill
+\newpage
+
+\question{35}
+{\small 對照：Handout 6, pp. 81, 89--93。}\\
+飛機由緯度 $25^\circ$、經度 $121^\circ$ 出發，維持北向地速 $v_N=120\,\mathrm{m/s}$、東向地速 $v_E=80\,\mathrm{m/s}$，飛行 $60\,\mathrm{s}$。採球形地球半徑 $R=6.371\times10^6\,\mathrm{m}$、忽略高度，並用初始緯度近似計算
+\[
+ \Delta\varphi=\frac{v_Nt}{R},\qquad
+ \Delta\lambda=\frac{v_Et}{R\cos\varphi_0}.
+\]
+求更新後的緯度與經度（以度表示）。若輸入的速度改為空速，為什麼必須考慮風速？
+\solution
+\vfill
+\question{36}
+{\small 對照：Handout 6, pp. 94--101。}\\
+比較 INS 與 GPS 的短期響應、雜訊、長期漂移及外部訊號依賴性。對互補濾波器
+\[
+ \hat\theta(s)=\frac{Ts}{1+Ts}\theta_1(s)+\frac{1}{1+Ts}\theta_2(s),\quad T>0,
+\]
+若 $\theta_1$ 反應快但會漂移，$\theta_2$ 雜訊較大但長期準確，說明兩條通道在低頻與高頻時的作用。GPS 中斷時，整合系統仍能輸出導航結果嗎？其誤差將如何變化？
+\solution
+\vfill
+\newpage
+
+\section*{Handout 7: Global Positioning System}
+{\small Questions 37--44；以講義原理為範圍，數值為自編；不以歷史衛星數量或服務表格作為現行規範。}
+
+\question{37}
+{\small 對照：Handout 7, pp. 4--17。}\\
+說明 GNSS 與 GPS 的關係，並列舉其他全球衛星導航系統。分別介紹 GPS 的太空、控制及使用者區段，說明衛星星系、地面監測／控制站與機載接收機如何配合完成定位。
+\solution
+\vfill
+\question{38}
+{\small 對照：Handout 7, pp. 18--23, 31--32；延伸接收機時鐘未知量。}\\
+GPS 利用訊號傳播時間估計距離。採光速 $c=299{,}792{,}458\,\mathrm{m/s}$，計算 $0.070\,\mathrm{s}$ 傳播時間對應的距離。再由簡化偽距模型
+\[
+ \rho_i=\sqrt{(x-x_i)^2+(y-y_i)^2+(z-z_i)^2}+c\,\delta t+\varepsilon_i
+\]
+說明各項物理意義。當接收機時鐘偏差未知時，為何一般三維單點定位至少需要四顆具有適當幾何分布的衛星？
+\solution
+\vfill
+\newpage
+
+\question{39}
+{\small 對照：Handout 7, pp. 22--23, 32。}\\
+假設衛星時鐘誤差已修正，接收機時鐘比 GPS 時間快 $1.0\,\mathrm{\mu s}$。依 Question 38 的符號定義，計算其對每筆偽距造成的共同偏差（含正負號）。為什麼這不代表接收機的位置誤差必然等於同樣的公尺數？請從共同時鐘未知量與衛星幾何說明。
+\solution
+\vfill
+\question{40}
+{\small 對照：Handout 7, pp. 23--29。}\\
+說明衛星時鐘、星曆、電離層、對流層、多路徑及接收機雜訊如何影響 GPS 量測。比較近距離參考站差分與雙頻量測可改善的誤差來源，並解釋為什麼接收機周圍的多路徑通常不能由遠端參考站完整消除。
+\solution
+\vfill
+\newpage
+
+\question{41}
+{\small 對照：Handout 7, pp. 27--29。}\\
+以講義介紹的傳統 GPS 訊號為例，比較 L1、L2 載波與 C/A、P(Y) 測距碼的角色，並說明導航資料中的星曆、衛星健康及時鐘修正資訊有何用途。為什麼載波頻率、測距碼碼片率（chip rate）及導航資料位元率是不同的物理量，不能混用？
+\solution
+\vfill
+\question{42}
+{\small 對照：Handout 7, pp. 24--25, 33。}\\
+某已知位置的 DGPS 參考站對某衛星算得幾何距離 $R_b=21{,}000{,}000\,\mathrm{m}$，量得偽距 $\rho_b=21{,}000{,}018\,\mathrm{m}$。假設時鐘效應已適當處理，且參考站與使用者共享同一加性距離誤差，定義修正量 $PRC=R_b-\rho_b$。若使用者原始偽距為 $21{,}450{,}025\,\mathrm{m}$，求修正量與修正後偽距。說明此假設在距離增加或修正資料過期時可能如何失效。
+\solution
+\vfill
+\newpage
+
+\question{43}
+{\small 對照：Handout 7, pp. 35--43。}\\
+分別解釋導航系統的 Accuracy、Integrity、Continuity 與 Availability。系統平時定位誤差很小，但發生異常後無法及時警告，最直接欠缺哪一項能力？另說明 Alert Limit 與 Time-to-Alert 的意義，以及為何僅有良好的平均精度仍不足以評估進場導航服務。
+\solution
+\vfill
+\question{44}
+{\small 對照：Handout 7, pp. 48--64；整合 Handout 6, pp. 94--101。}\\
+比較 SBAS（以 WAAS 為例）與 GBAS（講義中的 LAAS）在參考站配置、修正資訊傳送方式、服務範圍及航空應用上的差異。若飛機接近機場時出現衛星訊號遮蔽，說明增強系統與 GPS/INS 整合各能提供什麼幫助及仍有哪些限制。為什麼不能只因安裝增強系統就認定可執行任意類別的精密進場？
+\solution
+\vfill
+\end{document}

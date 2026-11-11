@@ -1,0 +1,367 @@
+[
+  {
+    "slide": 1,
+    "title": "GPS 原理、誤差與航空增強",
+    "characters": 117
+  },
+  {
+    "slide": 2,
+    "title": "範圍與閱讀方式",
+    "characters": 222
+  },
+  {
+    "slide": 3,
+    "title": "分次閱讀安排",
+    "characters": 175
+  },
+  {
+    "slide": 4,
+    "title": "分次閱讀安排（續）",
+    "characters": 216
+  },
+  {
+    "slide": 5,
+    "title": "分次閱讀安排（續）",
+    "characters": 95
+  },
+  {
+    "slide": 6,
+    "title": "系統家族與星系幾何",
+    "characters": 255
+  },
+  {
+    "slide": 7,
+    "title": "講義原頁 6：系統家族與星系幾何",
+    "characters": 78
+  },
+  {
+    "slide": 8,
+    "title": "講義原頁 8：系統家族與星系幾何",
+    "characters": 78
+  },
+  {
+    "slide": 9,
+    "title": "講義原頁 12：系統家族與星系幾何",
+    "characters": 80
+  },
+  {
+    "slide": 10,
+    "title": "自我檢查：系統家族與星系幾何",
+    "characters": 177
+  },
+  {
+    "slide": 11,
+    "title": "太空、控制與使用者區段",
+    "characters": 209
+  },
+  {
+    "slide": 12,
+    "title": "講義原頁 13：太空、控制與使用者區段",
+    "characters": 80
+  },
+  {
+    "slide": 13,
+    "title": "講義原頁 14：太空、控制與使用者區段",
+    "characters": 80
+  },
+  {
+    "slide": 14,
+    "title": "講義原頁 17：太空、控制與使用者區段",
+    "characters": 80
+  },
+  {
+    "slide": 15,
+    "title": "自我檢查：太空、控制與使用者區段",
+    "characters": 165
+  },
+  {
+    "slide": 16,
+    "title": "距離交會與時鐘未知量",
+    "characters": 262
+  },
+  {
+    "slide": 17,
+    "title": "講義原頁 19：距離交會與時鐘未知量",
+    "characters": 80
+  },
+  {
+    "slide": 18,
+    "title": "講義原頁 20：距離交會與時鐘未知量",
+    "characters": 80
+  },
+  {
+    "slide": 19,
+    "title": "講義原頁 21：距離交會與時鐘未知量",
+    "characters": 80
+  },
+  {
+    "slide": 20,
+    "title": "自我檢查：距離交會與時鐘未知量",
+    "characters": 161
+  },
+  {
+    "slide": 21,
+    "title": "訊號傳播時間與偽距模型",
+    "characters": 225
+  },
+  {
+    "slide": 22,
+    "title": "講義原頁 22：訊號傳播時間與偽距模型",
+    "characters": 81
+  },
+  {
+    "slide": 23,
+    "title": "自我檢查：訊號傳播時間與偽距模型",
+    "characters": 206
+  },
+  {
+    "slide": 24,
+    "title": "時鐘、星曆與大氣",
+    "characters": 205
+  },
+  {
+    "slide": 25,
+    "title": "講義原頁 23：時鐘、星曆與大氣",
+    "characters": 77
+  },
+  {
+    "slide": 26,
+    "title": "講義原頁 26：時鐘、星曆與大氣",
+    "characters": 77
+  },
+  {
+    "slide": 27,
+    "title": "自我檢查：時鐘、星曆與大氣",
+    "characters": 154
+  },
+  {
+    "slide": 28,
+    "title": "DGPS 參考站修正",
+    "characters": 223
+  },
+  {
+    "slide": 29,
+    "title": "講義原頁 25：DGPS 參考站修正",
+    "characters": 79
+  },
+  {
+    "slide": 30,
+    "title": "自我檢查：DGPS 參考站修正",
+    "characters": 198
+  },
+  {
+    "slide": 31,
+    "title": "載波、測距碼與導航資料",
+    "characters": 257
+  },
+  {
+    "slide": 32,
+    "title": "講義原頁 28：載波、測距碼與導航資料",
+    "characters": 80
+  },
+  {
+    "slide": 33,
+    "title": "講義原頁 30：載波、測距碼與導航資料",
+    "characters": 80
+  },
+  {
+    "slide": 34,
+    "title": "自我檢查：載波、測距碼與導航資料",
+    "characters": 174
+  },
+  {
+    "slide": 35,
+    "title": "時鐘誤差與共同估計",
+    "characters": 209
+  },
+  {
+    "slide": 36,
+    "title": "講義原頁 32：時鐘誤差與共同估計",
+    "characters": 78
+  },
+  {
+    "slide": 37,
+    "title": "自我檢查：時鐘誤差與共同估計",
+    "characters": 167
+  },
+  {
+    "slide": 38,
+    "title": "電碼差分與載波相位",
+    "characters": 224
+  },
+  {
+    "slide": 39,
+    "title": "講義原頁 33：電碼差分與載波相位",
+    "characters": 78
+  },
+  {
+    "slide": 40,
+    "title": "自我檢查：電碼差分與載波相位",
+    "characters": 154
+  },
+  {
+    "slide": 41,
+    "title": "Accuracy 與 Precision",
+    "characters": 247
+  },
+  {
+    "slide": 42,
+    "title": "講義原頁 40：Accuracy 與 Precision",
+    "characters": 89
+  },
+  {
+    "slide": 43,
+    "title": "自我檢查：Accuracy 與 Precision",
+    "characters": 182
+  },
+  {
+    "slide": 44,
+    "title": "Integrity、Continuity 與 Availability",
+    "characters": 300
+  },
+  {
+    "slide": 45,
+    "title": "講義原頁 41：Integrity、Continuity 與 Availability",
+    "characters": 104
+  },
+  {
+    "slide": 46,
+    "title": "講義原頁 42：Integrity、Continuity 與 Availability",
+    "characters": 104
+  },
+  {
+    "slide": 47,
+    "title": "講義原頁 43：Integrity、Continuity 與 Availability",
+    "characters": 104
+  },
+  {
+    "slide": 48,
+    "title": "自我檢查：Integrity、Continuity 與 Availability",
+    "characters": 191
+  },
+  {
+    "slide": 49,
+    "title": "飛行階段與歷史性能表",
+    "characters": 220
+  },
+  {
+    "slide": 50,
+    "title": "講義原頁 44：飛行階段與歷史性能表",
+    "characters": 81
+  },
+  {
+    "slide": 51,
+    "title": "講義原頁 46：飛行階段與歷史性能表",
+    "characters": 81
+  },
+  {
+    "slide": 52,
+    "title": "自我檢查：飛行階段與歷史性能表",
+    "characters": 174
+  },
+  {
+    "slide": 53,
+    "title": "SBAS 與 GBAS 的分工",
+    "characters": 242
+  },
+  {
+    "slide": 54,
+    "title": "講義原頁 49：SBAS 與 GBAS 的分工",
+    "characters": 84
+  },
+  {
+    "slide": 55,
+    "title": "講義原頁 50：SBAS 與 GBAS 的分工",
+    "characters": 84
+  },
+  {
+    "slide": 56,
+    "title": "講義原頁 51：SBAS 與 GBAS 的分工",
+    "characters": 84
+  },
+  {
+    "slide": 57,
+    "title": "自我檢查：SBAS 與 GBAS 的分工",
+    "characters": 176
+  },
+  {
+    "slide": 58,
+    "title": "WAAS 修正資訊的流程",
+    "characters": 217
+  },
+  {
+    "slide": 59,
+    "title": "講義原頁 52：WAAS 修正資訊的流程",
+    "characters": 81
+  },
+  {
+    "slide": 60,
+    "title": "講義原頁 54：WAAS 修正資訊的流程",
+    "characters": 81
+  },
+  {
+    "slide": 61,
+    "title": "講義原頁 59：WAAS 修正資訊的流程",
+    "characters": 81
+  },
+  {
+    "slide": 62,
+    "title": "自我檢查：WAAS 修正資訊的流程",
+    "characters": 159
+  },
+  {
+    "slide": 63,
+    "title": "機場局部服務與資料廣播",
+    "characters": 245
+  },
+  {
+    "slide": 64,
+    "title": "講義原頁 61：機場局部服務與資料廣播",
+    "characters": 80
+  },
+  {
+    "slide": 65,
+    "title": "講義原頁 62：機場局部服務與資料廣播",
+    "characters": 80
+  },
+  {
+    "slide": 66,
+    "title": "講義原頁 63：機場局部服務與資料廣播",
+    "characters": 80
+  },
+  {
+    "slide": 67,
+    "title": "自我檢查：機場局部服務與資料廣播",
+    "characters": 166
+  },
+  {
+    "slide": 68,
+    "title": "GPS、INS 與 CNS/ATM",
+    "characters": 239
+  },
+  {
+    "slide": 69,
+    "title": "講義原頁 65：GPS、INS 與 CNS/ATM",
+    "characters": 86
+  },
+  {
+    "slide": 70,
+    "title": "講義原頁 66：GPS、INS 與 CNS/ATM",
+    "characters": 86
+  },
+  {
+    "slide": 71,
+    "title": "自我檢查：GPS、INS 與 CNS/ATM",
+    "characters": 189
+  },
+  {
+    "slide": 72,
+    "title": "整合複述檢查",
+    "characters": 170
+  },
+  {
+    "slide": 73,
+    "title": "來源與後續閱讀",
+    "characters": 319
+  }
+]

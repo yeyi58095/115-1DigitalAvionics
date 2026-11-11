@@ -1,0 +1,434 @@
+
+PAGE 1
+@Ying-Chih Lai, FCU
+Digital Avionics
+航電系統
+Lecture 5
+Prof. Ying-Chih Lai
+
+PAGE 2
+Textbook
+• Reading:
+– Chapter 4: Fly-by-Wire Flight Control
+– Section 4.1~4.5, pp. 179-241
+2
+
+PAGE 3
+@Ying-Chih Lai, FCU
+Fly-by-Wire Flight Control
+
+PAGE 4
+Fly-by-Wire (FBW) Flight Control 
+• The introduction of fly-by-wire (FBW) flight control systems
+has been a watershed development in aircraft evolution as it
+has enabled technical advances to be made which were not
+possible before.
+• One of the unique benefits of a FBW system is the ability to
+exploit aircraft configurations which provide increased
+aerodynamic efficiency, like more lift and lower drag, but at a
+cost of reduced natural stability.
+• The FBW system provides high-integrity automatic
+stabilization of the aircraft to compensate for the loss of
+natural stability and thus enables a lighter aircraft with a better
+overall performance to be produced compared with a
+conventional design.
+4
+
+PAGE 5
+Fly-by-Wire (FBW) Flight Control 
+• Aircraft with FBW flight control systems first came into
+service in the late 1970s using analog implementation. Digital
+FBW systems have been in service since the late 1980s.
+• A major factor has been the development of failure survival
+digital flight control systems and their implementation in VLSI
+microcircuits (Semiconductor).
+• The current generation of civil airliners exploit FBW control,
+such as Airbus A320, A340, A380, and Boeing 777 and 787.
+5
+
+PAGE 6
+Control Mechanic Design
+6
+
+
+PAGE 7
+Control Mechanic Design
+7
+
+
+PAGE 8
+Nature of FBW
+• Aircraft is usually designed with naturally stable system
+structure. As long as speed and attitude can be maintained, it
+can return to stable condition automatically.
+• But for higher performance in military aircraft to escape from
+attacks, aircraft sacrifices naturally stable characteristics for
+better operation and performance. It becomes unstable in
+nature.
+
+PAGE 9
+Performance to Stability
+• Military Aircraft sacrifices natural stability to receive high
+performance.
+• Wing design changes this nature and becomes deterministic to
+overall system characteristics.
+• FBW can overcome the defect and help pilot to maneuver
+aircraft easily  (reducing workload and increasing flight
+safety).
+
+PAGE 10
+Unstable Aircraft
+
+
+PAGE 11
+Unstable Aircraft
+
+
+PAGE 12
+Requirements of FBW
+• FBW system is designed to solve the unstable system problem 
+for high performance aircraft applying control technologies. 
+• Use high speed computer to calculate feedback signals, 
+command terminal actuators via electronic signals for precise 
+and fast decisions to ensure system stability
+• FBW indeed uses electronic signals to replace mechanical 
+levers for fast response.
+
+PAGE 13
+Basic Elements of a FBW Flight Control
+• Eurofighter Typhoon
+13
+Fig. 4.1 Basic elements of a FBW flight control system.
+
+PAGE 14
+Operation of FBW
+• Modern aircraft uses FBW to reduce pilot load in flight control
+• FBW directly combines computer with hardware and software 
+to an integral operation
+NASA's F-8C digital fly-by-wire testbed
+
+PAGE 15
+Enhancement of FBW
+• (1) Enhance the capability to monitor aerodynamic effects and 
+aircraft response
+• (2) Need  less energy to operate aircraft from effective 
+navigation aids
+• (3) Reduce aircraft weight
+• (4) Simplify operation procedure, elevate operation efficiency 
+in flight performance of Pitch, Roll, Yaw, and throttle
+• (5) Ease of Integration of the Autopilot
+
+PAGE 16
+Effect of FBW
+• (1) Signal transmits faster and better to activate actuators more 
+efficiently 
+• (2) Shorten time delay in control command with more precise 
+feedback control 
+• (3) Transparent in control and command process
+• (4) Effective redundant system to avoid fault or failure
+• (5) Install hierarchical computer structure to share analysis and 
+record 
+
+PAGE 17
+Structure of FBW
+• Pilot commands all terminal elements via electronic signals, no 
+actual force is required 
+Hydraulic Actuator
+
+PAGE 18
+Basic Elements of a FBW Flight Control
+• The total elimination of all the complex mechanical control 
+runs and linkages
+• The interposition of a computer between the pilot’s commands 
+and the control surface actuators.
+• The aircraft motion sensors which feed back the components 
+of the aircraft’s angular and linear motion to the computer.
+• The air data sensors which supply height and airspeed 
+information to the computer.
+• Not shown in the figure is the redundancy to enable failures in 
+the system to be absorbed. The flaps can also be continually 
+controlled by the Flight Control Computer.
+18
+
+PAGE 19
+Electrical Data Transmission
+• Electrical transmission of signals and commands is a key
+element in a FBW system. Modern systems use a serial digital
+data transmission system with time division multiplexing.
+• Figure 4.2 shows how a digital flight control system is
+interconnected using a digital data bus.
+• Military FBW generally use the well established Mil Std 1553
+databus system.
+• The Boeing 777 uses the ARINC 629 data bus system.
+19
+
+PAGE 20
+Flight Control System Bus Configuration
+20
+Fig. 4.2 Flight control system bus configuration.
+
+PAGE 21
+Motion Sensing in FBW
+• Rate gyros which measure the angular rates of rotation of the 
+aircraft about its pitch, roll and yaw axes.
+• Linear accelerometers which measure the components of the 
+aircraft’s acceleration along these axes.
+• Air data system outputs altitude and indicated air speed and 
+etc.
+• Air flow sensor measures longitudinal and lateral wing control 
+angle
+
+PAGE 22
+FBW Flight Control System
+Fig. 4.4 Fly by wire flight control system.
+
+PAGE 23
+Inputs for FBW
+• FBW computer inputs signal sources as:
+– Control stick or lever from pilot in electronic signal
+– Sensor measurements for aircraft dynamic signals
+– Air data system output of 7 data as altitude, speed, climb rate, Mach, 
+temperature, etc.
+Fig. 4.5 Integrated air data transducer system (courtesy of BAE Systems).
+
+PAGE 24
+Automatic Control Loop in FBW
+• Automatic feedback control in FBW improves flight 
+performance as:
+– The input/output has no direct cause/effect relationship to system gain 
+– System bandwidth can be controlled by delay controller
+– Appropriate damping effect is added on
+
+PAGE 25
+Controller of FBW
+• Input from control stick by pilots
+• Control stick is the same as joy stick in games, but add on 
+force buffer to avoid overwhelming 
+• Additional spring is attached for virtual force to let pilot “feel” 
+the control stick motion
+
+PAGE 26
+Flight Control Computer
+• The tasks carried out by the computing system comprise:
+– (a) Failure detection.
+– (b) Fault isolation and system reconfiguration in the event 
+of a failure.
+– (c) Computation of the required control surface angles.
+– (d) Monitor aircraft flying in safety region
+– (e) Automatic Built-in Test (BIT) and record
+26
+
+PAGE 27
+FBW Control Sticks/Passive FBW Inceptors
+• A FBW inceptor is defined as a device which translates the
+pilot’s control inputs into electrical signals. They can be
+divided into two basic types – passive and active.
+• The passive type of FBW inceptor provides a fixed stick
+force–stick displacement relationship by means of a
+mechanical spring-box arrangement.
+• The active type of inceptor, in contrast, can provide a wide
+range of stick force–stick displacement characteristics by
+computer control of force motors which back drive the control
+stick.
+27
+
+PAGE 28
+Control Stick of FBW
+Fig. 4.6 FBW control stick/passive FBW 
+inceptor features.
+
+PAGE 29
+Roll Control Response
+• Control responses from control stick
+• These characteristics are carefully tailored to meet the 
+consensus of pilot approval.
+Pitch
+Roll
+
+PAGE 30
+Closed-Loop Control in FBW
+• A well designed closed-loop control system offers the
+following advantages over an open-loop control system:
+– (i) The steady-state output to input relationship is
+substantially independent of changes in the loop gain
+provided this remains sufficiently high.
+– (ii) The system bandwidth is improved and the phase lag
+when following a dynamically varying input is reduced.
+– (iii) A fast well damped response, which is little affected by
+normal changes in the loop gain, can generally be achieved
+by suitable design of the control loop.
+30
+
+PAGE 31
+Closed-Loop Control in FBW
+31
+Fig. 4.7 Roll rate command system.
+
+PAGE 32
+Closed-Loop in Roll Control
+
+
+PAGE 33
+Closed-Loop in Roll Control
+• The open-loop transfer function is
+• The closed-loop response is given by
+DTL
+LP
+RP += 1 1
+DKTK
+K
+DT
+L
+LK
+DT
+L
+LK
+P
+P
+R
+R
+P
+C
+R
+P
+C
+D
+++
+•+=
+++
++=
+11
+1
+1
+11
+1
+
+
+
+PAGE 34
+Closed-Loop in Roll Control
+• Aircraft characteristic parameters are changing with altitude, 
+pressure and speed, when K>1, it becomes 
+1
+1
+1 
++
+
+K
+DTP
+P
+RD
+
+PAGE 35
+Closed-Loop Control in FBW
+35
+Fig. 4.8 Roll rate response.
+
+PAGE 36
+Pitch Rate Command FBW Loop
+36
+
+
+PAGE 37
+Aerodynamics versus ‘Stealth’
+• Stealth considerations and requirements
+can conflict with aerodynamics
+requirements and FBW flight control is
+essential to give acceptable, safe
+handling across the flight envelope.
+• Note ‘flying wing’ configuration and
+absence of vertical surfaces, yaw
+control being achieved by the operation
+of split ailerons.
+37
+Fig. 4.10 Northrop B2 ‘Spirit’ 
+strategic bomber. 
+
+PAGE 38
+Handing Quality 
+• The quality of the handling characteristics and the pilot
+workload are generally expressed in terms of the Cooper–
+Harper scale of ratings from one to ten (Table 1); one being
+excellent and ten the worst qualities possible.
+38
+
+
+PAGE 39
+39
+
+
+PAGE 40
+Redundancy and Failure Survival
+• Clearly the FBW flight control system must be no less safe 
+than the simple mechanical control systems which it replaces. 
+• The safety levels required are specified in terms of the 
+probability of a catastrophic failure occurring in the system 
+from any cause whatsoever which could result in loss of 
+control of the aircraft. 
+• It is generally specified that the probability of a catastrophic 
+failure in the flight control system must not exceed 
+– 1 × 10−7/hour for a military aircraft 
+– 1 × 10−9/hour for a civil aircraft.
+40
+
+PAGE 41
+Redundant Configurations
+41
+
+
+PAGE 42
+Actuators in FBW
+• To ensure stability and reliability for flight control, the
+actuators in the electronic terminals are multiple redundant
+design
+• The operation computer determines which actuator to activate,
+carrying fault detection and recovery, also decide appropriate
+operating cycle and time for each actuator.
+
+PAGE 43
+Quadruplex System Architecture
+43
+
+
+PAGE 44
+Redundant Configurations
+44
+
+
+PAGE 45
+A380 Flight Control Surfaces
+45
+Fig. 4.34 A380 Flight control surfaces (by courtesy of Airbus).
+
+PAGE 46
+A380 Flight Control Surfaces
+46
+Fig. 4.35 A380 flight control system (by courtesy of Airbus).
+
+PAGE 47
+Airbus A380 Flight Control System 
+47
+
+
+PAGE 48
+Flight Control Software Functions
+• The main functions that are carried out by the software for the 
+flight control computers can be divided into three basic areas 
+which have a degree of interaction and comprise:
+1. Redundancy management.
+2. Control laws.
+3. Built-in test.
+48
+
+PAGE 49
+Sensor Consolidation
+• Consolidation of the data from a group of sensors to use a
+single representative value for subsequent computation of the
+control laws.
+• A first-order list of sensors for a typical system is set out in
+Table 4.2 to show the numbers of sensors involved in these
+respective tasks. Most of these sensors would be at quadruplex
+or triplex level redundancy.
+49
+
+PAGE 50

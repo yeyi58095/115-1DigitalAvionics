@@ -1,0 +1,312 @@
+[
+  {
+    "slide": 1,
+    "title": "基礎氣動與縱向靜穩定",
+    "characters": 113
+  },
+  {
+    "slide": 2,
+    "title": "範圍與閱讀方式",
+    "characters": 225
+  },
+  {
+    "slide": 3,
+    "title": "分次閱讀安排",
+    "characters": 154
+  },
+  {
+    "slide": 4,
+    "title": "公式推導與詳解閱讀地圖",
+    "characters": 174
+  },
+  {
+    "slide": 5,
+    "title": "FMS、Autopilot 與 FBW 的層級",
+    "characters": 247
+  },
+  {
+    "slide": 6,
+    "title": "講義原頁 3：FMS、Autopilot 與 FBW 的層級",
+    "characters": 89
+  },
+  {
+    "slide": 7,
+    "title": "講義原頁 6：FMS、Autopilot 與 FBW 的層級",
+    "characters": 89
+  },
+  {
+    "slide": 8,
+    "title": "自我檢查：FMS、Autopilot 與 FBW 的層級",
+    "characters": 165
+  },
+  {
+    "slide": 9,
+    "title": "力的方向與飛行角度",
+    "characters": 219
+  },
+  {
+    "slide": 10,
+    "title": "講義原頁 11：力的方向與飛行角度",
+    "characters": 78
+  },
+  {
+    "slide": 11,
+    "title": "講義原頁 12：力的方向與飛行角度",
+    "characters": 78
+  },
+  {
+    "slide": 12,
+    "title": "自我檢查：力的方向與飛行角度",
+    "characters": 156
+  },
+  {
+    "slide": 13,
+    "title": "升力與阻力的兩種描述",
+    "characters": 275
+  },
+  {
+    "slide": 14,
+    "title": "課本原圖 3.1：翼面壓力分布",
+    "characters": 112
+  },
+  {
+    "slide": 15,
+    "title": "課本原圖 3.2：氣流動量與反作用力",
+    "characters": 122
+  },
+  {
+    "slide": 16,
+    "title": "迎角、姿態與航跡角",
+    "characters": 298
+  },
+  {
+    "slide": 17,
+    "title": "課本原圖 3.3：迎角、升力與阻力方向",
+    "characters": 121
+  },
+  {
+    "slide": 18,
+    "title": "動壓與氣動係數",
+    "characters": 294
+  },
+  {
+    "slide": 19,
+    "title": "升力曲線與失速",
+    "characters": 263
+  },
+  {
+    "slide": 20,
+    "title": "課本原圖 3.4：升阻力係數與迎角",
+    "characters": 116
+  },
+  {
+    "slide": 21,
+    "title": "阻力極線與高升力裝置",
+    "characters": 278
+  },
+  {
+    "slide": 22,
+    "title": "課本原圖 3.5：前緣縫翼與後緣襟翼",
+    "characters": 116
+  },
+  {
+    "slide": 23,
+    "title": "等速平飛與低速限制",
+    "characters": 288
+  },
+  {
+    "slide": 24,
+    "title": "教材算例：低空低速的迎角",
+    "characters": 331
+  },
+  {
+    "slide": 25,
+    "title": "教材算例：速度與可用機動加速度",
+    "characters": 336
+  },
+  {
+    "slide": 26,
+    "title": "壓力中心與氣動中心",
+    "characters": 319
+  },
+  {
+    "slide": 27,
+    "title": "尾翼如何平衡俯仰力矩",
+    "characters": 337
+  },
+  {
+    "slide": 28,
+    "title": "課本原圖 3.6：主翼與尾翼的配平作用",
+    "characters": 119
+  },
+  {
+    "slide": 29,
+    "title": "配平的代價與幾何量提醒",
+    "characters": 290
+  },
+  {
+    "slide": 30,
+    "title": "課本原圖 3.7：機翼與尾翼力矩的疊加",
+    "characters": 117
+  },
+  {
+    "slide": 31,
+    "title": "靜穩定與動穩定",
+    "characters": 261
+  },
+  {
+    "slide": 32,
+    "title": "課本原圖 3.8：穩定、中性與不穩定的類比",
+    "characters": 119
+  },
+  {
+    "slide": 33,
+    "title": "課本原圖 3.9(a)：靜穩定的初始趨勢",
+    "characters": 119
+  },
+  {
+    "slide": 34,
+    "title": "課本原圖 3.9(b)：動穩定的振幅變化",
+    "characters": 119
+  },
+  {
+    "slide": 35,
+    "title": "縱向靜穩定判據",
+    "characters": 232
+  },
+  {
+    "slide": 36,
+    "title": "課本原圖 3.10：俯仰力矩係數的斜率",
+    "characters": 118
+  },
+  {
+    "slide": 37,
+    "title": "靜穩定曲線的讀法",
+    "characters": 174
+  },
+  {
+    "slide": 38,
+    "title": "中性點與靜裕度",
+    "characters": 292
+  },
+  {
+    "slide": 39,
+    "title": "課本原圖 3.11：陣風與自然恢復力矩",
+    "characters": 118
+  },
+  {
+    "slide": 40,
+    "title": "不穩定配置與主動穩定",
+    "characters": 307
+  },
+  {
+    "slide": 41,
+    "title": "課本原圖 3.12：不穩定飛機的配平配置",
+    "characters": 119
+  },
+  {
+    "slide": 42,
+    "title": "課本原圖 3.13：倒著騎自行車的控制類比",
+    "characters": 116
+  },
+  {
+    "slide": 43,
+    "title": "課本原圖 3.14：Tornado 與 FBW Jaguar",
+    "characters": 179
+  },
+  {
+    "slide": 44,
+    "title": "整機穩定性不只由機翼決定",
+    "characters": 267
+  },
+  {
+    "slide": 45,
+    "title": "升力與失速的閱讀限制",
+    "characters": 246
+  },
+  {
+    "slide": 46,
+    "title": "講義原頁 29：升力與失速的閱讀限制",
+    "characters": 79
+  },
+  {
+    "slide": 47,
+    "title": "講義原頁 35：升力與失速的閱讀限制",
+    "characters": 79
+  },
+  {
+    "slide": 48,
+    "title": "自我檢查：升力與失速的閱讀限制",
+    "characters": 156
+  },
+  {
+    "slide": 49,
+    "title": "配平力矩與參考幾何",
+    "characters": 224
+  },
+  {
+    "slide": 50,
+    "title": "講義原頁 42：配平力矩與參考幾何",
+    "characters": 78
+  },
+  {
+    "slide": 51,
+    "title": "講義原頁 45：配平力矩與參考幾何",
+    "characters": 78
+  },
+  {
+    "slide": 52,
+    "title": "自我檢查：配平力矩與參考幾何",
+    "characters": 149
+  },
+  {
+    "slide": 53,
+    "title": "中性點與靜裕度的定義",
+    "characters": 268
+  },
+  {
+    "slide": 54,
+    "title": "講義原頁 57：中性點與靜裕度的定義",
+    "characters": 79
+  },
+  {
+    "slide": 55,
+    "title": "講義原頁 60：中性點與靜裕度的定義",
+    "characters": 79
+  },
+  {
+    "slide": 56,
+    "title": "自我檢查：中性點與靜裕度的定義",
+    "characters": 203
+  },
+  {
+    "slide": 57,
+    "title": "自然穩定與受控穩定",
+    "characters": 206
+  },
+  {
+    "slide": 58,
+    "title": "講義原頁 62：自然穩定與受控穩定",
+    "characters": 78
+  },
+  {
+    "slide": 59,
+    "title": "講義原頁 64：自然穩定與受控穩定",
+    "characters": 78
+  },
+  {
+    "slide": 60,
+    "title": "自我檢查：自然穩定與受控穩定",
+    "characters": 201
+  },
+  {
+    "slide": 61,
+    "title": "整合複述檢查",
+    "characters": 170
+  },
+  {
+    "slide": 62,
+    "title": "來源與後續閱讀",
+    "characters": 319
+  }
+]

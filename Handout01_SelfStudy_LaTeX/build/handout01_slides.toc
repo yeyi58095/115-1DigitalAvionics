@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{閱讀地圖}{2}{0}{1}
+\beamer@sectionintoc {2}{課程與學習地圖}{5}{0}{2}
+\beamer@sectionintoc {3}{航電功能}{7}{0}{3}
+\beamer@sectionintoc {4}{數位訊號}{10}{0}{4}
+\beamer@sectionintoc {5}{導引導航控制}{16}{0}{5}
+\beamer@sectionintoc {6}{飛行任務}{19}{0}{6}
+\beamer@sectionintoc {7}{CNS/ATM}{22}{0}{7}
+\beamer@sectionintoc {8}{複習與整合}{28}{0}{8}
+\beamer@sectionintoc {9}{複習與來源}{31}{0}{9}

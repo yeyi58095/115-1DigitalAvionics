@@ -1,0 +1,272 @@
+[
+  {
+    "slide": 1,
+    "title": "電傳飛控與故障容忍",
+    "characters": 112
+  },
+  {
+    "slide": 2,
+    "title": "範圍與閱讀方式",
+    "characters": 210
+  },
+  {
+    "slide": 3,
+    "title": "分次閱讀安排",
+    "characters": 171
+  },
+  {
+    "slide": 4,
+    "title": "分次閱讀安排（續）",
+    "characters": 142
+  },
+  {
+    "slide": 5,
+    "title": "機械傳動與電子命令",
+    "characters": 207
+  },
+  {
+    "slide": 6,
+    "title": "講義原頁 6：機械傳動與電子命令",
+    "characters": 77
+  },
+  {
+    "slide": 7,
+    "title": "講義原頁 7：機械傳動與電子命令",
+    "characters": 77
+  },
+  {
+    "slide": 8,
+    "title": "自我檢查：機械傳動與電子命令",
+    "characters": 163
+  },
+  {
+    "slide": 9,
+    "title": "放寬自然穩定性的條件",
+    "characters": 220
+  },
+  {
+    "slide": 10,
+    "title": "講義原頁 10：放寬自然穩定性的條件",
+    "characters": 80
+  },
+  {
+    "slide": 11,
+    "title": "講義原頁 11：放寬自然穩定性的條件",
+    "characters": 80
+  },
+  {
+    "slide": 12,
+    "title": "自我檢查：放寬自然穩定性的條件",
+    "characters": 165
+  },
+  {
+    "slide": 13,
+    "title": "FBW 的閉迴路元件",
+    "characters": 217
+  },
+  {
+    "slide": 14,
+    "title": "講義原頁 13：FBW 的閉迴路元件",
+    "characters": 79
+  },
+  {
+    "slide": 15,
+    "title": "講義原頁 17：FBW 的閉迴路元件",
+    "characters": 79
+  },
+  {
+    "slide": 16,
+    "title": "自我檢查：FBW 的閉迴路元件",
+    "characters": 167
+  },
+  {
+    "slide": 17,
+    "title": "資料匯流排與多種輸入",
+    "characters": 219
+  },
+  {
+    "slide": 18,
+    "title": "講義原頁 20：資料匯流排與多種輸入",
+    "characters": 80
+  },
+  {
+    "slide": 19,
+    "title": "講義原頁 22：資料匯流排與多種輸入",
+    "characters": 80
+  },
+  {
+    "slide": 20,
+    "title": "講義原頁 23：資料匯流排與多種輸入",
+    "characters": 80
+  },
+  {
+    "slide": 21,
+    "title": "自我檢查：資料匯流排與多種輸入",
+    "characters": 172
+  },
+  {
+    "slide": 22,
+    "title": "被動與主動操縱桿",
+    "characters": 207
+  },
+  {
+    "slide": 23,
+    "title": "講義原頁 28：被動與主動操縱桿",
+    "characters": 79
+  },
+  {
+    "slide": 24,
+    "title": "講義原頁 29：被動與主動操縱桿",
+    "characters": 79
+  },
+  {
+    "slide": 25,
+    "title": "自我檢查：被動與主動操縱桿",
+    "characters": 157
+  },
+  {
+    "slide": 26,
+    "title": "滾轉角速度命令",
+    "characters": 269
+  },
+  {
+    "slide": 27,
+    "title": "講義原頁 31：滾轉角速度命令",
+    "characters": 77
+  },
+  {
+    "slide": 28,
+    "title": "講義原頁 32：滾轉角速度命令",
+    "characters": 77
+  },
+  {
+    "slide": 29,
+    "title": "自我檢查：滾轉角速度命令",
+    "characters": 157
+  },
+  {
+    "slide": 30,
+    "title": "穩態增益與時間常數",
+    "characters": 242
+  },
+  {
+    "slide": 31,
+    "title": "講義原頁 33：穩態增益與時間常數",
+    "characters": 79
+  },
+  {
+    "slide": 32,
+    "title": "講義原頁 35：穩態增益與時間常數",
+    "characters": 79
+  },
+  {
+    "slide": 33,
+    "title": "自我檢查：穩態增益與時間常數",
+    "characters": 192
+  },
+  {
+    "slide": 34,
+    "title": "任務表現與飛行員補償",
+    "characters": 226
+  },
+  {
+    "slide": 35,
+    "title": "講義原頁 37：任務表現與飛行員補償",
+    "characters": 79
+  },
+  {
+    "slide": 36,
+    "title": "講義原頁 39：任務表現與飛行員補償",
+    "characters": 79
+  },
+  {
+    "slide": 37,
+    "title": "自我檢查：任務表現與飛行員補償",
+    "characters": 164
+  },
+  {
+    "slide": 38,
+    "title": "故障機率與備援假設",
+    "characters": 213
+  },
+  {
+    "slide": 39,
+    "title": "講義原頁 41：故障機率與備援假設",
+    "characters": 79
+  },
+  {
+    "slide": 40,
+    "title": "自我檢查：故障機率與備援假設",
+    "characters": 155
+  },
+  {
+    "slide": 41,
+    "title": "四重架構與致動器",
+    "characters": 205
+  },
+  {
+    "slide": 42,
+    "title": "講義原頁 43：四重架構與致動器",
+    "characters": 78
+  },
+  {
+    "slide": 43,
+    "title": "講義原頁 44：四重架構與致動器",
+    "characters": 78
+  },
+  {
+    "slide": 44,
+    "title": "自我檢查：四重架構與致動器",
+    "characters": 152
+  },
+  {
+    "slide": 45,
+    "title": "A380 舵面與系統分配",
+    "characters": 213
+  },
+  {
+    "slide": 46,
+    "title": "講義原頁 45：A380 舵面與系統分配",
+    "characters": 81
+  },
+  {
+    "slide": 47,
+    "title": "講義原頁 46：A380 舵面與系統分配",
+    "characters": 81
+  },
+  {
+    "slide": 48,
+    "title": "講義原頁 47：A380 舵面與系統分配",
+    "characters": 81
+  },
+  {
+    "slide": 49,
+    "title": "自我檢查：A380 舵面與系統分配",
+    "characters": 154
+  },
+  {
+    "slide": 50,
+    "title": "控制律、備援管理與 BIT",
+    "characters": 242
+  },
+  {
+    "slide": 51,
+    "title": "講義原頁 50：控制律、備援管理與 BIT",
+    "characters": 85
+  },
+  {
+    "slide": 52,
+    "title": "自我檢查：控制律、備援管理與 BIT",
+    "characters": 201
+  },
+  {
+    "slide": 53,
+    "title": "整合複述檢查",
+    "characters": 170
+  },
+  {
+    "slide": 54,
+    "title": "來源與後續閱讀",
+    "characters": 319
+  }
+]

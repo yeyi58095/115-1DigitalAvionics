@@ -1,0 +1,402 @@
+[
+  {
+    "slide": 1,
+    "title": "慣性感測、姿態與整合導航",
+    "characters": 115
+  },
+  {
+    "slide": 2,
+    "title": "範圍與閱讀方式",
+    "characters": 213
+  },
+  {
+    "slide": 3,
+    "title": "分次閱讀安排",
+    "characters": 184
+  },
+  {
+    "slide": 4,
+    "title": "分次閱讀安排（續）",
+    "characters": 197
+  },
+  {
+    "slide": 5,
+    "title": "分次閱讀安排（續）",
+    "characters": 112
+  },
+  {
+    "slide": 6,
+    "title": "導航狀態與導引命令",
+    "characters": 210
+  },
+  {
+    "slide": 7,
+    "title": "講義原頁 8：導航狀態與導引命令",
+    "characters": 75
+  },
+  {
+    "slide": 8,
+    "title": "講義原頁 9：導航狀態與導引命令",
+    "characters": 75
+  },
+  {
+    "slide": 9,
+    "title": "自我檢查：導航狀態與導引命令",
+    "characters": 160
+  },
+  {
+    "slide": 10,
+    "title": "外部導航與航向參考",
+    "characters": 260
+  },
+  {
+    "slide": 11,
+    "title": "講義原頁 11：外部導航與航向參考",
+    "characters": 78
+  },
+  {
+    "slide": 12,
+    "title": "講義原頁 20：外部導航與航向參考",
+    "characters": 78
+  },
+  {
+    "slide": 13,
+    "title": "講義原頁 21：外部導航與航向參考",
+    "characters": 78
+  },
+  {
+    "slide": 14,
+    "title": "自我檢查：外部導航與航向參考",
+    "characters": 166
+  },
+  {
+    "slide": 15,
+    "title": "平台式與捷聯式 INS",
+    "characters": 214
+  },
+  {
+    "slide": 16,
+    "title": "講義原頁 24：平台式與捷聯式 INS",
+    "characters": 82
+  },
+  {
+    "slide": 17,
+    "title": "講義原頁 26：平台式與捷聯式 INS",
+    "characters": 82
+  },
+  {
+    "slide": 18,
+    "title": "講義原頁 27：平台式與捷聯式 INS",
+    "characters": 82
+  },
+  {
+    "slide": 19,
+    "title": "自我檢查：平台式與捷聯式 INS",
+    "characters": 155
+  },
+  {
+    "slide": 20,
+    "title": "角速度、比力與初始條件",
+    "characters": 215
+  },
+  {
+    "slide": 21,
+    "title": "講義原頁 30：角速度、比力與初始條件",
+    "characters": 81
+  },
+  {
+    "slide": 22,
+    "title": "自我檢查：角速度、比力與初始條件",
+    "characters": 180
+  },
+  {
+    "slide": 23,
+    "title": "MEMS 振動式陀螺儀",
+    "characters": 216
+  },
+  {
+    "slide": 24,
+    "title": "講義原頁 37：MEMS 振動式陀螺儀",
+    "characters": 81
+  },
+  {
+    "slide": 25,
+    "title": "講義原頁 38：MEMS 振動式陀螺儀",
+    "characters": 81
+  },
+  {
+    "slide": 26,
+    "title": "自我檢查：MEMS 振動式陀螺儀",
+    "characters": 174
+  },
+  {
+    "slide": 27,
+    "title": "RLG、FOG 與 Sagnac 效應",
+    "characters": 276
+  },
+  {
+    "slide": 28,
+    "title": "講義原頁 43：RLG、FOG 與 Sagnac 效應",
+    "characters": 89
+  },
+  {
+    "slide": 29,
+    "title": "講義原頁 45：RLG、FOG 與 Sagnac 效應",
+    "characters": 89
+  },
+  {
+    "slide": 30,
+    "title": "講義原頁 48：RLG、FOG 與 Sagnac 效應",
+    "characters": 89
+  },
+  {
+    "slide": 31,
+    "title": "自我檢查：RLG、FOG 與 Sagnac 效應",
+    "characters": 201
+  },
+  {
+    "slide": 32,
+    "title": "質量彈簧與比力量測",
+    "characters": 227
+  },
+  {
+    "slide": 33,
+    "title": "講義原頁 50：質量彈簧與比力量測",
+    "characters": 78
+  },
+  {
+    "slide": 34,
+    "title": "講義原頁 56：質量彈簧與比力量測",
+    "characters": 78
+  },
+  {
+    "slide": 35,
+    "title": "講義原頁 57：質量彈簧與比力量測",
+    "characters": 78
+  },
+  {
+    "slide": 36,
+    "title": "自我檢查：質量彈簧與比力量測",
+    "characters": 189
+  },
+  {
+    "slide": 37,
+    "title": "偏差如何變成導航誤差",
+    "characters": 239
+  },
+  {
+    "slide": 38,
+    "title": "講義原頁 60：偏差如何變成導航誤差",
+    "characters": 80
+  },
+  {
+    "slide": 39,
+    "title": "講義原頁 61：偏差如何變成導航誤差",
+    "characters": 80
+  },
+  {
+    "slide": 40,
+    "title": "自我檢查：偏差如何變成導航誤差",
+    "characters": 212
+  },
+  {
+    "slide": 41,
+    "title": "ISA、IMU 與 INS",
+    "characters": 217
+  },
+  {
+    "slide": 42,
+    "title": "講義原頁 62：ISA、IMU 與 INS",
+    "characters": 82
+  },
+  {
+    "slide": 43,
+    "title": "自我檢查：ISA、IMU 與 INS",
+    "characters": 167
+  },
+  {
+    "slide": 44,
+    "title": "Euler 角的奇異性",
+    "characters": 213
+  },
+  {
+    "slide": 45,
+    "title": "講義原頁 64：Euler 角的奇異性",
+    "characters": 80
+  },
+  {
+    "slide": 46,
+    "title": "自我檢查：Euler 角的奇異性",
+    "characters": 169
+  },
+  {
+    "slide": 47,
+    "title": "四元數與單位範數",
+    "characters": 213
+  },
+  {
+    "slide": 48,
+    "title": "講義原頁 65：四元數與單位範數",
+    "characters": 77
+  },
+  {
+    "slide": 49,
+    "title": "講義原頁 67：四元數與單位範數",
+    "characters": 77
+  },
+  {
+    "slide": 50,
+    "title": "自我檢查：四元數與單位範數",
+    "characters": 202
+  },
+  {
+    "slide": 51,
+    "title": "機體到 NED 的方向餘弦矩陣",
+    "characters": 207
+  },
+  {
+    "slide": 52,
+    "title": "講義原頁 71：機體到 NED 的方向餘弦矩陣",
+    "characters": 84
+  },
+  {
+    "slide": 53,
+    "title": "講義原頁 72：機體到 NED 的方向餘弦矩陣",
+    "characters": 84
+  },
+  {
+    "slide": 54,
+    "title": "自我檢查：機體到 NED 的方向餘弦矩陣",
+    "characters": 187
+  },
+  {
+    "slide": 55,
+    "title": "地理緯度與地心緯度",
+    "characters": 236
+  },
+  {
+    "slide": 56,
+    "title": "講義原頁 75：地理緯度與地心緯度",
+    "characters": 79
+  },
+  {
+    "slide": 57,
+    "title": "自我檢查：地理緯度與地心緯度",
+    "characters": 155
+  },
+  {
+    "slide": 58,
+    "title": "比力、重力與旋轉修正",
+    "characters": 221
+  },
+  {
+    "slide": 59,
+    "title": "講義原頁 76：比力、重力與旋轉修正",
+    "characters": 80
+  },
+  {
+    "slide": 60,
+    "title": "講義原頁 79：比力、重力與旋轉修正",
+    "characters": 80
+  },
+  {
+    "slide": 61,
+    "title": "自我檢查：比力、重力與旋轉修正",
+    "characters": 188
+  },
+  {
+    "slide": 62,
+    "title": "位置初始化、對準及姿態顯示",
+    "characters": 215
+  },
+  {
+    "slide": 63,
+    "title": "講義原頁 83：位置初始化、對準及姿態顯示",
+    "characters": 83
+  },
+  {
+    "slide": 64,
+    "title": "講義原頁 87：位置初始化、對準及姿態顯示",
+    "characters": 83
+  },
+  {
+    "slide": 65,
+    "title": "自我檢查：位置初始化、對準及姿態顯示",
+    "characters": 155
+  },
+  {
+    "slide": 66,
+    "title": "地速分量與經緯度積分",
+    "characters": 224
+  },
+  {
+    "slide": 67,
+    "title": "講義原頁 90：地速分量與經緯度積分",
+    "characters": 79
+  },
+  {
+    "slide": 68,
+    "title": "講義原頁 92：地速分量與經緯度積分",
+    "characters": 79
+  },
+  {
+    "slide": 69,
+    "title": "自我檢查：地速分量與經緯度積分",
+    "characters": 215
+  },
+  {
+    "slide": 70,
+    "title": "外部輔助與 Kalman 濾波概念",
+    "characters": 221
+  },
+  {
+    "slide": 71,
+    "title": "講義原頁 95：外部輔助與 Kalman 濾波概念",
+    "characters": 86
+  },
+  {
+    "slide": 72,
+    "title": "講義原頁 97：外部輔助與 Kalman 濾波概念",
+    "characters": 86
+  },
+  {
+    "slide": 73,
+    "title": "自我檢查：外部輔助與 Kalman 濾波概念",
+    "characters": 172
+  },
+  {
+    "slide": 74,
+    "title": "頻率分工與時間常數",
+    "characters": 237
+  },
+  {
+    "slide": 75,
+    "title": "講義原頁 100：頻率分工與時間常數",
+    "characters": 80
+  },
+  {
+    "slide": 76,
+    "title": "講義原頁 101：頻率分工與時間常數",
+    "characters": 80
+  },
+  {
+    "slide": 77,
+    "title": "講義原頁 102：頻率分工與時間常數",
+    "characters": 80
+  },
+  {
+    "slide": 78,
+    "title": "自我檢查：頻率分工與時間常數",
+    "characters": 176
+  },
+  {
+    "slide": 79,
+    "title": "整合複述檢查",
+    "characters": 170
+  },
+  {
+    "slide": 80,
+    "title": "來源與後續閱讀",
+    "characters": 319
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "source": "CA7528_Digital Avionics Handout #3_20260923_update.pdf",
+  "pdf_pages": 65,
+  "handout_pages": [
+    3,
+    6,
+    11,
+    12,
+    29,
+    35,
+    42,
+    45,
+    57,
+    60,
+    62,
+    64
+  ],
+  "textbook_figures": [
+    "fig-3-01.png",
+    "fig-3-02.png",
+    "fig-3-03.png",
+    "fig-3-04.png",
+    "fig-3-05.png",
+    "fig-3-06.png",
+    "fig-3-07.png",
+    "fig-3-08.png",
+    "fig-3-09a.png",
+    "fig-3-09b.png",
+    "fig-3-10.png",
+    "fig-3-11.png",
+    "fig-3-12.png",
+    "fig-3-13.png",
+    "fig-3-14.png"
+  ]
+}

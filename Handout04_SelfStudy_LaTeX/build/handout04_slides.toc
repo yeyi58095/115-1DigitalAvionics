@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{閱讀地圖}{2}{0}{1}
+\beamer@sectionintoc {2}{講義導讀}{5}{0}{2}
+\beamer@sectionintoc {3}{3.4 運動方程與氣動導數}{9}{0}{3}
+\beamer@sectionintoc {4}{3.5 縱向控制與響應}{39}{0}{4}
+\beamer@sectionintoc {5}{3.6 橫向控制}{64}{0}{5}
+\beamer@sectionintoc {6}{3.7 動力操縱與 PCU}{76}{0}{6}
+\beamer@sectionintoc {7}{3.8 穩定增強系統}{83}{0}{7}
+\beamer@sectionintoc {8}{講義核對}{97}{0}{8}
+\beamer@sectionintoc {9}{算例與響應}{112}{0}{9}
+\beamer@sectionintoc {10}{講義核對}{116}{0}{10}
+\beamer@sectionintoc {11}{複習與來源}{120}{0}{11}

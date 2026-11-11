@@ -1,0 +1,607 @@
+[
+  {
+    "slide": 1,
+    "title": "飛機動力學、線性模型與增穩",
+    "characters": 117
+  },
+  {
+    "slide": 2,
+    "title": "範圍與閱讀方式",
+    "characters": 233
+  },
+  {
+    "slide": 3,
+    "title": "分次閱讀安排",
+    "characters": 153
+  },
+  {
+    "slide": 4,
+    "title": "公式推導與詳解閱讀地圖",
+    "characters": 261
+  },
+  {
+    "slide": 5,
+    "title": "模型與飛行品質的關係",
+    "characters": 232
+  },
+  {
+    "slide": 6,
+    "title": "講義原頁 6：模型與飛行品質的關係",
+    "characters": 77
+  },
+  {
+    "slide": 7,
+    "title": "講義原頁 9：模型與飛行品質的關係",
+    "characters": 77
+  },
+  {
+    "slide": 8,
+    "title": "自我檢查：模型與飛行品質的關係",
+    "characters": 162
+  },
+  {
+    "slide": 9,
+    "title": "六自由度與機體座標",
+    "characters": 268
+  },
+  {
+    "slide": 10,
+    "title": "課本原圖 3.15：機體軸、速度與操縱面",
+    "characters": 123
+  },
+  {
+    "slide": 11,
+    "title": "旋轉座標系中的加速度",
+    "characters": 280
+  },
+  {
+    "slide": 12,
+    "title": "課本原圖 3.16：座標旋轉造成的速度變化",
+    "characters": 123
+  },
+  {
+    "slide": 13,
+    "title": "Euler 角與旋轉次序",
+    "characters": 277
+  },
+  {
+    "slide": 14,
+    "title": "課本原圖 3.17：Euler 姿態角",
+    "characters": 120
+  },
+  {
+    "slide": 15,
+    "title": "Euler 角速度的反解",
+    "characters": 309
+  },
+  {
+    "slide": 16,
+    "title": "小擾動線性化的起點",
+    "characters": 300
+  },
+  {
+    "slide": 17,
+    "title": "課本原圖 3.18：飛機受到的外力",
+    "characters": 119
+  },
+  {
+    "slide": 18,
+    "title": "小擾動力與力矩方程",
+    "characters": 321
+  },
+  {
+    "slide": 19,
+    "title": "課本原圖 3.19：氣動力、推力與重力分量",
+    "characters": 121
+  },
+  {
+    "slide": 20,
+    "title": "氣動導數就是局部偏導數",
+    "characters": 299
+  },
+  {
+    "slide": 21,
+    "title": "導數的單位與角度轉換",
+    "characters": 313
+  },
+  {
+    "slide": 22,
+    "title": "縱向導數：速度與迎角的作用",
+    "characters": 272
+  },
+  {
+    "slide": 23,
+    "title": "俯仰阻尼的來源",
+    "characters": 273
+  },
+  {
+    "slide": 24,
+    "title": "課本原圖 3.20：俯仰率造成的尾翼阻尼",
+    "characters": 123
+  },
+  {
+    "slide": 25,
+    "title": "下洗延遲與控制導數",
+    "characters": 304
+  },
+  {
+    "slide": 26,
+    "title": "側滑力與風向標穩定",
+    "characters": 309
+  },
+  {
+    "slide": 27,
+    "title": "課本原圖 3.21：側滑與側向力",
+    "characters": 119
+  },
+  {
+    "slide": 28,
+    "title": "側滑如何產生滾轉",
+    "characters": 280
+  },
+  {
+    "slide": 29,
+    "title": "課本原圖 3.22：上反角與側滑的作用",
+    "characters": 120
+  },
+  {
+    "slide": 30,
+    "title": "角速度導數與橫向耦合",
+    "characters": 278
+  },
+  {
+    "slide": 31,
+    "title": "課本原圖 3.23：滾轉率造成的阻尼力矩",
+    "characters": 123
+  },
+  {
+    "slide": 32,
+    "title": "副翼與方向舵的控制導數",
+    "characters": 286
+  },
+  {
+    "slide": 33,
+    "title": "縱向與橫向何時可以分開？",
+    "characters": 285
+  },
+  {
+    "slide": 34,
+    "title": "完整線性縱向方程",
+    "characters": 332
+  },
+  {
+    "slide": 35,
+    "title": "縱向狀態空間模型",
+    "characters": 327
+  },
+  {
+    "slide": 36,
+    "title": "橫向狀態空間模型",
+    "characters": 308
+  },
+  {
+    "slide": 37,
+    "title": "由模型計算響應與模態",
+    "characters": 300
+  },
+  {
+    "slide": 38,
+    "title": "本單元自我檢查",
+    "characters": 251
+  },
+  {
+    "slide": 39,
+    "title": "升降舵輸入如何改變飛行路徑",
+    "characters": 278
+  },
+  {
+    "slide": 40,
+    "title": "課本原圖 3.24：縱向機動的建立過程",
+    "characters": 119
+  },
+  {
+    "slide": 41,
+    "title": "桿力每 g 與人工力感",
+    "characters": 301
+  },
+  {
+    "slide": 42,
+    "title": "完整縱向響應的兩個時間尺度",
+    "characters": 305
+  },
+  {
+    "slide": 43,
+    "title": "課本原圖 3.25：短週期與長週期響應",
+    "characters": 118
+  },
+  {
+    "slide": 44,
+    "title": "短週期近似的假設",
+    "characters": 270
+  },
+  {
+    "slide": 45,
+    "title": "課本原圖 3.26：穩定軸下的縱向力與力矩",
+    "characters": 118
+  },
+  {
+    "slide": 46,
+    "title": "正負號統一：帶符號導數與正大小值",
+    "characters": 337
+  },
+  {
+    "slide": 47,
+    "title": "課本原圖 3.27：俯仰運動的方塊圖",
+    "characters": 123
+  },
+  {
+    "slide": 48,
+    "title": "課本原圖 3.28：迎角運動的方塊圖",
+    "characters": 121
+  },
+  {
+    "slide": 49,
+    "title": "消去迎角，得到俯仰角速度傳遞函數",
+    "characters": 336
+  },
+  {
+    "slide": 50,
+    "title": "課本原圖 3.29：一般負回授關係",
+    "characters": 119
+  },
+  {
+    "slide": 51,
+    "title": "保留直接尾翼力時會改變什麼？",
+    "characters": 318
+  },
+  {
+    "slide": 52,
+    "title": "與教材時間常數寫法的對照",
+    "characters": 272
+  },
+  {
+    "slide": 53,
+    "title": "課本原圖 3.30：簡化後的縱向回授模型",
+    "characters": 119
+  },
+  {
+    "slide": 54,
+    "title": "課本原圖 3.31：俯仰率與迎角的傳遞關係",
+    "characters": 126
+  },
+  {
+    "slide": 55,
+    "title": "二階極點、自然頻率與阻尼比",
+    "characters": 330
+  },
+  {
+    "slide": 56,
+    "title": "課本原圖 3.32：二階系統的自由響應",
+    "characters": 126
+  },
+  {
+    "slide": 57,
+    "title": "穩態增益與短週期模型的界線",
+    "characters": 293
+  },
+  {
+    "slide": 58,
+    "title": "短週期算例：已知資料與近似",
+    "characters": 328
+  },
+  {
+    "slide": 59,
+    "title": "短週期算例：由每 g 資料估計導數",
+    "characters": 341
+  },
+  {
+    "slide": 60,
+    "title": "短週期算例：逐項重算係數",
+    "characters": 325
+  },
+  {
+    "slide": 61,
+    "title": "短週期算例：教材值與重算值",
+    "characters": 290
+  },
+  {
+    "slide": 62,
+    "title": "過衝公式的適用範圍",
+    "characters": 303
+  },
+  {
+    "slide": 63,
+    "title": "同一組極點，兩種不同階躍響應",
+    "characters": 253
+  },
+  {
+    "slide": 64,
+    "title": "坡度轉彎的力平衡",
+    "characters": 280
+  },
+  {
+    "slide": 65,
+    "title": "課本原圖 3.33：協調水平轉彎的受力",
+    "characters": 110
+  },
+  {
+    "slide": 66,
+    "title": "轉彎算例與數值核對",
+    "characters": 299
+  },
+  {
+    "slide": 67,
+    "title": "協調轉彎需要哪些輸入？",
+    "characters": 256
+  },
+  {
+    "slide": 68,
+    "title": "純滾轉的一階近似",
+    "characters": 288
+  },
+  {
+    "slide": 69,
+    "title": "課本原圖 3.34：副翼階躍與滾轉率",
+    "characters": 114
+  },
+  {
+    "slide": 70,
+    "title": "滾轉率與坡度是不同的輸出",
+    "characters": 216
+  },
+  {
+    "slide": 71,
+    "title": "方向舵的主要任務",
+    "characters": 244
+  },
+  {
+    "slide": 72,
+    "title": "純偏航模型的角度符號",
+    "characters": 293
+  },
+  {
+    "slide": 73,
+    "title": "偏航振盪的自然頻率與阻尼",
+    "characters": 308
+  },
+  {
+    "slide": 74,
+    "title": "Dutch roll 、滾轉衰減與螺旋模態",
+    "characters": 288
+  },
+  {
+    "slide": 75,
+    "title": "橫向模型階數的核對",
+    "characters": 355
+  },
+  {
+    "slide": 76,
+    "title": "Power Control Unit 的作用",
+    "characters": 286
+  },
+  {
+    "slide": 77,
+    "title": "課本原圖 3.35：機械傳令的動力操縱系統",
+    "characters": 144
+  },
+  {
+    "slide": 78,
+    "title": "PCU 的力量與獨立供應",
+    "characters": 285
+  },
+  {
+    "slide": 79,
+    "title": "PCU 位置回授的幾何關係",
+    "characters": 270
+  },
+  {
+    "slide": 80,
+    "title": "課本原圖 3.36：PCU 閥口與活塞回授",
+    "characters": 124
+  },
+  {
+    "slide": 81,
+    "title": "液壓流量如何形成一階模型",
+    "characters": 271
+  },
+  {
+    "slide": 82,
+    "title": "PCU 傳遞函數、頻寬與相位",
+    "characters": 323
+  },
+  {
+    "slide": 83,
+    "title": "SAS 以回授建立額外阻尼",
+    "characters": 323
+  },
+  {
+    "slide": 84,
+    "title": "課本原圖 3.37：簡單穩定增強系統",
+    "characters": 116
+  },
+  {
+    "slide": 85,
+    "title": "有限權限的意義",
+    "characters": 280
+  },
+  {
+    "slide": 86,
+    "title": "Wash-out 為何讓偏航阻尼器不抵抗轉彎？",
+    "characters": 309
+  },
+  {
+    "slide": 87,
+    "title": "課本原圖 3.38：洗出與高頻截止的頻率特性",
+    "characters": 124
+  },
+  {
+    "slide": 88,
+    "title": "結構模態、濾波與增益排程",
+    "characters": 275
+  },
+  {
+    "slide": 89,
+    "title": "俯仰 SAS 的閉迴路推導",
+    "characters": 330
+  },
+  {
+    "slide": 90,
+    "title": "課本原圖 3.39：俯仰率增穩回路",
+    "characters": 114
+  },
+  {
+    "slide": 91,
+    "title": "SAS 算例：教材的設計鏈",
+    "characters": 291
+  },
+  {
+    "slide": 92,
+    "title": "SAS 算例：依重算模型重新設計",
+    "characters": 345
+  },
+  {
+    "slide": 93,
+    "title": "極點改善不等於所有輸出都同樣改善",
+    "characters": 312
+  },
+  {
+    "slide": 94,
+    "title": "課本原圖 3.40：加入增穩前後的響應",
+    "characters": 126
+  },
+  {
+    "slide": 95,
+    "title": "全權限 SAS 與三重冗餘",
+    "characters": 289
+  },
+  {
+    "slide": 96,
+    "title": "固定翼單元的整合檢查",
+    "characters": 292
+  },
+  {
+    "slide": 97,
+    "title": "角速度與 Euler 角變化率",
+    "characters": 210
+  },
+  {
+    "slide": 98,
+    "title": "講義原頁 16：角速度與 Euler 角變化率",
+    "characters": 85
+  },
+  {
+    "slide": 99,
+    "title": "講義原頁 17：角速度與 Euler 角變化率",
+    "characters": 85
+  },
+  {
+    "slide": 100,
+    "title": "自我檢查：角速度與 Euler 角變化率",
+    "characters": 191
+  },
+  {
+    "slide": 101,
+    "title": "剛體假設與慣性乘積",
+    "characters": 227
+  },
+  {
+    "slide": 102,
+    "title": "講義原頁 27：剛體假設與慣性乘積",
+    "characters": 80
+  },
+  {
+    "slide": 103,
+    "title": "講義原頁 29：剛體假設與慣性乘積",
+    "characters": 80
+  },
+  {
+    "slide": 104,
+    "title": "自我檢查：剛體假設與慣性乘積",
+    "characters": 194
+  },
+  {
+    "slide": 105,
+    "title": "控制面也會產生力",
+    "characters": 224
+  },
+  {
+    "slide": 106,
+    "title": "講義原頁 44：控制面也會產生力",
+    "characters": 79
+  },
+  {
+    "slide": 107,
+    "title": "自我檢查：控制面也會產生力",
+    "characters": 173
+  },
+  {
+    "slide": 108,
+    "title": "狀態空間中的輸出與可量測性",
+    "characters": 235
+  },
+  {
+    "slide": 109,
+    "title": "講義原頁 51：狀態空間中的輸出與可量測性",
+    "characters": 84
+  },
+  {
+    "slide": 110,
+    "title": "講義原頁 59：狀態空間中的輸出與可量測性",
+    "characters": 84
+  },
+  {
+    "slide": 111,
+    "title": "自我檢查：狀態空間中的輸出與可量測性",
+    "characters": 179
+  },
+  {
+    "slide": 112,
+    "title": "二階分母與傳遞函數",
+    "characters": 217
+  },
+  {
+    "slide": 113,
+    "title": "講義原頁 60：二階分母與傳遞函數",
+    "characters": 81
+  },
+  {
+    "slide": 114,
+    "title": "講義原頁 65：二階分母與傳遞函數",
+    "characters": 81
+  },
+  {
+    "slide": 115,
+    "title": "自我檢查：二階分母與傳遞函數",
+    "characters": 195
+  },
+  {
+    "slide": 116,
+    "title": "SAS 的阻尼方向",
+    "characters": 244
+  },
+  {
+    "slide": 117,
+    "title": "講義原頁 67：SAS 的阻尼方向",
+    "characters": 80
+  },
+  {
+    "slide": 118,
+    "title": "講義原頁 68：SAS 的阻尼方向",
+    "characters": 80
+  },
+  {
+    "slide": 119,
+    "title": "自我檢查：SAS 的阻尼方向",
+    "characters": 190
+  },
+  {
+    "slide": 120,
+    "title": "整合複述檢查",
+    "characters": 172
+  },
+  {
+    "slide": 121,
+    "title": "來源與後續閱讀",
+    "characters": 321
+  }
+]

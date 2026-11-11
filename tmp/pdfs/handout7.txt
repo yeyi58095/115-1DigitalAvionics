@@ -1,0 +1,807 @@
+
+PAGE 1
+@Ying-Chih Lai, FCU
+Digital Avionics
+航電系統
+Lecture 7
+Prof. Ying-Chih Lai
+
+PAGE 2
+Textbook
+• Reading:
+– Chapter 6: Navigation Systems 
+– Section 6.1~6.6, pp. 303-372
+2
+
+PAGE 3
+@Ying-Chih Lai, FCU
+Global Positioning System
+
+PAGE 4
+Satellite Navigation System
+• U.S. Navy and Air Force programs combined to 
+become GPS
+– Basic architecture approved in 1973
+– 1st satellite launch in 1978
+– Fully operational in 1994 (22 years!)
+• Other satellite navigation systems
+– GLONASS (Russia), Galileo (EU), Compass (China)
+• Called Global Navigation Satellite System (GNSS)
+
+PAGE 5
+Satellite Navigation System
+• Global coverage(全球覆蓋) achieved by
+– a satellite constellation of 20–30 Medium Earth Orbit 
+(MEO) satellites spread between several orbital planes
+– orbital inclinations of >50°
+– orbital periods of roughly 12 hours 
+– at an altitude of about 20,000 Km
+
+
+PAGE 6
+GPS Orbit Trajectory
+6
+
+
+PAGE 7
+GPS Satellite Deployment
+
+
+PAGE 8
+Orbits of MEO Satellite Navigation Systems
+
+
+PAGE 9
+Current status of GNSS
+• Operational (In order of first launch year)
+– GPS (US, 1978)
+• Operational since 1978 and globally available since 1994
+• GPS is currently the world’s most utilized satellite navigation system.
+– GLONASS (Russia, 1982)
+• Fully functional navigation constellation in 1995
+• After the collapse of the Soviet Union (1991), it fell into disrepair
+• It was recovered and restored in 2011
+– BeiDou (China, 2000)
+• A 16-satellite regional version (covering Asia and Pacific area) was completed by 
+December 2012.
+• Global service was completed by December 2018.
+• On 23 June 2020, the BDS-3 constellation deployment is fully completed after the 
+last satellite was successfully launched.
+– Galileo (EU, 2005)
+• Galileo became operational on 15 December 2016 (global Early Operational 
+Capability (EOC))
+• he full Galileo constellation consists of 24 active satellites, the last of which was 
+launched in December 2021.
+• The system is intended primarily for civilian use
+
+PAGE 10
+Launched GNSS satellites 1978 to 2014 
+Time (year)
+number of satellites 
+
+PAGE 11
+First Rocket Lunch by Country
+• First Lunch
+11
+First launch by country
+Order Country Date of first launch Rocket Satellite
+1  Soviet Union 4 October 1957 Sputnik-PS Sputnik 1
+2  United States 1 February 1958 Juno I Explorer 1
+3  France 26 November 1965 Diamant-A Astérix
+4  Japan 11 February 1970 Lambda-4S Ōsumi
+5  China 24 April 1970 Long March 1 Dong Fang Hong I
+6  United Kingdom 28 October 1971 Black Arrow Prospero
+7  India 18 July 1980 SLV Rohini
+8  Israel 19 September 1988 Shavit Ofeq 1
+—  Russia 21 January 1992 Soyuz-U Kosmos 2175
+—  Ukraine 13 July 1992 Tsyklon-3 Strela
+9  Iran 2 February 2009 Safir-1 Omid
+10  North Korea 12 December 2012 Unha-3 Kwangmyŏngsŏng-3 Unit 2
+—  South Korea 30 January 2013 Naro-1 STSAT-2C
+
+
+PAGE 12
+Overview of GNSS
+System GPS GLONASS
+Political 
+entity United States Russian Federation
+Coding CDMA FDMA & CDMA
+Orbital 
+height 20,180 km (12,540 mi) 19,130 km (11,890 mi)
+Period 11.97 hours (11 h58 m) 11.26 hours (11 h16 m)
+Evolution
+per sidereal 
+day
+2 17/8
+Number of
+satellites
+31
+24 by design
+24 by design
+24 operational
+1 commissioning
+1 in flight tests
+Frequency
+1.57542 GHz 
+(L1 signal)
+1.2276 GHz (L2 signal)
+Around 1.602 GHz (SP)
+Around 1.246 GHz (SP)
+Status Operational Operational
+Precision 5m (no DGPS or WAAS) 4.5m – 7.4m
+System BeiDou Galileo GLONASS GPS NAVIC QZSS
+Owner China European Union Russia United States India Japan
+Coverage Global Global by 2020 Global Global Regional Regional
+Coding CDMA CDMA FDMA & CDMA CDMA CDMA CDMA
+Altitude 21,150 km (13,140 mi) (MEO) 23,222 km (14,429 mi) 19,130 km (11,890 mi) 20,180 km (12,540 mi) 36,000 km (22,000 mi)
+32,600 km 
+(20,300 mi) –
+39,000 km 
+(24,000 mi)
+Period 12.63 h (12 h 38 min) (MEO) 14.08 h (14 h 5 min) 11.26 h (11 h 16 min) 11.97 h (11 h 58 min) 23.93 h (23 h 56 min) 23.93 h (23 h 56 min)
+Rev./S. day 13/7 (1.86) 17/10 (1.7) 17/8 (2.125) 2 1 1
+Satellites
+BeiDou-3:
+30 by design
+35 operational
+BeiDou-2:
+16 operational
+24 in orbit
+26 operational
+24 operational
+1 spare
+24 by design
+30 operational
+7 by design
+3 operational
+4 operational (3 
+GSO, 1 GEO)
+7 in the future
+Frequency
+1.561098 GHz (B1)
+1.589742 GHz (B1-2)
+1.20714 GHz (B2)
+1.26852 GHz (B3)
+1.559–1.592 GHz 
+(E1)1.164–
+1.215 GHz (E5a/b)
+1.260–1.300 GHz 
+(E6)
+1.593–1.610 GHz 
+(G1)
+1.237–1.254 GHz 
+(G2)1.189–
+1.214 GHz (G3)
+1.563–1.587 GHz 
+(L1)
+1.215–1.2396 GHz 
+(L2)1.164–
+1.189 GHz (L5)
+1176.45 MHz(L5)
+2492.028 MHz (S)
+1575.42MHz 
+(L1C/A,L1C,L1S)
+1227.60MHz 
+(L2C)
+1176.45MHz 
+(L5,L5S)
+1278.75MHz (L6)
+Status Operational
+Operating since 
+2016
+2020 
+completion
+Operational Operational Operational Operational
+Precision 3.6m (Public)0.1m (Encrypted) 0.2m (Public)0.01m (Encrypted) 2m – 4m 0.3–5 (no DGPS or WAAS) 1m (Public)0.1m (Encrypted) 1m (Public)0.1m (Encrypted)
+Retrieved 2024
+
+PAGE 13
+Introduction to GPS
+• System Architecture
+
+
+PAGE 14
+Space Segment
+• 24+ Satellites (up to 32) 
+• 6 orbital planes
+• 4 SVs per plane
+• 55 degree inclination
+• ~12 hour orbits
+• 2.7 Km/sec 
+A visual example of a 24 
+satellite GPS constellation 
+in motion with the Earth 
+rotating. Notice how the 
+number of satellites in 
+view from a given point on 
+the Earth's surface, in this 
+example at 45°N, changes 
+with time.
+ Artist's conception of GPS Block II-F satellite in 
+Earth orbit (12 year design life)
+Navstar Block II satellite (7.5 year design life)
+
+PAGE 15
+GPS Satellites
+15
+
+
+PAGE 16
+Summary of GPS Satellites
+Block LaunchPeriod
+Satellite launches
+Currently in orbit
+and healthySuccess Failure In preparation Planned
+I 1978–1985 10 1 0 0 0
+II 1989–1990 9 0 0 0 0
+IIA 1990–1997 19 0 0 0 0
+IIR 1997–2004 12 1 0 0 7
+IIR-M 2005–2009 8 0 0 0 7
+IIF 2010–2016 12 0 0 0 12
+IIIA From 2018 5 0 5 0 5
+IIIF — 0 0 0 22 0
+Total 75 2 5 22 31
+(Last update: 08 July 2021)
+
+PAGE 17
+GPS Control Stations
+
+PAGE 18
+How GPS works
+1. The basis for GPS is resection from satellites
+2. For resection a GPS receiver calculates
+distance to satellites 
+using travel time of radio signals
+3. To measure travel time, GPS needs exact timing
+4. Along with distance you need to know the satellite position 
+5. For accurate positioning you must correct for errors
+
+PAGE 19
+GPS Position – 1 satellite
+We’re somewhere on 
+this sphere. 
+
+PAGE 20
+GPS position – 2 satellites
+20
+Two measurements 
+put us somewhere on 
+this circle. 
+
+PAGE 21
+GPS position – 3 satellites
+21
+3 satellites for a position fix
+Three measurements put 
+us at one of two points. 
+
+PAGE 22
+Measuring distance to satellites
+Distance is about 22,000 km
+⚫ We cannot see satellites
+⚫ We cannot measure exact distance
+Distance= velocity * travel time
+Using radio signal to calculate distance
+This signal travels with speed of light
+Speed of light = 299,174 km/sec
+Calculating distance to satellite
+Using travel time of radio signal
+Travel time = ?
+approx. 0.07 sec !
+22
+
+PAGE 23
+GPS Error Sources
+23
+GPS satellite clocks
+Satellite ephemeris errors
+Troposphere errors
+Ionosphere errors
+Multi-path
+Receiver clocks
+
+
+PAGE 24
+➢Pseudo (虛擬) distance calibration
+➢Coordinate Division Calibration
+➢Smoothing Pseudo Range
+Differential GPS
+
+PAGE 25
+Differential GPS (DGPS) Operation 
+
+
+PAGE 26
+GPS Error Sources
+26
+26
+
+PAGE 27
+GPS Signal
+• 3 binary digital codes are sent via L1 and L2 
+carrier phase transmitters
+– a. C/A code: from L1 carrier phase (1.023Mbps), for SPS
+– b. P code: from L1 and L2 carrier phase (10.23Mbps), for 
+PPS
+– c. Y code: add Anti-spoofing(反愚) to P code
+• Other message: 50 bps  ephemeris, satellite health 
+and clock error
+
+PAGE 28
+GPS Signal
+
+PAGE 29
+GPS Signal
+• L1: 1575.42 MHz 
+– carries the navigation message
+– C/A code, P code signals
+• L2: 1227.60 MHz
+– carries the navigation message 
+– P code signals
+• L5 1176.45 MHz
+– Proposed for use as a civilian safety-of-life (SoL) 
+signal.
+
+PAGE 30
+
+
+PAGE 31
+1. GPS localization measurement is based on 
+triangular relationship by establishing the signal 
+transmitting time between GPS transceivers 
+2. GPS requires to be capable for high precision 
+timing clock and precise satellite location in space 
+3. Calibrate all possible error sources
+GPS Operation
+
+PAGE 32
+Satellite Clock
+Clock Clock Freq
+(Hz)
+Daily 
+Stability
+(△f/f)
+Time to 1 
+second error
+(years)
+quartz 5,000,000 10-9 30 
+Rubidium
+(Rb) 銣鐘
+6,834,682,613 10-12 30,000 
+Cesium 
+(Cs) 銫鐘
+9,192,631,770 10-13 300,000 
+Hydrogen
+(H) 氫鐘
+1,420,405,751 10-15 30,000,000
+
+PAGE 33
+GPS
+相對定位
+ 
+GPS Relative Positioning Methods
+地區差分
+LADGPS
+靜態定位
+Statics Positioning
+動態定位
+Kinematics Positioning
+動態相位
+KGPS phase
+差分電碼
+DGPS Code
+靜態相位
+Static-phase
+廣域差分
+WADGPS
+廣域增強
+WAAS
+即時動態
+Real-Time Kinematic
+半動態
+Semi Kinematic
+虛擬動態
+Pseudo Kinematic
+
+PAGE 34
+GPS Enhance 
+Navigation Performance 
+
+PAGE 35
+Reduce GPS Risk
+• Reduce signal interference from spectrum 
+analysis and test
+• Inspect GPS irregularity 
+• Study ionosphere effect and sun spot effect
+• Guarantee availability of aviation frequency 
+
+PAGE 36
+• Enhance GPS, WAAS/LAAS  to satisfy 
+(Required Navigation Performance) RNP
+• Reduce international interference before 
+control GPS receiver risk  
+• Elevate international airline industries in 
+GPS technology to improve current system 
+performance
+GPS Risk Assessment
+
+PAGE 37
+• Required Navigation Performance (RNP)
+– 95％ confidence on aircraft position
+• ICAO definition RNP in airspaces 
+– Identify lateral accuracy in airway
+– Assesse Accuracy (精確性), Integrity (完整性), 
+Continuity (連續性), Availability (可用性) for
+• Approach進場
+• Landing降落
+• Departure離場
+Required Navigation Performance
+
+PAGE 38
+Parameters to Determine RNP
+• 精確性(Accuracy)
+• 完整性(Integrity)
+• 連續性(Continuity)
+• 可用性(Availability)
+
+PAGE 39
+Determine RNP -
+精確性(Accuracy)
+• Position accuracy is determined from Navigation 
+Sensor Error (NSE), including two sources:
+– Signal-in-Space (SIS) error is the part that 
+cannot be eliminated from differential 
+calibration
+– Aircraft Instrument error due to receiver noise 
+or antenna multiple path effect
+
+PAGE 40
+Accuracy vs. Precision
+
+
+PAGE 41
+Determine RNP-
+完整性(Integrity)
+• When system has faults or positioning 
+accuracy is not sufficient, the capability 
+for GPS system to send a warning signal 
+– including Alert Limit, Integrity Level and 
+Time-to-Alarm
+– Alert limit contains lateral and vertical alert 
+limits LAL and VAL
+ 
+
+PAGE 42
+Determine RNP-
+連續性(Continuity)
+a. Lose of continuity means an interruption of 
+satellite signals from satellite and ground 
+stations 
+b. Continuity is always trade-off with integrity 
+at the same time 
+
+PAGE 43
+Determine RNP-
+可用性(Availability)
+a. Considering three performance parameters 
+in probability at any time
+b. Lose availability means lose signals from 
+satellite or poor geometric satellite 
+distribution 
+c. Airport conditions such as climate, terrain 
+and equipment cause variation. 
+Availability requires 0.999-0.99999
+
+PAGE 44
+Integrity Availability2
+Operation Accuracy(95%) Time-to-Alert Alert Limit Probabilityof MI Thres Obj Continuity(Loss of Nav)
+Oceanic
+Enroute
+& Remote
+12.4 nm 2 min 12.4 nmi+ 10-7/hour .99 .99999 1x10-5/hour
+Domestic
+Enroute 2.0 nm 1 min 2.0 nmi+ 10-7/hour* .999 .99999 1x10-6/hour
+Terminal 0.4 nm 30 sec 1.0 nmi+ 10-7/hour* .999 .99999 1x10-6/hour
+Non-
+Precision 220 m 10 sec 0.3 nmi+ 10-7/hour* .99 .99999 1x10-5/hour
+Cat I
+Precision
+H – 16 m
+V – 7.7 m 6 sec H- 40m**V-10-15m++ 2x10-7/approach* .99 .99999 5x10-5/ approach
+Cat II
+Precision
+H – 6.9 m
+V – 2.0 m 2 sec H-17.3m**V- 5.3 m** 210-9/approach** .99 .99999 4x10-6/15 sec
+Cat III
+Precision
+H – 6.1 m
+V – 2.0 m
+2 sec**
+1 sec (goal)
+H-15.5m**
+V- 5.3 m**
+210-9/
+approach** .99 .99999
+2x10-6/last 15 s
+1x10-7/last 15 s
+(vertical)
+         * WAAS spec in FAA-E-2892C      ** LAAS MASPS, DO-245       + RCTA DO-208, GPS MOPS     ++ B. DeCleene
+Performance Requirements
+1 ATA SOW as modified at 10/26/98 meeting with ATA/FAA
+2 Availability Requirements Are Location Dependent and Vary by Region  0.999 in Alaska, 0.99999 in CONUS,  
+0.999 Caribbean and Oceanic 0.999 for WAAS Category I, 0.99999 for LAAS Category I (0.99 ~ 4 days/yr, 0.999 ~ 
+9hr/yr, 0.99999 ~ 5 min/yr Loss of Service)
+
+PAGE 45
+GNSS Applications 
+• Simple application of GPS、GLONASS、
+GALELIO
+• Integration any two systems 
+• Meet civil aviation navigation requirements
+
+PAGE 46
+Non-Augmented GPS
+    
+       
+1   System Today
+2   Selective Availability Off
+3   SA Off Plus 30 Satellite Constellation
+4   SA Off Plus 2nd Civil Frequency
+5   SA Off, 2nd Civil Frequency, 30 Satellite Constellation Minimum
+Maximum
+Mean For AllLocations 
+Availability Oceanic En Route Terminal Non-PrecisionApproach
+0.99999
+0.9999
+0.999
+0.99
+0.9
+1 2
+3
+4
+5
+1
+2
+3
+4
+5
+1
+2
+3
+4
+5
+1 2
+3
+4
+5
+< 0.9
+Availability:
+
+PAGE 47
+Category I II III
+Altitude accuracy 4.42       1.86       0.64
+at DH(95%)
+Risk of integrity ~1E-7     ~1E-8   ~5E-10
+Standard positioning service (SPS) at 95% accuracy :
+Horizontal : 100/20(SA OFF) meters
+Vertical     : 156/50(SA OFF) meters
+Non-Augmented GPS
+Accuracy and Integrity refer to
+
+PAGE 48
+Augmented GNSS
+• Why Augmentation?
+– Accuracy is insufficient 
+– Satellite receiver integrity insufficient 
+– Signal continuity being interfered
+– Area availability being poor
+• What in augmentation?
+– Enhance signal reliability
+
+PAGE 49
+Augmented GNSS
+• Space-Based Augmentation System(S-BAS) 
+• Wide Area Augmentation System(WAAS)
+• Use other space satellite resources to 
+improve positioning accuracy during cruise 
+flights, at lease offer CAT I non precision 
+approach service
+
+PAGE 50
+Augmented GNSS
+• Ground-Based Augmentation System(G-
+BAS)  
+• Local Area Augmentation System(LAAS)
+• Use additional ground facilities to enhance 
+satellite signal and improve ground 
+calibration for accurate altitude and lateral 
+message in CAT II and CAT III precision 
+approach
+
+PAGE 51
+S-BAS 
+• Offer worldwide information service
+– Complete broadcast to aircraft
+– Additional ranging signal
+– Differential calibration
+• World three systems
+– USA in Wide Area Augmentation System (WAAS)
+– Europe in European Geostationary Navigation 
+Overlay System (EGNOS)
+– Japan in MTSAT Satellite Augmentation System 
+(MSAS)
+
+PAGE 52
+I Tu k u k( ) ( ),
+廣域參考站 Wide Area 
+Reference Stations (WRSs)
+Atmospheric Effects
+廣域主站 Wide Area
+Master Station (WMS)
+WAAS Avionics
+Single Freq.
+true 
+position
+broadcast
+position
+INMARSAT
+Satellite Broadcast of
+(1) Vector Corrections
+(2) “Use/Don’t Use”
+(3) Ranging Signal
+地面接收站
+Earth Station
+[ , ] R k kB
+WAAS
+
+PAGE 53
+WAAS Infrastructure
+• GPS basic functions, general code (C/A 
+Code) and SA Off
+• IMMARSAT offers differential broadcast 
+calibration signal
+• Broadcast to users (aircraft) and control 
+center
+• Use other Earth-Synchro satellite
+
+PAGE 54
+WAAS Infrastructure
+
+
+PAGE 55
+WAAS Concept
+• Safer • Increased Capacity • Cost Effective
+
+
+PAGE 56
+WAAS Profits
+Primary Means of Navigation - Take-Off, En Route,
+Approach and Landing
+More Direct Routes - Not Restricted By Location of 
+Ground-Based Navigation Equipment
+Precision Approach Capability - At Any Qualified 
+Airport
+Decommission of Older, Expensive Ground-Based 
+Navigation Equipment (Reduced maintenance costs)
+Reduced/Simplified Equipment On Board Aircraft
+Increased Capacity - Reduced Separation Due to 
+Improved Accuracy
+
+PAGE 57
+WAAS Deployment
+
+
+PAGE 58
+
+
+PAGE 59
+⚫ Taipei
+ 
+Taiwan Earth-Synchro Satellite
+PORIOR
+MTSAT
+
+PAGE 60
+G-BAS
+• Offer enhanced local message
+– Complete broadcast to aircraft and ground facilities 
+– Establish airport pseudolite（APL）
+– Approach navigation and precision landing
+– Replace ILS or MLS
+• USA in Local Area Augmentation System 
+(LAAS)
+
+PAGE 61
+LAAS Infrastructure
+• Airport Pseodulite (APL) reflects 1～2 GPS 
+signals to enhance RNP parameters
+• VHF Differential Broadcast offers ground 
+calibration signals
+• Set up in-track airport vicinity for operation 
+• Use other communication satellites
+
+PAGE 62
+LAAS Concept
+
+PAGE 63
+LAAS Concept
+• Cost Effective • Multiple Use • Increased Efficiency
+
+PAGE 64
+LAAS Profits
+Category I, II & III - Precision Approach Capability Within 
+System Range
+Remote Coverage - Augments Wide Area System in 
+Locations Not Cost Effective (Terrain Traffic Volume)
+Tailored Approaches - To Avoid Obstacles, Noise Sensitive 
+Areas, or Congested Airspace (Helicopter Urban Access)
+Multiple Runway Coverage - One LAAS Will Serve the 
+Entire Airport (Reduced Equipment and Maintenance Costs)
+Aircraft Surface Navigation - Aircraft Use as a Guide 
+When Taxiing in Inclement Weather
+
+PAGE 65
+•ATC Radar 
+•TCAS
+•ADS-A,B
+•CDTI
+•Conflict
+Probe
+•VHF/HF Voice
+•SATCOM
+•ACARS / CMU
+•CPDLC
+•Mode S 
+•VDL Mode 2/3/4
+•FMS
+•RNP
+•GNSS
+•SBAS
+•LAAS
+•IRS
+•RTA
+•RVSM
+CNS/ATM Profits
+Increased Profitability
+Schedule Reliability
+User Selected Flight Profiles
+Reduced Separation
+ATM Profile Negotiation
+Enhanced Safety
+FUTURE
+ATM
+Communication
+Navigation
+ Surveillance
+
+PAGE 66
+Airborne Solutions NavigationSatellites
+Digital
+High Bandwidth
+Cockpit Data
+High Bandwidth
+Digital
+Data Link
+Surveillance
+via ADS-B & TCAS
+Precision
+Navigation
+via LAAS
+Communication
+Satellites
+Voice
+Surveillance
+via ADS-A
+Surface 
+Movement 
+Guidance
+Data Center Air Traffic
+Control
+P7620-093-19
+CNS/ATM
+ 
+Environment
+Airport 
+Systems
+Aviation 
+Services

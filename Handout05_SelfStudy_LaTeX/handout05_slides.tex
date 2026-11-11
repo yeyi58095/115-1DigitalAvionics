@@ -1,0 +1,324 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[UTF8,fontset=none]{ctex}
+\setCJKmainfont{Microsoft JhengHei}
+\setCJKsansfont{Microsoft JhengHei}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\definecolor{navy}{HTML}{183750}
+\definecolor{teal}{HTML}{007E87}
+\definecolor{orange}{HTML}{B45A20}
+\setbeamercolor{normal text}{fg=navy,bg=white}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{frametitle}{fg=navy}
+\setbeamercolor{alerted text}{fg=orange}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+\setbeamertemplate{footline}{\hspace{8mm}\scriptsize Handout 5 自讀筆記\hfill\insertsectionhead\hfill\insertframenumber/\inserttotalframenumber\hspace{8mm}\vspace{3mm}}
+\newcommand{\src}[1]{\par\vfill{\scriptsize\color{teal}#1}}
+\newcommand{\slide}[3]{\begin{frame}[t]{#1}#3\src{#2}\end{frame}}
+\newcommand{\bi}{\begin{itemize}\setlength{\itemsep}{5pt}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\key}[1]{\par\medskip{\color{teal}\bfseries #1}\par\smallskip}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\bookslide}[3]{\slide{#1}{課本：#2。頁碼為書本印刷頁碼}{#3}}
+% Original images extracted losslessly from the supplied textbook PDF.
+\newcommand{\originalfigure}[6]{
+\begin{frame}[t]{課本原圖 #1：#2}
+\centering
+\includegraphics[width=.94\linewidth,height=5.05cm,keepaspectratio]{figures/#4}\par
+\vspace{2mm}\raggedright\small #5\par
+\vfill{\scriptsize\color{teal}原圖：Collinson, 第 3 版，Fig. #1，p. #3。#6}\par
+\end{frame}}
+
+
+\newcommand{\handoutfigure}[3]{
+\begin{frame}[t]{講義原頁 #1：#2}
+\centering
+\includegraphics[width=.97\linewidth,height=5.65cm,keepaspectratio]{figures/#3}\par
+\vfill{\scriptsize\color{teal}原圖與文字：賴盈誌老師提供之 Handout，PDF 第 #1 頁。}\par
+\end{frame}}
+\title{電傳飛控與故障容忍}
+\subtitle{Handout 5\\繁體中文自讀詳解}
+\author{依賴盈誌老師課程講義整理}
+\date{CA7528 Digital Avionics\quad Fall 2026}
+\begin{document}
+\begin{frame}\titlepage\centering\small 概念、原圖、推導、算例與自我檢查\end{frame}
+\section{閱讀地圖}
+\slide{範圍與閱讀方式}{Handout 5，PDF pp. 1--50}{
+\bi
+\item FBW 架構、閉迴路、操縱品質、備援及感測整合。
+\item 原頁碼一律指講義 PDF 頁序。標示「課本」的頁碼則是 Collinson 第三章印刷頁碼。
+\item 先讀概念，再對照原圖。自我檢查先遮住參考解答，再獨立計算或口頭說明。
+\item 自編算例與補充推導依題內假設使用。歷史機型、服務與表格依原教材背景理解。
+\ei
+}
+\slide{分次閱讀安排}{Handout 5 閱讀地圖}{
+\small
+\bi
+\item \textbf{FBW 基礎}：機械傳動與電子命令。
+\item \textbf{穩定與性能}：放寬自然穩定性的條件。
+\item \textbf{系統架構}：FBW 的閉迴路元件。
+\item \textbf{資料與感測}：資料匯流排與多種輸入。
+\item \textbf{控制律與操縱}：被動與主動操縱桿。
+\item \textbf{閉迴路推導}：滾轉角速度命令、穩態增益與時間常數。
+\ei
+}
+\slide{分次閱讀安排（續）}{Handout 5 閱讀地圖}{
+\small
+\bi
+\item \textbf{操縱品質}：任務表現與飛行員補償。
+\item \textbf{安全與冗餘}：故障機率與備援假設、四重架構與致動器。
+\item \textbf{機型案例}：A380 舵面與系統分配。
+\item \textbf{軟體與資料整合}：控制律、備援管理與 BIT。
+\ei
+}
+\section{FBW 基礎}
+\slide{機械傳動與電子命令}{Handout 5，PDF pp. 1--7；概念整理與補充推導}{
+\small
+\bi
+\item FBW 讓飛行員輸入先進入電子飛控系統，再由控制律決定致動命令。
+\item 電子命令取代長距離機械操縱傳動，實際舵面仍需由電氣或液壓等能源驅動。
+\item 數位化支援計算、監視及整合，並使軟體、電源與訊號鏈成為控制安全的關鍵。
+\ei
+\key{閱讀重點}分析 FBW 必須同時追蹤資訊鏈與能量鏈。
+}
+\handoutfigure{6}{機械傳動與電子命令}{handout05-p006.png}
+\handoutfigure{7}{機械傳動與電子命令}{handout05-p007.png}
+\slide{自我檢查：機械傳動與電子命令}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼 FBW 可減少機械連桿，卻不能說完全不需要機械與液壓？
+\key{參考解答}
+舵面與飛機仍是機械結構，致動器必須克服氣動負載。部分設計仍用液壓或其他機構，FBW 主要改變命令傳遞與控制計算。
+}
+\section{穩定與性能}
+\slide{放寬自然穩定性的條件}{Handout 5，PDF pp. 8--12；概念整理與補充推導}{
+\small
+\bi
+\item 某些配置以較低自然穩定性換取氣動或機動性能，主動回授用來提供所需響應。
+\item 這不是所有 FBW 飛機都自然不穩定，穩定性取決於機型、構型與飛行條件。
+\item 不穩定模態需要持續可靠的感測、計算與致動，控制中斷可能迅速放大偏差。
+\ei
+\key{閱讀重點}性能改善來自飛機與控制系統共同設計，不只來自換成電子訊號。
+}
+\handoutfigure{10}{放寬自然穩定性的條件}{handout05-p010.png}
+\handoutfigure{11}{放寬自然穩定性的條件}{handout05-p011.png}
+\slide{自我檢查：放寬自然穩定性的條件}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+自然不穩定飛機若只剩下把操縱桿直接轉成舵角的備用模式，是否一定容易控制？
+\key{參考解答}
+不一定。若沒有足夠增穩功能，飛機可能需要超過飛行員能力的快速修正。備用模式與剩餘穩定能力必須一併設計。
+}
+\section{系統架構}
+\slide{FBW 的閉迴路元件}{Handout 5，PDF pp. 13--18；概念整理與補充推導}{
+\small
+\bi
+\item 飛行員指令由操縱裝置轉成電訊號，飛控電腦依控制律及模式產生舵面命令。
+\item 角速度計及加速度計量測運動，空氣資料提供速度與高度等條件，用於回授及增益調整。
+\item 舵面與致動器位置回授屬局部控制，整機運動回授則屬外層控制。
+\ei
+\key{閱讀重點}每個回路都要定義實際輸出與回授來源，避免把命令當作量測。
+}
+\handoutfigure{13}{FBW 的閉迴路元件}{handout05-p013.png}
+\handoutfigure{17}{FBW 的閉迴路元件}{handout05-p017.png}
+\slide{自我檢查：FBW 的閉迴路元件}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+若舵面位置與命令一致，但飛機反應不如預期，還可檢查哪些部分？
+\key{參考解答}
+可檢查運動感測器、空氣資料、控制模式、氣動負載與模型假設。舵面位置正常只證明局部位置追蹤正常，不能證明整機回路全部正常。
+}
+\section{資料與感測}
+\slide{資料匯流排與多種輸入}{Handout 5，PDF pp. 19--23；概念整理與補充推導}{
+\small
+\bi
+\item 講義舉 MIL-STD-1553 與 ARINC 629 為不同機型使用的匯流排例子。
+\item 資料傳輸需要考慮排程、延遲、故障隔離與冗餘，不能只確認訊息能送達。
+\item 角速度、線加速度、空氣資料及飛行員命令各有單位、有效性與時間基準。
+\ei
+\key{閱讀重點}資料新鮮度與來源可信度，和數值本身同樣重要。
+}
+\handoutfigure{20}{資料匯流排與多種輸入}{handout05-p020.png}
+\handoutfigure{22}{資料匯流排與多種輸入}{handout05-p022.png}
+\handoutfigure{23}{資料匯流排與多種輸入}{handout05-p023.png}
+\slide{自我檢查：資料匯流排與多種輸入}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+自編算例：資料每 $10\,\mathrm{ms}$ 更新，但某次延遲 $50\,\mathrm{ms}$ 才到達，能直接視為最新量測嗎？
+\key{參考解答}
+不能。要檢查時間戳、資料年齡與控制律允許的延遲，必要時採預測、拒收或降級。到達時間與量測時間不同。
+}
+\section{控制律與操縱}
+\slide{被動與主動操縱桿}{Handout 5，PDF pp. 24--29；概念整理與補充推導}{
+\small
+\bi
+\item 被動操縱裝置以彈簧等機構建立固定力量與位移特性。
+\item 主動操縱裝置利用受控力矩馬達等方式改變回饋特性，可傳遞狀態或限制資訊。
+\item 人工力感讓飛行員取得操縱線索，但它與真實舵面負載的關係由設計決定。
+\ei
+\key{閱讀重點}操縱桿位移、桿力與飛機反應之間的對應，都屬操縱品質設計。
+}
+\handoutfigure{28}{被動與主動操縱桿}{handout05-p028.png}
+\handoutfigure{29}{被動與主動操縱桿}{handout05-p029.png}
+\slide{自我檢查：被動與主動操縱桿}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼電子操縱桿若完全沒有適當阻力或回中感，可能增加過度操縱？
+\key{參考解答}
+飛行員缺少力量線索，容易給出過大或過快的輸入。阻力、位移範圍與控制律需要配合任務和飛行員操作能力。
+}
+\section{閉迴路推導}
+\slide{滾轉角速度命令}{Handout 5，PDF pp. 30--32；概念整理與補充推導}{
+\small
+\bi
+\item 採用簡化模型 $G(s)=K_a/(\tau s+1)$，輸入副翼偏角，輸出滾轉角速度 $p$。
+\item 比例控制律 $\delta_a=K_c(p_c-p)$，回授比較指令角速度與實際角速度。
+\item 由 $p=GK_c(p_c-p)$ 得閉迴路 $p/p_c=K_cG/(1+K_cG)$。
+\ei
+\[\frac{p(s)}{p_c(s)}=\frac{K_aK_c}{\tau s+1+K_aK_c}\]
+\key{閱讀重點}此推導假設量測與致動器理想，後續要再加入它們的動態。
+}
+\handoutfigure{31}{滾轉角速度命令}{handout05-p031.png}
+\handoutfigure{32}{滾轉角速度命令}{handout05-p032.png}
+\slide{自我檢查：滾轉角速度命令}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+滾轉角速度命令與副翼偏角命令的差別是什麼？
+\key{參考解答}
+角速度命令要求飛機達到某個運動速率，控制律會調整舵角。副翼偏角命令只指定舵面位置，同一舵角在不同動壓下可能產生不同角速度。
+}
+\slide{穩態增益與時間常數}{Handout 5，PDF pp. 33--36；概念整理與補充推導}{
+\small
+\bi
+\item 令迴路無因次增益 $L_0=K_aK_c$，閉迴路直流增益為 $L_0/(1+L_0)$。
+\item 閉迴路時間常數為 $\tau/(1+L_0)$，比例回授仍有有限的階躍穩態誤差。
+\item 高增益近似須明確使用「遠大於 1」的條件。加入致動器、延遲及結構動態後，高增益未必安全。
+\ei
+\key{閱讀重點}閉迴路可以降低對模型增益變化的敏感度，但效果受頻率與穩定裕度限制。
+}
+\handoutfigure{33}{穩態增益與時間常數}{handout05-p033.png}
+\handoutfigure{35}{穩態增益與時間常數}{handout05-p035.png}
+\slide{自我檢查：穩態增益與時間常數}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+自編算例：$K_a=2\,\mathrm{s^{-1}}$、$K_c=3\,\mathrm s$、$\tau=0.8\,\mathrm s$，求閉迴路參數。
+\key{參考解答}
+$L_0=6$，直流增益 $6/7=0.8571$，時間常數 $0.8/7=0.1143\,\mathrm s$。單位階躍的穩態誤差為 $1/7=14.29\%$。
+}
+\section{操縱品質}
+\slide{任務表現與飛行員補償}{Handout 5，PDF pp. 37--39；概念整理與補充推導}{
+\small
+\bi
+\item 機體外型受到氣動、任務及其他需求影響，控制系統要把實際動態調整成可接受的操縱反應。
+\item Cooper--Harper 評估把任務表現與所需飛行員補償結合，講義以 1 至 10 呈現評分方向。
+\item 不能只看最終追蹤誤差，也要看操縱努力、可預測性與任務情境。
+\ei
+\key{閱讀重點}相同誤差可能來自完全不同的操作負擔。
+}
+\handoutfigure{37}{任務表現與飛行員補償}{handout05-p037.png}
+\handoutfigure{39}{任務表現與飛行員補償}{handout05-p039.png}
+\slide{自我檢查：任務表現與飛行員補償}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+兩套系統都完成著陸任務，其中一套需要連續大幅修正，可否認定操縱品質相同？
+\key{參考解答}
+不能。評估需記錄任務條件、性能要求及飛行員補償程度，並依正式評分流程判斷。相同結果不表示相同操縱品質。
+}
+\section{安全與冗餘}
+\slide{故障機率與備援假設}{Handout 5，PDF pp. 40--41；概念整理與補充推導}{
+\small
+\bi
+\item 講義列出的災難性故障目標用來說明飛控安全需求的嚴格程度，不能直接替代實際適航條件。
+\item 備援通道只有在足夠獨立且能偵測、隔離及切換時，才可轉化為任務可靠度。
+\item 共用軟體、電源、環境與量測來源可能造成共同原因故障。
+\ei
+\key{閱讀重點}備援通道數與故障容忍能力之間，還隔著架構與假設。
+}
+\handoutfigure{41}{故障機率與備援假設}{handout05-p041.png}
+\slide{自我檢查：故障機率與備援假設}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+兩個通道數值不一致時，只靠互相比較能知道哪個錯嗎？
+\key{參考解答}
+通常不能。需要第三個獨立來源、內建監視、模型一致性或其他診斷資訊。單純雙通道可發現不一致，未必能隔離故障。
+}
+\slide{四重架構與致動器}{Handout 5，PDF pp. 42--44；概念整理與補充推導}{
+\small
+\bi
+\item 多通道計算可在部分故障後繼續運作，但最後的致動器、能源與舵面同樣需要檢查。
+\item 卡死、失控運動與失去輸出等故障具有不同後果，不能用同一切換策略處理。
+\item 故障後可能需要重新分配操縱能力、限制包線或使用降級控制律。
+\ei
+\key{閱讀重點}失效後的剩餘能力應依具體故障型態分析。
+}
+\handoutfigure{43}{四重架構與致動器}{handout05-p043.png}
+\handoutfigure{44}{四重架構與致動器}{handout05-p044.png}
+\slide{自我檢查：四重架構與致動器}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+電腦通道正常，但某個致動器卡死時，多數決能直接修復嗎？
+\key{參考解答}
+不能。多數決處理計算或感測不一致，不能解除機械卡死。需要隔離、旁通、其他舵面補償或適當的機構設計。
+}
+\section{機型案例}
+\slide{A380 舵面與系統分配}{Handout 5，PDF pp. 45--47；概念整理與補充推導}{
+\small
+\bi
+\item 原圖可用來辨認舵面種類、飛控電腦及能源如何分配，重點是功能與獨立性。
+\item 同一軸的控制可能由多個舵面共同產生，失去一個舵面後仍可能保有部分能力。
+\item 機型架構圖屬講義案例，不能直接推成其他機型的設計。
+\ei
+\key{閱讀重點}讀架構圖時，從一個失效開始，逐條追蹤還有哪些可用的控制路徑。
+}
+\handoutfigure{45}{A380 舵面與系統分配}{handout05-p045.png}
+\handoutfigure{46}{A380 舵面與系統分配}{handout05-p046.png}
+\handoutfigure{47}{A380 舵面與系統分配}{handout05-p047.png}
+\slide{自我檢查：A380 舵面與系統分配}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+為什麼同一架飛機可能配置多種致動能源或供應路徑？
+\key{參考解答}
+目的是減少單一能源故障同時失去所有控制能力的風險。能否達成仍取決於隔離、共用元件、環境與剩餘舵面配置。
+}
+\section{軟體與資料整合}
+\slide{控制律、備援管理與 BIT}{Handout 5，PDF pp. 48--50；概念整理與補充推導}{
+\small
+\bi
+\item 控制律把指令與量測轉成操縱需求，備援管理選擇可用資料與通道，BIT 提供測試及紀錄。
+\item Sensor consolidation 將多個來源整合成控制律使用的代表值，需先檢查一致性與有效性。
+\item 平均、選中位數、投票與加權各有假設，無法靠一個規則解決所有故障。
+\ei
+\key{閱讀重點}資料選擇與控制律互相影響，切換也可能產生瞬變。
+}
+\handoutfigure{50}{控制律、備援管理與 BIT}{handout05-p050.png}
+\slide{自我檢查：控制律、備援管理與 BIT}{依 Handout 範圍自編問題與參考解答}{
+\small
+\key{先自行作答}
+自編算例：三個角速度為 $1.8,1.9,12.0\,\mathrm{deg/s}$，比較平均值與中位數。
+\key{參考解答}
+平均值為 $15.7/3=5.233\,\mathrm{deg/s}$，中位數為 $1.9\,\mathrm{deg/s}$。中位數可抑制單一離群值，但若兩個來源同時偏錯，多數規則仍可能選錯。
+}
+\section{複習與來源}
+\slide{整合複述檢查}{Handout 5 全份複習}{
+\bi
+\item 選一項系統功能，說明輸入、輸出、座標、單位與資料來源。
+\item 找出一個公式，逐一解釋每個符號，再說明它使用哪些假設。
+\item 選一個故障或誤差，追蹤它如何影響下游功能，以及可以用什麼獨立資訊核對。
+\item 重做本份的自我檢查，再對照講義與相關公式。
+\ei
+}
+\slide{來源與後續閱讀}{Handout 5 與隨附教材}{
+\small
+\bi
+\item 主要來源：賴盈誌老師，CA7528 Digital Avionics，Handout 5。原始檔保留於上一層資料夾。
+\item 版型與重用內容：既有 Chapter03\_SelfStudy\_LaTeX。Handout 3、4 沿用相關章節及其原圖。
+\item 第三章重用內容來源：R. P. G. Collinson，\textit{Introduction to Avionics Systems}，第 3 版。
+\item 本筆記的重算、核對與延伸為自讀整理，並非授課教師或出版社正式勘誤。
+\item 原圖內來源標示與圖說保留，新增題目與參考解答已另行標明。
+\ei
+}
+\end{document}

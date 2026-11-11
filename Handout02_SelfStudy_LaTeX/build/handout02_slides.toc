@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{閱讀地圖}{2}{0}{1}
+\beamer@sectionintoc {2}{航電與演進}{5}{0}{2}
+\beamer@sectionintoc {3}{獨立類比架構}{11}{0}{3}
+\beamer@sectionintoc {4}{駕駛艙與分工}{15}{0}{4}
+\beamer@sectionintoc {5}{資料匯流排}{19}{0}{5}
+\beamer@sectionintoc {6}{系統功能}{25}{0}{6}
+\beamer@sectionintoc {7}{CNS/ATM}{27}{0}{7}
+\beamer@sectionintoc {8}{模組化與顯示}{31}{0}{8}
+\beamer@sectionintoc {9}{維修與 BIT}{39}{0}{9}
+\beamer@sectionintoc {10}{整合複習}{42}{0}{10}
+\beamer@sectionintoc {11}{複習與來源}{45}{0}{11}

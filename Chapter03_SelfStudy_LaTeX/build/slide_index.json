@@ -1,0 +1,474 @@
+[
+  {
+    "slide": 1,
+    "heading": "空氣動力學與飛機控制"
+  },
+  {
+    "slide": 2,
+    "heading": "這一章要建立的能力"
+  },
+  {
+    "slide": 3,
+    "heading": "分次閱讀安排"
+  },
+  {
+    "slide": 4,
+    "heading": "範圍與閱讀約定"
+  },
+  {
+    "slide": 5,
+    "heading": "升力與阻力的兩種描述"
+  },
+  {
+    "slide": 6,
+    "heading": "迎角、姿態與航跡角"
+  },
+  {
+    "slide": 7,
+    "heading": "動壓與氣動係數"
+  },
+  {
+    "slide": 8,
+    "heading": "升力曲線與失速"
+  },
+  {
+    "slide": 9,
+    "heading": "阻力極線與高升力裝置"
+  },
+  {
+    "slide": 10,
+    "heading": "等速平飛與低速限制"
+  },
+  {
+    "slide": 11,
+    "heading": "教材算例：低空低速的迎角"
+  },
+  {
+    "slide": 12,
+    "heading": "教材算例：速度與可用機動加速度"
+  },
+  {
+    "slide": 13,
+    "heading": "壓力中心與氣動中心"
+  },
+  {
+    "slide": 14,
+    "heading": "尾翼如何平衡俯仰力矩"
+  },
+  {
+    "slide": 15,
+    "heading": "配平的代價與幾何量提醒"
+  },
+  {
+    "slide": 16,
+    "heading": "靜穩定與動穩定"
+  },
+  {
+    "slide": 17,
+    "heading": "縱向靜穩定判據"
+  },
+  {
+    "slide": 18,
+    "heading": "靜穩定曲線的讀法"
+  },
+  {
+    "slide": 19,
+    "heading": "中性點與靜裕度"
+  },
+  {
+    "slide": 20,
+    "heading": "不穩定配置與主動穩定"
+  },
+  {
+    "slide": 21,
+    "heading": "整機穩定性不只由機翼決定"
+  },
+  {
+    "slide": 22,
+    "heading": "六自由度與機體座標"
+  },
+  {
+    "slide": 23,
+    "heading": "旋轉座標系中的加速度"
+  },
+  {
+    "slide": 24,
+    "heading": "Euler 角與旋轉次序"
+  },
+  {
+    "slide": 25,
+    "heading": "Euler 角速度的反解"
+  },
+  {
+    "slide": 26,
+    "heading": "小擾動線性化的起點"
+  },
+  {
+    "slide": 27,
+    "heading": "小擾動力與力矩方程"
+  },
+  {
+    "slide": 28,
+    "heading": "氣動導數就是局部偏導數"
+  },
+  {
+    "slide": 29,
+    "heading": "導數的單位與角度轉換"
+  },
+  {
+    "slide": 30,
+    "heading": "縱向導數：速度與迎角的作用"
+  },
+  {
+    "slide": 31,
+    "heading": "俯仰阻尼的來源"
+  },
+  {
+    "slide": 32,
+    "heading": "下洗延遲與控制導數"
+  },
+  {
+    "slide": 33,
+    "heading": "側滑力與風向標穩定"
+  },
+  {
+    "slide": 34,
+    "heading": "側滑如何產生滾轉"
+  },
+  {
+    "slide": 35,
+    "heading": "角速度導數與橫向耦合"
+  },
+  {
+    "slide": 36,
+    "heading": "副翼與方向舵的控制導數"
+  },
+  {
+    "slide": 37,
+    "heading": "縱向與橫向何時可以分開？"
+  },
+  {
+    "slide": 38,
+    "heading": "完整線性縱向方程"
+  },
+  {
+    "slide": 39,
+    "heading": "縱向狀態空間模型"
+  },
+  {
+    "slide": 40,
+    "heading": "橫向狀態空間模型"
+  },
+  {
+    "slide": 41,
+    "heading": "由模型計算響應與模態"
+  },
+  {
+    "slide": 42,
+    "heading": "本單元自我檢查"
+  },
+  {
+    "slide": 43,
+    "heading": "升降舵輸入如何改變飛行路徑"
+  },
+  {
+    "slide": 44,
+    "heading": "桿力每 g 與人工力感"
+  },
+  {
+    "slide": 45,
+    "heading": "完整縱向響應的兩個時間尺度"
+  },
+  {
+    "slide": 46,
+    "heading": "短週期近似的假設"
+  },
+  {
+    "slide": 47,
+    "heading": "正負號統一：帶符號導數與正大小值"
+  },
+  {
+    "slide": 48,
+    "heading": "消去迎角，得到俯仰角速度傳遞函數"
+  },
+  {
+    "slide": 49,
+    "heading": "保留直接尾翼力時會改變什麼？"
+  },
+  {
+    "slide": 50,
+    "heading": "與教材時間常數寫法的對照"
+  },
+  {
+    "slide": 51,
+    "heading": "二階極點、自然頻率與阻尼比"
+  },
+  {
+    "slide": 52,
+    "heading": "穩態增益與短週期模型的界線"
+  },
+  {
+    "slide": 53,
+    "heading": "短週期算例：已知資料與近似"
+  },
+  {
+    "slide": 54,
+    "heading": "短週期算例：由每 g 資料估計導數"
+  },
+  {
+    "slide": 55,
+    "heading": "短週期算例：逐項重算係數"
+  },
+  {
+    "slide": 56,
+    "heading": "短週期算例：教材值與重算值"
+  },
+  {
+    "slide": 57,
+    "heading": "過衝公式的適用範圍"
+  },
+  {
+    "slide": 58,
+    "heading": "同一組極點，兩種不同階躍響應"
+  },
+  {
+    "slide": 59,
+    "heading": "坡度轉彎的力平衡"
+  },
+  {
+    "slide": 60,
+    "heading": "轉彎算例與數值核對"
+  },
+  {
+    "slide": 61,
+    "heading": "協調轉彎需要哪些輸入？"
+  },
+  {
+    "slide": 62,
+    "heading": "純滾轉的一階近似"
+  },
+  {
+    "slide": 63,
+    "heading": "滾轉率與坡度是不同的輸出"
+  },
+  {
+    "slide": 64,
+    "heading": "方向舵的主要任務"
+  },
+  {
+    "slide": 65,
+    "heading": "純偏航模型的角度符號"
+  },
+  {
+    "slide": 66,
+    "heading": "偏航振盪的自然頻率與阻尼"
+  },
+  {
+    "slide": 67,
+    "heading": "Dutch roll 、滾轉衰減與螺旋模態"
+  },
+  {
+    "slide": 68,
+    "heading": "橫向模型階數的核對"
+  },
+  {
+    "slide": 69,
+    "heading": "Power Control Unit 的作用"
+  },
+  {
+    "slide": 70,
+    "heading": "PCU 的力量與獨立供應"
+  },
+  {
+    "slide": 71,
+    "heading": "PCU 位置回授的幾何關係"
+  },
+  {
+    "slide": 72,
+    "heading": "液壓流量如何形成一階模型"
+  },
+  {
+    "slide": 73,
+    "heading": "PCU 傳遞函數、頻寬與相位"
+  },
+  {
+    "slide": 74,
+    "heading": "SAS 以回授建立額外阻尼"
+  },
+  {
+    "slide": 75,
+    "heading": "有限權限的意義"
+  },
+  {
+    "slide": 76,
+    "heading": "Wash-out 為何讓偏航阻尼器不抵抗轉彎？"
+  },
+  {
+    "slide": 77,
+    "heading": "結構模態、濾波與增益排程"
+  },
+  {
+    "slide": 78,
+    "heading": "俯仰 SAS 的閉迴路推導"
+  },
+  {
+    "slide": 79,
+    "heading": "SAS 算例：教材的設計鏈"
+  },
+  {
+    "slide": 80,
+    "heading": "SAS 算例：依重算模型重新設計"
+  },
+  {
+    "slide": 81,
+    "heading": "極點改善不等於所有輸出都同樣改善"
+  },
+  {
+    "slide": 82,
+    "heading": "全權限 SAS 與三重冗餘"
+  },
+  {
+    "slide": 83,
+    "heading": "固定翼單元的整合檢查"
+  },
+  {
+    "slide": 84,
+    "heading": "旋翼使空氣流過翼面"
+  },
+  {
+    "slide": 85,
+    "heading": "旋翼配置與反扭矩"
+  },
+  {
+    "slide": 86,
+    "heading": "主旋翼扭矩與偏航控制"
+  },
+  {
+    "slide": 87,
+    "heading": "前進側與後退側的升力不對稱"
+  },
+  {
+    "slide": 88,
+    "heading": "旋翼接頭：揮舞與擺振"
+  },
+  {
+    "slide": 89,
+    "heading": "旋翼剛性如何影響機身響應"
+  },
+  {
+    "slide": 90,
+    "heading": "斜盤把機身指令送到旋轉葉片"
+  },
+  {
+    "slide": 91,
+    "heading": "總距、週期變距與腳踏板"
+  },
+  {
+    "slide": 92,
+    "heading": "總距與垂直運動"
+  },
+  {
+    "slide": 93,
+    "heading": "縱向 cyclic 與向前飛行"
+  },
+  {
+    "slide": 94,
+    "heading": "滾轉、偏航與多軸協調"
+  },
+  {
+    "slide": 95,
+    "heading": "直升機 SAS 的基本功能"
+  },
+  {
+    "slide": 96,
+    "heading": "直升機增穩的冗餘架構"
+  },
+  {
+    "slide": 97,
+    "heading": "AHRS 提供整合運動資訊"
+  },
+  {
+    "slide": 98,
+    "heading": "直升機俯仰增穩：CG 變動與配平"
+  },
+  {
+    "slide": 99,
+    "heading": "俯仰通道的行程與濾波"
+  },
+  {
+    "slide": 100,
+    "heading": "滾轉增穩：小坡度與大坡度"
+  },
+  {
+    "slide": 101,
+    "heading": "偏航與總距通道"
+  },
+  {
+    "slide": 102,
+    "heading": "有限權限 SAS 到直升機 FBW"
+  },
+  {
+    "slide": 103,
+    "heading": "符號速查：速度、姿態與操縱"
+  },
+  {
+    "slide": 104,
+    "heading": "符號速查：力、力矩與導數"
+  },
+  {
+    "slide": 105,
+    "heading": "核心公式速查：氣動與運動"
+  },
+  {
+    "slide": 106,
+    "heading": "核心公式速查：短週期與控制"
+  },
+  {
+    "slide": 107,
+    "heading": "練習一：升力、失速與靜裕度"
+  },
+  {
+    "slide": 108,
+    "heading": "練習一解答"
+  },
+  {
+    "slide": 109,
+    "heading": "練習二：轉彎與滾轉一階模型"
+  },
+  {
+    "slide": 110,
+    "heading": "練習二解答"
+  },
+  {
+    "slide": 111,
+    "heading": "練習三：二階模型與增穩"
+  },
+  {
+    "slide": 112,
+    "heading": "練習三解答"
+  },
+  {
+    "slide": 113,
+    "heading": "練習四：致動器與直升機概念"
+  },
+  {
+    "slide": 114,
+    "heading": "練習四解答"
+  },
+  {
+    "slide": 115,
+    "heading": "教材核對清單：公式與數值"
+  },
+  {
+    "slide": 116,
+    "heading": "教材核對清單：模型與適用範圍"
+  },
+  {
+    "slide": 117,
+    "heading": "全章口頭複述檢查"
+  },
+  {
+    "slide": 118,
+    "heading": "來源與後續閱讀方向"
+  }
+]

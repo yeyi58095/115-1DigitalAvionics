@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{閱讀地圖}{2}{0}{1}
+\beamer@sectionintoc {2}{3.2 基礎空氣動力學}{5}{0}{2}
+\beamer@sectionintoc {3}{3.3 飛機穩定性}{23}{0}{3}
+\beamer@sectionintoc {4}{3.4 運動方程與氣動導數}{37}{0}{4}
+\beamer@sectionintoc {5}{3.5 縱向控制與響應}{67}{0}{5}
+\beamer@sectionintoc {6}{3.6 橫向控制}{92}{0}{6}
+\beamer@sectionintoc {7}{3.7 動力操縱與 PCU}{104}{0}{7}
+\beamer@sectionintoc {8}{3.8 穩定增強系統}{111}{0}{8}
+\beamer@sectionintoc {9}{3.9 直升機飛行控制}{125}{0}{9}
+\beamer@sectionintoc {10}{複習、練習與核對}{162}{0}{10}
