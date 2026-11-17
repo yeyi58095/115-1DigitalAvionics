@@ -1,0 +1,450 @@
+PAGE 1
+期中考重點整理 
+ 
+HW1 
+Q1.What are the advantages of digital avionics comparing the analog avionics? 
+問題一:數位航電相較於類比航電的優勢 
+數位系統優勢：整合儀表板，更耐用，也多了安全功能，經濟效益高，因為重量輕，燃油效
+率更高，維護成本更低 
+1. 顯示與操作:整合很多資訊到儀表板,降低飛行員工作負荷 
+2. 耐用性:固態電子取代機械零件,維護需求低、壽命長 
+3. 安全功能:即時地形警告、天氣雷達、防撞系統(TCAS) 
+4. 經濟效益:重量輕、燃油效率高、長期維護成本低 
+ 
+Q2.Is there any drawback of the digital avionics? How to overcome the drawback in aircraft 
+system engineering? 
+問題二修訂版:數位航電的缺點與解決方式 
+缺點:系統較複雜，依賴電力，軟體要定期更新，技術更新快，容易過時 
+ 
+缺點一:系統複雜度高、操作困難 
+解決方式:設計直觀且可調整的介面,降低飛行員工作負荷,提供充分訓練 
+ 
+缺點二:高度依賴電力供應 
+解決方式:採用高效電源管理與備援供電系統(例如空中巴士 A350),確保系統穩定運作 
+ 
+缺點三:軟體可能含錯誤需定期更新 
+PAGE 2
+解決方式:遵循嚴格的軟體開發與測試流程,將對飛行作業的干擾降至最低 
+ 
+缺點四:技術更新快、硬體易過時 
+解決方式:採用模組化系統架構,搭配冗餘與容錯設計(例如波音 787 使用多重感測器與交叉檢
+核機制),便於升級維護並提升可靠性 
+ 
+Q3.Introduce and compare the CNS/ATM and NAS (National Airspace System) 
+問題三:CNS/ATM 與 NAS 的介紹與比較 
+CNS/ATM 與 NAS 比較 
+CNS/ATM(通訊/導航/監視/空中交通管理): 
+ICAO 制定的全球性框架,整合衛星通訊、導航與監視技術,配合改良的飛航管理程序,目標是提
+升國際空中交通的安全性、效率、容量與可預測性。 
+NAS(美國國家空域系統): 
+美國的國家空域基礎設施,包含機場、空中交通管制設施、空域結構與作業程序,實際應用
+CNS/ATM 技術,如 ADS-B(監視)、PBN(導航)與資料鏈通訊。 
+兩者關係: 
+CNS/ATM 是全球性的概念與標準,NAS 是美國具體實施這些概念的國家系統。 
+ 
+Q4.Every aircraft equips with voice communication by radio frequency. Many radio 
+frequencies are used onboard for different avionics. Please show all the radio frequencies and 
+the purposes of the belonging avionics. 
+問題四修訂版:機載無線電系統功能整理 
+分為四類，通訊系統、導航系統、監視防撞系統、緊急系統 
+通訊系統包含 VHF(近距)、HF(遠距洋區)、SATCOM(衛星全球覆蓋)。 
+導航系統有 GPS(衛星定位)、ILS(進場導引含水平與垂直)、VOR(方位)、DME(測距)。 
+監視防撞系統包含應答機(回傳識別高度)、TCAS(主動防撞警告)、氣象雷達(偵測天氣)、無線
+電高度表(測離地高度)。 
+PAGE 3
+緊急系統為 ELT(失事求救訊號)。 
+ 
+ 
+Q5.Explain the relationships of Guidance, Navigation, and Control for an aircraft 
+問題五:導引、導航、控制關係 
+三者形成連續迴圈: 
+1. 導航(Navigation):使用 GPS 與感測器,確定飛機位置、速度、姿態 
+2. 導引(Guidance):比較當前位置與目標,決定應遵循的路徑 
+3. 控制(Control):操縱控制面與油門,執行導引指令 
+運作邏輯:導航→提供狀態 → 導引→規劃路徑 → 控制→執行修正 → 回到導航確認 
+ 
+  
+PAGE 4
+HW2 
+ 
+
+PAGE 5
+ 
+
+PAGE 6
+ 
+  
+
+PAGE 7
+HW3 
+Q1. Please draw the block diagram of the altitude autopilot for an aircraft and then explain the 
+functions of every part. 
+ 
+• 飛行員操縱桿：由飛行員下達俯仰變化的要求。（Pilot’s stick） 
+• 誤差加總節點：把想要的俯仰變化與實際量到的俯仰變化相減，得到修正量。（Error 
+summing junction） 
+• 控制器：把誤差轉成對升降舵的控制命令，設定反應和穩定。（Controller） 
+• 升降舵致動器：執行命令並驅動升降舵偏轉。（Elevator actuator） 
+• 飛機動力學：把升降舵偏轉轉成機身的俯仰運動反應。（Aircraft dynamics） 
+• 俯仰變化（輸出）：機身實際產生的俯仰角速度，回饋給前端使用。（Pitch rate 
+output/feedback） 
+• 速率陀螺：量測俯仰角速度並提供回授。（Rate gyro） 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+PAGE 8
+Q2. Please draw the block diagram of the heading autopilot for an aircraft and then explain 
+the functions of every part. 
+ 
+• 飛行員操縱桿：由飛行員下達「滾轉速率」的要求，決定要多快向左/右滾轉。
+（Pilot’s stick） 
+• 誤差加總節點：把「想要的滾轉速率」與「實際量到的滾轉速率」相減，得到需要修
+正的差值。（Error summing junction） 
+• 控制器：把誤差轉成對副翼的控制命令，設定反應速度與穩定度，避免震盪。
+（Controller） 
+• 副翼致動器：執行控制命令並驅動副翼偏轉，產生所需滾轉力矩。（Aileron 
+actuators） 
+• 副翼偏角：實際偏轉量進入機體，改變橫向氣動力矩。（Aileron angle） 
+• 飛機動力學：把副翼偏轉轉成機身的滾轉運動反應，輸出滾轉速率。（Aircraft 
+dynamics） 
+• 滾轉速率（輸出/回授）：機身真正產生的滾轉速率，回饋到前端做誤差計算。（Roll 
+rate output/feedback） 
+• 速率陀螺：量測滾轉速率並提供回授訊號，供閉迴路穩定控制。（Rate gyro） 
+ 
+ 
+
+PAGE 9
+Q3. Please describe the relationship between stability margin and neutral point. Relationship 
+between Stability Margin and Neutral Point: 
+問題三:穩定邊界與中性點的關係 
+定義: 
+• 中性點:飛機重心在此位置時具有中性靜穩定(∂𝐶𝑚/ ∂𝛼 = 0),由氣動力構型決定 
+• 靜穩定邊界:重心與中性點的距離,公式為: 
+Static Margin = ℎ𝑛 − ℎ𝑐𝑔 
+ 
+(h_n 為中性點位置,h_cg 為重心位置,均以 MAC 百分比表示) 
+穩定性判斷: 
+• 重心在中性點前方(h_cg < h_n):正靜穩定邊界→飛機穩定 
+• 重心在中性點上(h_cg = h_n):零靜穩定邊界→中性穩定 
+• 重心在中性點後方(h_cg > h_n):負靜穩定邊界→飛機不穩定 
+重要特性: 
+飛機需保持正靜穩定邊界(重心在中性點前)才能安全飛行。靜穩定邊界越大越穩定,但操縱性
+降低且需更大操縱力。 
+  
+PAGE 10
+Q4. Describe the differences between MCAS (Maneuvering Characteristic Augmentation 
+System) and SAS (Stability Augmentation System) of longitudinal motion. 
+問題四精簡版:MCAS 與 SAS 的差異 
+SAS(穩定增強系統): 
+在整個飛行包線持續運作,透過回饋俯仰角速率等運動變數提供小幅度控制調整,目的是改善飛
+機穩定性，增強操控品質並降低飛行員工作負荷。作動升降舵 
+MCAS(操縱特性增強系統): 
+專為波音 737 MAX 開發,僅在特定條件(人工飛行、襟翼收起、高攻角)啟動,基於攻角感測器
+指令大幅度水平安定面偏轉(最多 2.5°),用於對抗因引擎前移造成的抬頭趨勢,飛行員修正後可
+重複啟動。水平尾翼配平 
+主要差異: 
+SAS 持續運作提供小幅調整改善一般穩定性,MCAS 僅在特定條件啟動並指令大幅偏轉以解決
+特定機型問題。 
+ 
+Q5.Explain what is triple redundant system and compare the differences between quadruplex 
+and triple redundant systems. 
+問題五精簡版:三重冗餘與四重冗餘系統比較 
+三重冗餘系統(TMR): 
+使用三個獨立通道同時執行相同功能,採用多數決投票邏輯。若一個通道故障,另外兩個可否決
+它,系統繼續正常運作。可容忍一次故障。故障後以雙工模式運作,無剩餘冗餘。 
+四重冗餘系統(QMR): 
+使用四個獨立通道執行相同功能,採用中位數選擇法投票。可容忍兩次同時故障。故障後仍保
+有三重冗餘。 
+關鍵差異: 
+• 容錯能力:三重冗餘容忍 1 次,四重容忍 2 次同時故障 
+• 成本複雜度:四重系統成本與複雜度更高 
+• 應用:三重冗餘因成本效益成為商用飛機標準,四重冗餘用於需要最大容錯能力的高度關
+鍵應用 
+PAGE 11
+ 
+HW4  
+ 
+1.Please describe the advantages of radio navigation, dead reckoning, and fixed point 
+positioning. Is it possible to use only one navigation system for the commercial airliners? Why? 
+問題一:導航系統的優勢與為何需多系統整合 
+無線電導航(Radio Navigation): 
+• 使用地面設施或衛星確定飛機位置 
+• 準確度高、全天候運作、覆蓋範圍廣 
+推算導航(Dead Reckoning): 
+• 基於航向、速度、時間計算位置 
+• 不依賴電子設備、備用能力強、培養基本導航技能 
+• 缺點:風漂誤差、誤差累積、不適合遠程飛行 
+固定點定位(Fixed Point Positioning/GNSS): 
+• 使用衛星確定絕對位置坐標 
+• 精度高、全球覆蓋、無需地面基礎設施、支援自動飛管 
+為何商用飛機不能只用一個系統: 
+• 適航要求:FAA、EASA、ICAO 規定關鍵系統需冗餘 
+• 系統脆弱性:無線電導航易受干擾、GNSS 易被干擾與欺騙、推算導航誤差累積 
+• 數據融合:現代飛機整合多個感測器,若一個故障仍可導航 
+ 
+ 
+ 
+ 
+PAGE 12
+2. What are the error sources of INS? How to reduce these errors? 
+問題二精簡版:慣性導航系統(INS)的誤差與改善方法 
+陀螺儀誤差: 
+1. 陀螺漂移(Gyro Bias):持續偏移導致姿態持續漂移 
+2. 陀螺比例因子誤差(Scale Factor):測量與實際角速度的比例偏差 
+3. 陀螺隨機噪音(Gyro Noise):隨機測量噪音 
+加速度計誤差: 
+1. 加速度計偏差(Accelerometer Bias):持續偏移累積成速度與位置誤差 
+2. 加速度計比例因子誤差:測量加速度的比例偏差 
+3. 加速度計隨機噪音:影響速度與位置精度 
+安裝對齊誤差(Misalignment):感測器軸與飛機機體框架間的對齊偏差 
+改善： 
+出廠/飛行前全域標定＋溫度補償；卡爾曼濾波與在線估計（EKF/互補）追蹤殘餘偏置與尺
+度；良好裝配對齊與時間同步/延遲補償。 
+ 
+ 
+  
+PAGE 13
+3. Please show the differences between the strapdown and stable gimbal systems. 
+問題三:捷聯系統與穩定平台的差異 
+• 穩定平台式 INS 以三軸萬向架將 IMU 機械穩定並對齊導航座標，量測直接位於導航座
+標、解算較簡單，但機構複雜、體積大、成本與維護負擔高。 
+• 捷聯式 INS 將 IMU 固定於機體座標，透過數學平台高速姿態解算把量測轉到導航座標
+再做速度/位置解算，結構簡單可靠但計算與更新率需求高。 
+• 總結：穩定平台用機械換低運算，捷聯用運算換低機械；隨 FOG/MEMS 與運算力成
+熟，捷聯式成主流並常與 GNSS 組成 INS/GNSS。 
+ 
+4. What is the fundamental concept of the dead reckoning DR navigation? Use a diagram and 
+some equations to show the process of DR navigation. 
+問題四:推算導航(Dead Reckoning, DR)的原理與功用 
+推算導航（DR）的基本概念，是從已知起點出發，根據航跡角與地速在時間上累加路程向
+量，推估當前位置；它屬於自主導航，不依賴外部訊號。實務上以陀螺維持/更新方向，以空
+速或地速來源提供速率，將短時間內的位移向量沿航跡逐段累加得到最新位置。若風未正確
+估計、或方向/速度量測有偏差，誤差會隨時間累積並呈漂移。用途上，DR 可在遠洋或無導
+航設施空域、以及 GPS/無線電失效時維持定位；平時常與 GNSS/無線電或 INS 融合，利用外
+援定期校正，以抑制長期漂移。 
+5. Provide a real example of complementary filter design.Explain the design of low pass and 
+high pass filters. 
+問題五:互補濾波器將陀螺儀與加速度計融合。 
+陀螺儀快速反應但長期漂移,加速度計穩定但受短期擾動影響。濾波器透過低通濾波提取加速
+度計的穩定信號,高通濾波保留陀螺儀的快速變化,加權組合得到準確且穩定的俯仰角測量,是
+飛行姿態基準的標準方法。 
+ 
+ 
+ 
+PAGE 14
+OLDHW 
+ 
+1.Explain the following terms 
+問題一:空氣動力學基本概念 
+翼型(Airfoil):設計用來產生升力的特殊形狀 
+攻角(AOA, Angle of Attack):機翼翼弦線與相對氣流方向之間的夾角 
+升力(Lift):翼型垂直於相對氣流所產生的向上力,由翼面周圍的壓力差產生 
+阻力(Drag):作用於飛機運動方向相反的力,由空氣摩擦與分離產生 
+壓力中心(Center of Pressure):翼型弦線上合力作用點,此點周圍無空氣動力矩 
+氣動中心(Aerodynamic Center):攻角變化時,俯仰力矩不變的翼型上的點,通常在弦長 1/4 位置 
+自由流(Free Stream):未受擾動的相對氣流,用作氣動力計算的參考 
+相對風(Relative Wind):飛行中飛機感受的明顯風向,由飛機速度與方向變化結合產生 
+ 
+3.Explain the relationship between flight stability and angle of attack (AOA). 
+問題三:飛行穩定性與攻角的關係 
+攻角與高度的關係: 
+• 保持相同攻角並增加速度→飛機上升 
+• 保持相同攻角並減少速度→飛機下降 
+• 增加速度且保持高度→攻角需降低 
+• 減少速度且保持高度→攻角需升高 
+失速:當攻角增加到某個臨界值時,阻力快速增加且升力急劇下降,飛機進入失速狀態 
+ 
+ 
+PAGE 15
+4. Describe the forces and moments act on an aircraft when it flies from the level flight to the 
+accelerating and turning flight. 
+問題四:加速飛行與轉彎飛行的力與矩 
+加速平飛 
+• 推力需大於總阻力，藉由加油門增加推力使飛機加速。 
+• 以升降舵微調迎角，讓升力約等於重量以維持高度；速度變化時攻角需跟著小幅修
+正。 
+• 為保持配平，俯仰、滾轉、偏航的合力矩應趨近於零；控制面做小幅輸入維持穩定與
+航向。 
+協調轉彎（等速等高） 
+• 機翼傾斜後，總升力需變大，使其垂直分力=重量；通常需增加一點攻角並增加推力，
+補償誘導阻力上升。 
+• 轉彎時寄生阻力與誘導阻力都會增加，等速時總阻力大於直飛同速。 
+ 
+5. Please describe the criteria of lateral-directional stability of an aircraft and discuss these 
+requirements for a stable aircraft 
+問題五:橫向-方向穩定性標準 
+橫向-方向穩定性的準則: 
+確保飛機能保持受控飛行、抵抗不想要的滾轉與偏航運動、給予飛行員保持穩定協調飛行的
+能力 
+要求: 
+• 飛機應在橫向-方向軸上表現出正靜穩定性 
+• 重心應位於氣動中心前方以維持橫向穩定性 
+*其他 
+油門—推力映射與律則（Throttle-to-thrust mapping/laws）：飛控與自動油門將手柄開度映射
+成期望推力，再經濾波與限幅輸出，避免瞬時過載與姿態/速度階躍；進場、起飛、巡航等模
+式會有不同曲線。 
+PAGE 16
+
+PAGE 17
+ 
+• Communication：提供飛機與地面/衛星之間的語音與資料通訊，用來下達與回覆指
+令。 
+• Navigation：提供飛機自身位置、速度與時間的精準導引，讓飛機沿預定航路飛。 
+• Surveillance：把飛機的位置與識別回報給地面系統，讓管制方能即時監看空域狀態。 
+• Air Traffic Management：整合通訊/導航/監視資訊來指揮與調配交通，確保安全與效
+率。 
+
+PAGE 18
+ 
+ 
+ 
+
+PAGE 19
+ 
+現代則走資料鏈、GNSS 與 ADS-B。 
+• C：用 HF、VHF、UHF 與衛星通訊處理空對空或空對地的語音與資料聯絡；重點是全
+球可用與資料鏈支援（例如控制指令、放行、航行情資）。 
+• N：用 GNSS 建立基於 SBAS（如 WAAS）與 GBAS（如 LAAS）的導航能力，實現
+「自由飛行」概念下的連續、精準導引。 
+• S：用 ADS-B 回報飛機動態（位置、高度、速度等）供空管監視，提升態勢感知與空
+域效率。 
+
+PAGE 20
+ 
+傳統 CNS 重地面設施與語音、雷達； 
+• C（通訊）：使用 HF/VHF/UHF 為空對地語音通話的主力，重在指令與協調，資料能
+力有限。 
+• N（導航）：依賴地面導航設施（如 VOR、航路定位點）來建立航路與引導，覆蓋受
+地面台站布局限制。 
+• S（監視）：以一次/二次雷達搜尋空域、掌握目標動態，地面端主動偵測、設備成本
+高。 
+ 
+ 
+
+PAGE 21
+ 
+ 
+斜率負→有回復→穩定；斜率正→越偏越離→不穩定 
+• 中性點（Neutral Point）是使 
+𝑑𝐶𝑀
+𝑑𝛼 = 0 的重心位置；重心位於中性點前方則靜穩定，重
+心越靠近中性點穩定性越弱但機動性↑。 
+ 
+
+PAGE 22
+ 
+ 
+
+PAGE 23
+ 
+• Inertial：不跟地球轉的「不動」基準，用來量真正運動。 
+• Earth-fixed：跟著地球轉的地圖座標（經緯度、東北天）。 
+• Vehicle-carried vertical：原點在重心、z 軸對重力，用來判斷有沒有歪。 
+• Air-trajectory：原點在重心、x 軸沿飛行方向，用來算迎角/側滑與航跡角。 
+• Body-fixed：原點在重心、軸黏在機身，用來寫力矩與接 IMU 資料。 
+• Stability axes：以「定常氣流方向」為基準的小擾動座標，用來推導穩定導數與線性 
+ 
+ 
+ 
+ 
+ 
+ 
+
+PAGE 24
+飛機數學模型怎麼把輸入變成輸出 
+
+PAGE 25
+
+PAGE 26
+ 
+ 
+
+PAGE 27
+• 非線性模型：最貼近真實飛行力學，可用來模擬真實飛行、做性能預測與軌跡最佳
+化；但計算複雜，通常需要數值方法與較多參數，適合高保真模擬與最終驗證。 
+• 線性化模型：在配平附近以小擾動近似，把問題簡化，便於分析系統模態、快速計算
+與設計控制器（如 PID）；缺點是只在小偏離範圍內準確。 
+ 
+ 
+
+PAGE 28
+ 
+1. 提升監測與補償氣動效應、改善飛機動態回應。 
+2. 透過有效的導航/飛控輔助，操縱所需能量更小、工作負荷更低。 
+3. 可降低機體重量（線纜/機械連桿減少、冗餘以電腦與線路實現）。 
+4. 簡化操作流程，提升俯仰/橫滾/偏航與油門協同的操作效率。 
+5. 自動駕駛更容易整合到系統架構中（軟體/法則與感測器共享） 
+ 
+傳統（機械）：靠鋼纜連桿＋助力，子系統各自以獨立系統存在，重、維護大，增穩與
+保護有限。 
+線傳（FBW）：電訊號＋飛控法則做增穩／包線保護，導航與自動駕駛/推力可協同，程
+序簡化、負荷更低。 
+
+PAGE 29
+ 
+• RLG（Ring Laser Gyro）：在左側高精度區，靠 Sagnac 效應量角速，偏置不穩可到 
+0.001–0.01 °/h 等級，價格高，多用在高端航空/軍規 INS。 
+• HRG（Hemispherical Resonator Gyro）：也在高精度區，靠玻璃/石英半球諧振器，
+幾乎無磨耗、壽命長，成本很高，戰略/太空等級常見。 
+• FOG（Fiber-Optic Gyro）：位於中高精度帶，偏置約 0.01–0.1 °/h（與光纖環長、設
+計有關），成本介於 RLG/HRG 與 MEMS 之間，常見於導航級/戰術級系統。 
+• MEMS Gyro：在右側，偏置通常 1–50+ °/h，便宜、小型、可量產，需要演算法/溫控
+/多感測融合來抑制漂移，廣泛用於工業與消費裝置。 
+應用等級（橢圓泡泡） 
+• Strategic（戰略級）：要求超低漂移與長壽命，通常選 HRG/RLG。 
+• Navigation（導航級）：航空/海事 INS 主流，多見 RLG/FOG 的高規型號。 
+• Tactical（戰術級）：導引炸彈、UAV 等，多用 FOG 或強化 MEMS。 
+• Industrial（工業級）：平台穩定、測姿等，常用 MEMS 或低階 FOG。 
+
+PAGE 30
+• Consumer（消費級）：手機、穿戴、玩具等，幾乎都用 MEMS。 
+ 
+• ISA（Inertial Sensor Assembly） 
+內容：只是一顆顆感測器本體（陀螺、加速度計），幾乎沒算任何東西。 
+輸出給使用者：Raw Inertial Data（原始慣性資料），包含原始角速度、線加速度，還
+沒做校正。 
+• IMU（Inertial Measurement Unit） 
+內容：在 ISA 基礎上加了「Error Compensation（誤差補償）」電子與韌體，會先做
+偏差、比例因子、軸不正交、溫度等校正。 
+輸出給使用者：Corrected Raw Inertial Data（校正後的原始慣性資料），品質比 ISA 
+好，但仍是感測量本身。 
+• INS（Inertial Navigation System） 
+內容：除了 IMU 的補償，還有 Navigation Computer（導航電腦）：做座標轉換與一
+次/二次積分，融合模型或外援（如 GNSS）求位置、速度、姿態。 
+輸出給使用者：Navigation + Corrected Raw Inertial Data（導航解＋校正後感測），也
+就是姿態/角、速度/位置等最終可用的導航狀態。 
+
+PAGE 31
+ISA＝只給「原始感測值」。 
+IMU＝給「校正後感測值」。 
+INS＝再加「導航狀態（姿態、速度、位置）」一起給。 
+ 
+ 
+把 INS 當作主體，靠外部量測一直幫它糾正 
+「INS 融合外援（Aided IN）與卡爾曼濾波」：各類量測被分成位置、速度與高度三類，經
+濾波與融合來約束 INS 漂移，形成多感測器導航。 
+• 位置來源：GPS、VOR/DME、TACAN、地形參考、雷達、目視參考、天文導航等；
+用來提供絕對位置校正，限制 INS 長期漂移。 
+• 速度來源：都卜勒雷達、GPS；用來修正 INS 速度/方位誤差，提升短中期精度與風切
+擾動下的穩健性。 
+• 高度來源：氣壓高度（由空速電腦計算）與無線電高度計；用於縱向計算與下滑道/地
+形約束。 
+
+PAGE 32
+ 
+INS 優點 
+• 不依賴外部電磁訊號，抗干擾與不可干擾特性佳（non-jammable）。 
+• 資料輸出率極高，遠高於典型衛星導航更新率，適合快動態控制與導航解算。 
+• 幾乎可在所有環境工作（室內、海底、地下），不受外部基礎設施限制。 
+• 量測噪聲相對低、短期穩定度好，適合做高頻姿態與速率回授。 
+INS 缺點 
+• 偏置與漂移問題使誤差隨時間積累，長時間精度惡化（drift）。 
+• 需要開機初始對準與飛行中校正，流程與時間成本不可忽視。 
+• 需要已知或準確估計重力加速度以做導航座標解算與漂移補償 
+ 

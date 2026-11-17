@@ -1,0 +1,16 @@
+
+const bank=JSON.parse(document.getElementById('bank').textContent);
+const byId=new Map(bank.map(c=>[c.id,c])), $=id=>document.getElementById(id), key='avionics-offline-29c41f2df578';
+const units=[...new Set(bank.map(c=>c.unit))];
+for(const u of units){const o=document.createElement('option');o.value=u;o.textContent=u;$('unit').append(o)}
+let state={unit:'',mode:'all',deck:[],index:0,known:0,revealed:false,wrong:[]};
+try{const saved=JSON.parse(localStorage.getItem(key));if(saved&&Array.isArray(saved.deck)&&Array.isArray(saved.wrong)&&saved.deck.every(id=>byId.has(id))&&Number.isInteger(saved.index)&&saved.index>=0&&saved.index<=saved.deck.length)state={...state,...saved}}catch(e){$('storage-note').classList.remove('hide')}
+const save=()=>{try{localStorage.setItem(key,JSON.stringify(state))}catch(e){$('storage-note').classList.remove('hide')}};
+$('unit').value=state.unit;$('mode').value=state.mode;
+function start(){state.unit=$('unit').value;state.mode=$('mode').value;state.deck=bank.filter(c=>(!state.unit||c.unit===state.unit)&&(state.mode!=='extended'||c.extended)&&(state.mode!=='wrong'||state.wrong.includes(c.id))).map(c=>c.id);for(let i=state.deck.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[state.deck[i],state.deck[j]]=[state.deck[j],state.deck[i]]}state.index=0;state.known=0;state.revealed=false;save();render()}
+function render(){const total=state.deck.length,done=state.index>=total;$('progress').value=total?state.index/total:0;$('status').textContent=total?`已完成 ${state.index} / ${total} 題 · 本輪知道 ${state.known} 題 · 歷史不熟 ${state.wrong.length} 題`:'目前範圍沒有題目；可切換單元或練習範圍。';$('flip').classList.toggle('hide',done||state.revealed);$('answer').classList.toggle('hide',done||!state.revealed);$('marks').classList.toggle('hide',done||!state.revealed);if(done){$('meta').textContent='';$('question').textContent=total?`本輪完成！自評知道率 ${Math.round(100*state.known/total)}%`:'請選擇練習範圍';if(total)$('progress').value=1;return}const c=byId.get(state.deck[state.index]);$('meta').textContent=`${c.unit} · ${c.term} · 來源：${c.source}`;$('question').textContent=c.question;$('answer').replaceChildren();if(state.revealed){for(const part of c.answer.split(' || ')){const p=document.createElement('p');p.textContent=part;$('answer').append(p)}}}
+function mark(known){if(!state.revealed||state.index>=state.deck.length)return;const id=state.deck[state.index];if(known)state.known++;else if(!state.wrong.includes(id))state.wrong.push(id);state.index++;state.revealed=false;save();render();$('question').scrollIntoView({block:'nearest'})}
+$('start').onclick=start;$('unit').onchange=start;$('mode').onchange=start;
+$('flip').onclick=()=>{state.revealed=true;save();render()};$('known').onclick=()=>mark(true);$('unknown').onclick=()=>mark(false);
+$('export').onclick=()=>{const text=state.wrong.map(id=>byId.get(id)).filter(Boolean).map(c=>`[${c.unit}] ${c.term}\n題目：${c.question}\n答案：${c.answer.replaceAll(' || ','\n')}\n`).join('\n');const url=URL.createObjectURL(new Blob(['\ufeff'+(text||'目前沒有錯題。')],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='avionics-wrongs.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+if(state.deck.length)render();else start();
